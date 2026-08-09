@@ -45,7 +45,21 @@ de categoría de `catalogo.json`.
 lista esté vacía: no se anuncia una sección sin contenido. En cuanto se añade
 una entrada aparecen solas.
 
+## Contraseña mientras está en pruebas
+
+La web pide contraseña. Vercel trae esa función de serie pero solo en los
+planes de pago, así que va en `proxy.ts` con autenticación básica: la pantalla
+la pone el navegador. El usuario da igual, solo se comprueba la contraseña.
+
+Se activa sola si existe la variable de entorno `CLAVE_WEB` en Vercel.
+**Para abrir la web al público basta con borrar esa variable y volver a
+desplegar**; no hay que tocar el código.
+
 ## Pendiente antes de publicar en el dominio real
+
+- **Borrar `CLAVE_WEB`** de las variables de entorno en Vercel. Si el dominio
+  real se apunta con la contraseña puesta, Google se encuentra un 401 en todas
+  las páginas.
 
 - `content/ferias.json` y `content/publicaciones.json` llevan **entradas de
   muestra**, inventadas para enseñar el diseño. Vaciar las listas o

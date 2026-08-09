@@ -27,7 +27,45 @@ function idiomaPreferido(peticion: NextRequest): string {
   return IDIOMA_POR_DEFECTO;
 }
 
+/**
+ * Puerta con contraseña mientras la web está en pruebas.
+ *
+ * Vercel trae esto de serie, pero solo en los planes de pago; el equipo está
+ * en Hobby, así que se resuelve aquí con autenticación básica, que es lo que
+ * el propio navegador sabe pedir sin necesidad de pantalla de acceso.
+ *
+ * Se activa sola si existe la variable CLAVE_WEB. Para abrir la web al público
+ * basta con borrar esa variable en Vercel y volver a desplegar: no hay que
+ * tocar este fichero. Y hay que borrarla antes de apuntar el dominio real, o
+ * Google se encontrará un 401 en todas las páginas.
+ */
+const CLAVE = process.env.CLAVE_WEB;
+
+function pedirClave() {
+  return new NextResponse("Acceso restringido", {
+    status: 401,
+    headers: {
+      "WWW-Authenticate": 'Basic realm="Web en pruebas", charset="UTF-8"',
+      // que ningún buscador ni intermediario guarde esto
+      "Cache-Control": "no-store",
+    },
+  });
+}
+
 export function proxy(peticion: NextRequest) {
+  if (CLAVE) {
+    const cabecera = peticion.headers.get("authorization") ?? "";
+    const codificado = cabecera.startsWith("Basic ") ? cabecera.slice(6) : "";
+    let dada = "";
+    try {
+      // el usuario da igual: solo se comprueba la contraseña
+      dada = codificado ? atob(codificado).split(":").slice(1).join(":") : "";
+    } catch {
+      dada = "";
+    }
+    if (dada !== CLAVE) return pedirClave();
+  }
+
   const { pathname } = peticion.nextUrl;
   const yaTieneIdioma = IDIOMAS.some(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`),

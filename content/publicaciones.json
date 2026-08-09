@@ -1,0 +1,73 @@
+{
+ "_comentario": "Entrevistas y publicaciones sobre la casa. Añadir entradas a la lista `publicaciones`. El campo `ejemplo` no se pinta: está aquí como plantilla. `fecha` va en AAAA-MM-DD y ordena la lista, de la más reciente a la más antigua. `url`, `foto` y `resumen` son opcionales; el titular se guarda tal y como se publicó, sin traducir, y lo que se traduce es el resumen.",
+ "ejemplo": {
+  "id": "diario-huelva-2026",
+  "medio": "Diario de Huelva",
+  "titulo": "«El producto español se vende solo cuando llega bien contado»",
+  "fecha": "2026-05-14",
+  "url": "https://www.ejemplo.com/entrevista",
+  "foto": "/publicaciones/diario-huelva-2026.jpg",
+  "resumen": {
+   "es": "Entrevista sobre la selección de producto y la exportación a los países nórdicos.",
+   "en": "Interview on product curation and exports to the Nordic markets.",
+   "nb": "",
+   "fr": "",
+   "pt": "",
+   "it": "",
+   "de": ""
+  }
+ },
+ "publicaciones": [
+  {
+   "id": "m1",
+   "medio": "Diario de Huelva",
+   "titulo": "«El producto español se vende solo cuando llega bien contado»",
+   "fecha": "2026-05-14",
+   "url": "https://ejemplo.test/entrevista",
+   "foto": "/marca/fundador.jpeg",
+   "resumen": {
+    "es": "Entrevista sobre la selección de producto y la exportación a los países nórdicos.",
+    "en": "",
+    "nb": "",
+    "fr": "",
+    "pt": "",
+    "it": "",
+    "de": ""
+   }
+  },
+  {
+   "id": "m2",
+   "medio": "Gourmets",
+   "titulo": "Una casa de selección para el Travel Retail",
+   "fecha": "2026-02-03",
+   "url": "https://ejemplo.test/gourmets",
+   "foto": "",
+   "resumen": {
+    "es": "Reportaje sobre el modelo de casa de selección frente al de fabricante.",
+    "en": "",
+    "nb": "",
+    "fr": "",
+    "pt": "",
+    "it": "",
+    "de": ""
+   }
+  },
+  {
+   "id": "m3",
+   "medio": "Norsk Mat",
+   "titulo": "Spansk kvalitet i norske hyller",
+   "fecha": "2025-11-20",
+   "foto": "/ambiente/quesos.jpg",
+   "resumen": {
+    "es": "Publicación noruega sobre la llegada del queso manchego D.O.P. al canal especializado.",
+    "en": "",
+    "nb": "",
+    "fr": "",
+    "pt": "",
+    "it": "",
+    "de": ""
+   }
+  }
+ ],
+ "_DEMO": "ATENCIÓN: las entradas de la lista son de MUESTRA, inventadas para enseñar el diseño al cliente. Vaciar la lista antes de publicar en el dominio real, o sustituirlas por datos verdaderos."
+}

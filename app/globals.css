@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+/* Identidad heredada de la web anterior: Lora, dorado y crema sobre blanco.
+   El cliente dio el visto bueno al estilo, así que no se reinventa: se sube
+   el contraste, se ordena la escala tipográfica y se le da sitio a la foto. */
+
+@theme {
+  --color-tinta: #17181c;
+  --color-tinta-2: #4a4f5a;
+  --color-tinta-3: #6b6d76;
+  --color-negro: #0e0e11;
+
+  /* El dorado claro no llega a 4,5:1 sobre blanco: como TEXTO se usa oro-tinta. */
+  --color-oro: #e8c570;
+  --color-oro-fuerte: #d9b356;
+  --color-oro-tinta: #7d600f;
+  --color-oro-tenue: #faf1da;
+
+  --color-crema: #fcf7ec;
+  --color-linea: #e7e2d6;
+
+  --font-display: "Lora", Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* escala modular 1.25, fluida en los títulos */
+  /* "González-Regalado" es un apellido y no se parte por el guion, así que el
+     titular no puede medir más que la columna: es la palabra la que fija el
+     tamaño en los dos extremos. El techo de 3.75rem lo mantiene en una línea
+     en pantalla grande; el suelo y la pendiente están calculados para que a
+     320 px quepa entero en los 272 px que deja el margen. */
+  --text-display: clamp(1.75rem, 1.1rem + 4vw, 3.75rem);
+  --text-titulo: clamp(1.9rem, 1.35rem + 2.2vw, 3rem);
+  --text-seccion: clamp(1.45rem, 1.2rem + 1.1vw, 2rem);
+
+  --ease-salida: cubic-bezier(0.22, 1, 0.36, 1);   /* out-quint */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);      /* out-expo, más decidido */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #fff;
+  color: var(--color-tinta);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-oro);
+  color: var(--color-negro);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-oro-tinta);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Etiqueta pequeña en versalitas: se usa contadas veces, no en cada sección.
+   0.72rem daban 11,5 px, por debajo de lo cómodo en un móvil; y con 0.16em de
+   letra suelta la línea se hacía muy ancha para 320 px. */
+.etiqueta {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-oro-tinta);
+}
+
+.filete {
+  width: 2.75rem;
+  height: 1px;
+  background: var(--color-oro);
+}
+
+/* Prosa de las páginas legales y de "quiénes somos". */
+.prosa p {
+  margin-bottom: 1.15em;
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+.prosa h2 {
+  font-size: var(--text-seccion);
+  margin: 2.2em 0 0.6em;
+  text-wrap: balance;
+}
+.prosa h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1.8em 0 0.4em;
+}
+.prosa li {
+  margin-bottom: 0.5em;
+  max-width: 68ch;
+}
+
+/* --------------------------------------------------------------- atmósfera
+   Nada de degradados de color: en esta marca el "premium" viene de la luz,
+   no del tinte. Un negro plano parece pintura; un negro con una zona más
+   iluminada parece un bodegón. Los valores son deliberadamente cortos: si se
+   nota el degradado, está mal. */
+
+/* Negro con foco de luz donde cae el texto y caída hacia los bordes. */
+.fondo-hondo {
+  background:
+    radial-gradient(115% 85% at 18% 22%, #1c1d23 0%, #121317 45%, #0e0e11 100%);
+}
+
+/* Halo dorado bajísimo para bloques oscuros que piden calidez (el CTA). */
+.halo-oro {
+  background:
+    radial-gradient(75% 70% at 12% 0%, rgba(232, 197, 112, 0.13), transparent 68%),
+    radial-gradient(100% 100% at 80% 100%, rgba(232, 197, 112, 0.05), transparent 60%),
+    #0e0e11;
+}
+
+/* El blanco puro corta con la crema del pie; esto lo templa hacia abajo. */
+.fondo-calido {
+  background: linear-gradient(180deg, #ffffff 0%, #fffdf8 55%, #fdf9f0 100%);
+}
+
+/* ------------------------------------------------------- entrada del hero
+   Un solo momento coreografiado al cargar, no un fade en cada sección: eso
+   último es el tic que delata una plantilla. La foto resuelve el desenfoque
+   mientras el texto sube escalonado; el filete se traza al final.
+   Se usa `animation` (no `transition`) y `backwards`, así el contenido
+   también aparece en renderizadores que no ejecutan transiciones. */
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes revelar {
+  from { opacity: 0; transform: scale(1.07); filter: blur(16px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+@keyframes trazar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.entra {
+  animation: surgir 0.72s var(--ease-salida) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+.entra-foto {
+  animation: revelar 1.15s var(--ease-expo) backwards;
+}
+.entra-filete {
+  /* Se traza desde el centro, que es donde está anclado ahora el filete. */
+  transform-origin: center;
+  animation: trazar 0.55s var(--ease-expo) 0.42s backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ------------------------------------------------- fundido de fotos del hero
+   Tres imágenes que se cruzan solas, sin flechas ni puntos: no es un carrusel
+   de contenido (donde la 2.ª y la 3.ª diapositiva no las ve nadie), es
+   atmósfera. El texto no se mueve.
+   Ciclo de 21 s: ~6 s por foto y ~1 s de cruce. */
+.fundido > * {
+  position: absolute;
+  /* -1px a propósito: con `inset: 0` el redondeo a subpíxel dejaba una rendija
+     de 1 px en el perímetro por la que se veía el fondo, y se leía como una
+     línea clara. Sobresaliendo un píxel no hay rendija posible. */
+  inset: -1px;
+  opacity: 0;
+  animation: fundir 21s linear infinite;
+}
+.fundido > *:nth-child(1) { animation-delay: 0s; }
+.fundido > *:nth-child(2) { animation-delay: 7s; }
+.fundido > *:nth-child(3) { animation-delay: 14s; }
+
+@keyframes fundir {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  29%  { opacity: 1; }
+  34%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Va DESPUÉS del bloque general de movimiento reducido a propósito: aquel
+   deja las animaciones en 0,01 ms, y con `opacity: 0` de base eso apagaría
+   las tres fotos. Aquí se fija la primera visible y se acabó el movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  .fundido > * { animation: none; opacity: 0; }
+  .fundido > *:nth-child(1) { opacity: 1; }
+}
+
+/* ------------------------------------------------------------ relieve real
+   Nada de neumorfismo: aquí el objeto no está tallado en el fondo, está
+   POSADO encima, como una tarjeta impresa sobre papel. Sombra corta y
+   definida (blur ≤ 8 px), sin halos difusos.
+   Y sin borde: borde de 1 px + sombra ancha a la vez es el look de plantilla. */
+.tarjeta {
+  position: relative;
+  box-shadow:
+    0 1px 2px rgba(23, 24, 28, 0.06),
+    0 5px 8px -4px rgba(23, 24, 28, 0.14);
+  transition:
+    box-shadow 0.25s var(--ease-salida),
+    transform 0.25s var(--ease-salida);
+}
+.tarjeta:hover {
+  box-shadow:
+    0 2px 4px rgba(23, 24, 28, 0.07),
+    0 10px 14px -6px rgba(23, 24, 28, 0.18);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------- grabado
+   El mismo filete impreso por dentro que llevan los botones, pero quieto.
+   Es lo que ata toda la web a un solo lenguaje: tarjeta de categoría, ficha
+   de producto, foto de feria y botón parecen impresos sobre la misma
+   etiqueta. Va en un pseudoelemento y no en un borde para poder moverlo y
+   para no sumar un borde de 1 px a la sombra, que es el look de plantilla.
+   `z-index: 1` porque cruza por encima de la foto de la tarjeta. */
+.grabado::after {
+  content: "";
+  position: absolute;
+  /* 5 px: cae dentro del margen blanco de 10 px de la tarjeta, sin llegar a
+     tocar la foto. Cuando el filete cruzaba por encima de la imagen no
+     parecía impreso, parecía una raya puesta encima. */
+  inset: 5px;
+  border: 1px solid var(--filete, var(--color-oro));
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 1;
+  transition:
+    inset 0.3s var(--ease-salida),
+    opacity 0.3s var(--ease-salida);
+}
+/* Al pasar por encima el filete se abre hacia el canto, igual que en la placa
+   de los botones: es el mismo gesto en toda la web. */
+.tarjeta:hover.grabado::after,
+.grupo:hover .grabado::after {
+  inset: 3px;
+  opacity: 0.5;
+}
+
+/* En piezas pequeñas (la ficha de un producto) el filete se acerca al canto y
+   baja de intensidad: a ese tamaño, 6 px y 0.28 taparían el producto. */
+.grabado-menudo::after {
+  inset: 4px;
+  opacity: 0.2;
+}
+
+/* ---------------------------------------------------------- placa grabada
+   La píldora dorada es el botón por defecto de cualquier plantilla. Esto sale
+   de donde vive la marca: la etiqueta de una botella de aceite o de vino, un
+   recuadro de esquina casi viva con un filete impreso por dentro.
+   El filete es un pseudoelemento y no un segundo borde para poder moverlo:
+   al pasar por encima se abre hacia el canto, como si la placa respirara.
+   Nada de sombra difusa detrás; el relieve lo da el propio grabado. */
+.placa {
+  position: relative;
+  border-radius: 2px;
+  transition: background-color 0.2s var(--ease-salida),
+    border-color 0.2s var(--ease-salida);
+}
+.placa::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--filete, currentColor);
+  border-radius: 1px;
+  opacity: 0.4;
+  pointer-events: none;
+  transition:
+    inset 0.3s var(--ease-salida),
+    opacity 0.3s var(--ease-salida);
+}
+.placa:hover::before {
+  inset: 2px;
+  opacity: 0.75;
+}
+/* Sobre fondo oscuro el filete es dorado, no del color del texto. */
+.placa-oro {
+  --filete: var(--color-oro);
+}
+
+/* Aquí vivían `.funde-borde` y un fondo negro para `.entra-foto`: hacían
+   falta cuando el hero partía la pantalla en columna de texto y columna de
+   foto, para que el canto entre las dos no dibujara una costura. Ahora la
+   foto es el fondo de toda la sección y no hay canto que fundir. */
+
+/* ------------------------------------------------- pie de la tarjeta
+   Donde hay cursor, la flecha sobra: al pasar por encima la tarjeta ya se
+   levanta, la foto crece y el filete se abre, así que se entiende que se
+   pulsa. En táctil no hay nada de eso, y sin la flecha la tarjeta parece una
+   foto sin más. Se decide por `hover`, no por ancho de pantalla: un portátil
+   táctil o una tablet con teclado necesitan la flecha aunque sean anchos. */
+@media (hover: hover) and (pointer: fine) {
+  .pie-tarjeta {
+    justify-content: center;
+    text-align: center;
+  }
+  .pie-tarjeta .flecha {
+    display: none;
+  }
+}

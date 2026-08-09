@@ -1,0 +1,49 @@
+{
+  "nota": "Fotografía de ambiente provisional. Licencia Unsplash (uso comercial permitido, sin atribución obligatoria). SUSTITUIR por fotos propias del cliente cuando las envíe: basta con reemplazar el fichero en public/ambiente/ conservando el nombre.",
+  "fotos": [
+    {
+      "fichero": "hero-aceite.jpg",
+      "uso": "portada",
+      "origen": "https://unsplash.com/photos/photo-1474979266404-7eaacbcd87c5",
+      "nota": "Recortada: la original traía una pared muy clara en el borde izquierdo que hacía línea contra el negro del hero."
+    },
+    {
+      "fichero": "aceites.jpg",
+      "uso": "Aceite de oliva",
+      "origen": "https://unsplash.com/photos/photo-1707827914998-0d56ee13c161"
+    },
+    {
+      "fichero": "quesos.jpg",
+      "uso": "Quesos",
+      "origen": "https://unsplash.com/photos/photo-1748040584633-55bb02ca6ee7"
+    },
+    {
+      "fichero": "chacinas.jpg",
+      "uso": "Chacinas e ibéricos",
+      "origen": "https://unsplash.com/photos/photo-1650921220190-e325bad9385e"
+    },
+    {
+      "fichero": "aceitunas.jpg",
+      "uso": "Aceitunas",
+      "origen": "https://unsplash.com/photos/photo-1737681159526-0561967bd0e5"
+    },
+    {
+      "fichero": "frutos-secos.jpg",
+      "uso": "Frutos secos",
+      "origen": "https://unsplash.com/photos/photo-1769255484682-c7260b13d564"
+    },
+    {
+      "fichero": "sal-y-especias.jpg",
+      "uso": "Sal, pimienta y especias",
+      "origen": "https://unsplash.com/photos/photo-1558394299-f2e6198506a6"
+    },
+    {
+      "fichero": "monodosis.jpg",
+      "uso": "Monodosis y sets",
+      "origen": "https://unsplash.com/photos/photo-1574785289548-b6604d39125d"
+    }
+  ],
+  "descartadas": [
+    "photo-1656423521731-9665583f100c: llevaba una botella de ginebra de marca ajena bien visible"
+  ]
+}

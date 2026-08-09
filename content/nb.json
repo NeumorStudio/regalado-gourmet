@@ -1,0 +1,441 @@
+{
+ "index": {
+  "titulo": "Hjem",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "González-Regalado Gourmet"
+   },
+   {
+    "tipo": "p",
+    "texto": "Premium spansk gourmetutvalg"
+   },
+   {
+    "tipo": "p",
+    "texto": "Reisebutikk og internasjonal distribusjon"
+   },
+   {
+    "tipo": "p",
+    "texto": "Nøye utvalgte spanske D.O.P.-produkter, utviklet for salg på flyplasser og internasjonal detaljhandel."
+   }
+  ]
+ },
+ "about": {
+  "titulo": "Om oss",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "González-Regalado"
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado er et spansk hus dedikert til utvelgelse og utvikling av gastronomiske produkter av høy kvalitet, med spesiell oppmerksomhet på beskyttede opprinnelsesbetegnelser og tilberedninger som representerer den spanske kulinariske arven."
+   },
+   {
+    "tipo": "p",
+    "texto": "Firmaet springer ut fra et internasjonalt perspektiv, der verdien av opprinnelsesproduktet oppfattes med særlig klarhet. Dette ytre blikket har gjort det mulig å strukturere et forslag designet for å projisere spansk gastronomisk fortreffelighet i krevende globale miljøer, særlig innen Travel Retail og spesialisert distribusjon."
+   },
+   {
+    "tipo": "p",
+    "texto": "Hver utgave følger en grundig kuratorprosess: utvelgelse av opprinnelse, estetisk sammenheng, formatjustering, overholdelse av forskrifter og logistisk tilpasning for internasjonale markeder. Resultatet er et balansert forslag mellom autentisitet, sofistikering og kommersiell levedyktighet."
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado opererer ikke som produsent, men som et utvelgelses- og strategisk utviklingshus som bevarer produktets identitet samtidig som det posisjoneres i en moderne og internasjonal kontekst."
+   },
+   {
+    "tipo": "p",
+    "texto": "En nøktern og moderne tolkning av spansk gastronomisk fortreffelighet fra et europeisk og globalt perspektiv."
+   },
+   {
+    "tipo": "h2",
+    "texto": "Grunnlegger"
+   },
+   {
+    "tipo": "p",
+    "texto": "Selskapet ledes av Eduardo González-Regalado Batlles, hvis personlige erfaring utenfor Spania har gjort det mulig for ham å identifisere den differensierte verdien av spanske gastronomiske produkter i internasjonale markeder."
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado ble født med en klar visjon: å strukturere et solid forslag, regulatorisk tilpasset og strategisk posisjonert for internasjonale distribusjonsmiljøer og Travel Retail."
+   },
+   {
+    "tipo": "p",
+    "texto": "Ledelsen er orientert mot å bevare opprinnelsens autentisitet, garantere internasjonale standarder og projisere det spanske produktet innenfor en moderne premium-ramme."
+   }
+  ]
+ },
+ "products": {
+  "titulo": "Katalog",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Produktkatalog"
+   }
+  ]
+ },
+ "contact": {
+  "titulo": "Kontakt",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Kontakt"
+   },
+   {
+    "tipo": "p",
+    "texto": "For kommersielle henvendelser, produktinformasjon eller internasjonal distribusjon, kan du kontakte oss gjennom følgende kanaler."
+   },
+   {
+    "tipo": "p",
+    "texto": "Email contacto@regaladogourmet.com Telefon Spania +34 671 474 116 Telefon Norge +47 98 63 43 85 Vi vil svare på din henvendelse så snart som mulig."
+   }
+  ]
+ },
+ "terms": {
+  "titulo": "Vilkår og betingelser",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Vilkår og betingelser"
+   },
+   {
+    "tipo": "h2",
+    "texto": "1. Generell informasjon"
+   },
+   {
+    "tipo": "p",
+    "texto": "Velkommen til González-Regalado Gourmet. Disse vilkårene og betingelsene beskriver reglene og forskriftene for bruk av nettstedet og tjenestene våre."
+   },
+   {
+    "tipo": "h2",
+    "texto": "2. Bruk av nettstedet"
+   },
+   {
+    "tipo": "p",
+    "texto": "Ved å få tilgang til dette nettstedet, antar vi at du aksepterer disse vilkårene og betingelsene i sin helhet. Ikke fortsett å bruke González-Regalado Gourmets nettsted hvis du ikke aksepterer alle vilkårene og betingelsene angitt på denne siden."
+   },
+   {
+    "tipo": "h2",
+    "texto": "3. Intellektuell eiendom"
+   },
+   {
+    "tipo": "p",
+    "texto": "Alt innhold inkludert på dette nettstedet, som tekster, grafikk, logoer, bilder, samt samlingen av disse, er eiendom av González-Regalado Gourmet eller dets innholdsleverandører og er beskyttet av spanske og internasjonale lover om intellektuell eiendom."
+   },
+   {
+    "tipo": "h2",
+    "texto": "4. Produkter og tjenester"
+   },
+   {
+    "tipo": "p",
+    "texto": "Våre produkter er underlagt tilgjengelighet og kan endres eller avvikles uten varsel. Produktbildene er representative og kan avvike noe fra det faktiske produktet."
+   },
+   {
+    "tipo": "h2",
+    "texto": "5. Priser og betalinger"
+   },
+   {
+    "tipo": "p",
+    "texto": "Alle priser kan endres uten varsel. Vi forbeholder oss retten til å endre eller avvikle ethvert produkt uten varsel."
+   },
+   {
+    "tipo": "h2",
+    "texto": "6. Ansvar"
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado Gourmet vil ikke være ansvarlig for direkte, indirekte, tilfeldig, spesiell eller følgeskade som følge av bruk eller manglende evne til å bruke våre produkter eller tjenester."
+   },
+   {
+    "tipo": "h2",
+    "texto": "7. Endringer"
+   },
+   {
+    "tipo": "p",
+    "texto": "Vi forbeholder oss retten til å revidere disse vilkårene når som helst. Ved å bruke dette nettstedet godtar du å være underlagt den gjeldende versjonen av disse vilkårene og betingelsene."
+   },
+   {
+    "tipo": "h2",
+    "texto": "8. Gjeldende lov"
+   },
+   {
+    "tipo": "p",
+    "texto": "Disse vilkårene vil bli styrt og tolket i samsvar med lovene i Spania, og du underkaster deg ugjenkallelig den eksklusive jurisdiksjonen til domstolene i det landet."
+   },
+   {
+    "tipo": "h2",
+    "texto": "9. Kontakt"
+   },
+   {
+    "tipo": "p",
+    "texto": "Hvis du har spørsmål om disse vilkårene og betingelsene, kan du kontakte oss på: contacto@regaladogourmet.com"
+   }
+  ]
+ },
+ "privacy": {
+  "titulo": "Personvernerklæring",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Personvernerklæring"
+   },
+   {
+    "tipo": "h2",
+    "texto": "1. Introduksjon"
+   },
+   {
+    "tipo": "p",
+    "texto": "Hos González-Regalado Gourmet forplikter vi oss til å beskytte ditt personvern. Denne personvernerklæringen forklarer hvordan vi samler inn, bruker, avslører og beskytter din personlige informasjon."
+   },
+   {
+    "tipo": "h2",
+    "texto": "2. Informasjon vi samler inn"
+   },
+   {
+    "tipo": "p",
+    "texto": "Vi kan samle inn følgende informasjon:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Navn og kontaktinformasjon"
+   },
+   {
+    "tipo": "li",
+    "texto": "Demografisk informasjon"
+   },
+   {
+    "tipo": "li",
+    "texto": "Kommersiell og bestillingsinformasjon"
+   },
+   {
+    "tipo": "li",
+    "texto": "Nettleser- og nettstedbruksdata"
+   },
+   {
+    "tipo": "h2",
+    "texto": "3. Hvordan vi bruker din informasjon"
+   },
+   {
+    "tipo": "p",
+    "texto": "Vi bruker den innsamlede informasjonen til:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Behandle og administrere bestillinger"
+   },
+   {
+    "tipo": "li",
+    "texto": "Forbedre våre produkter og tjenester"
+   },
+   {
+    "tipo": "li",
+    "texto": "Sende markedsføringskommunikasjon (med ditt samtykke)"
+   },
+   {
+    "tipo": "li",
+    "texto": "Oppfylle juridiske forpliktelser"
+   },
+   {
+    "tipo": "li",
+    "texto": "Tilpasse din opplevelse på nettstedet vårt"
+   },
+   {
+    "tipo": "h2",
+    "texto": "4. Databeskyttelse"
+   },
+   {
+    "tipo": "p",
+    "texto": "Vi implementerer passende tekniske og organisatoriske sikkerhetstiltak for å beskytte din personlige informasjon mot uautorisert tilgang, endring, avsløring eller ødeleggelse."
+   },
+   {
+    "tipo": "h2",
+    "texto": "5. Deling av informasjon"
+   },
+   {
+    "tipo": "p",
+    "texto": "Vi selger, bytter eller overfører ikke din personlige informasjon til tredjeparter uten ditt samtykke, bortsett fra når det er nødvendig for å levere våre tjenester eller når loven krever det."
+   },
+   {
+    "tipo": "h2",
+    "texto": "6. Dine rettigheter"
+   },
+   {
+    "tipo": "p",
+    "texto": "I henhold til GDPR har du rett til å:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Få tilgang til dine personopplysninger"
+   },
+   {
+    "tipo": "li",
+    "texto": "Rette unøyaktige data"
+   },
+   {
+    "tipo": "li",
+    "texto": "Be om sletting av dine data"
+   },
+   {
+    "tipo": "li",
+    "texto": "Motsette deg behandling av dine data"
+   },
+   {
+    "tipo": "li",
+    "texto": "Be om portabilitet av dine data"
+   },
+   {
+    "tipo": "li",
+    "texto": "Trekke tilbake ditt samtykke når som helst"
+   },
+   {
+    "tipo": "h2",
+    "texto": "7. Datalagring"
+   },
+   {
+    "tipo": "p",
+    "texto": "Vi oppbevarer din personlige informasjon kun så lenge det er nødvendig for formålene angitt i denne retningslinjen eller som loven krever."
+   },
+   {
+    "tipo": "h2",
+    "texto": "8. Endringer i denne retningslinjen"
+   },
+   {
+    "tipo": "p",
+    "texto": "Vi forbeholder oss retten til å oppdatere denne personvernerklæringen når som helst. Vi vil varsle deg om betydelige endringer ved å publisere den nye retningslinjen på denne siden."
+   },
+   {
+    "tipo": "h2",
+    "texto": "9. Kontakt"
+   },
+   {
+    "tipo": "p",
+    "texto": "Hvis du har spørsmål om denne personvernerklæringen eller ønsker å utøve dine rettigheter, kan du kontakte oss på: contacto@regaladogourmet.com"
+   }
+  ]
+ },
+ "legal": {
+  "titulo": "Juridisk informasjon",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Juridisk informasjon"
+   },
+   {
+    "tipo": "h2",
+    "texto": "1. Identifikasjonsdata"
+   },
+   {
+    "tipo": "p",
+    "texto": "I samsvar med artikkel 10 i lov 34/2002 av 11. juli om informasjonssamfunnstjenester og elektronisk handel, presenterer innehaveren sine identifikasjonsdata:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Innehaver: Eduardo González-Regalado Batllés"
+   },
+   {
+    "tipo": "li",
+    "texto": "E-post: contacto@regaladogourmet.com"
+   },
+   {
+    "tipo": "h2",
+    "texto": "2. Formål"
+   },
+   {
+    "tipo": "p",
+    "texto": "Denne juridiske informasjonen regulerer bruken av nettstedet www.regaladogourmet.com, som eies av Eduardo González-Regalado Batllés."
+   },
+   {
+    "tipo": "p",
+    "texto": "Navigering på nettstedet gir brukerstatus og innebærer full og uforbeholden aksept av alle bestemmelsene inkludert i denne juridiske informasjonen."
+   },
+   {
+    "tipo": "h2",
+    "texto": "3. Intellektuell og industriell eiendom"
+   },
+   {
+    "tipo": "p",
+    "texto": "Alt innhold på nettstedet, inkludert, uten begrensning, tekster, fotografier, grafikk, bilder, ikoner, teknologi, programvare, samt dets grafiske design og kildekode, utgjør et verk som tilhører Eduardo González-Regalado Batllés, uten at noen av utnyttelsesrettighetene over dem skal forstås som overført til brukeren utover det som er strengt nødvendig for korrekt bruk av nettstedet."
+   },
+   {
+    "tipo": "p",
+    "texto": "Til syvende og sist kan brukere som får tilgang til dette nettstedet se innholdet og gjøre, der det er aktuelt, autoriserte private kopier forutsatt at de reproduserte elementene ikke senere overføres til tredjeparter, ikke installeres på servere koblet til nettverk, og ikke er gjenstand for noen form for utnyttelse."
+   },
+   {
+    "tipo": "h2",
+    "texto": "4. Brukerens forpliktelser"
+   },
+   {
+    "tipo": "p",
+    "texto": "Brukeren forplikter seg til å gjøre passende bruk av innholdet og tjenestene som Eduardo González-Regalado Batllés tilbyr gjennom sitt nettsted, og som et eksempel, men ikke begrenset til, ikke bruke dem til:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Delta i ulovlige, illegale aktiviteter eller aktiviteter i strid med god tro og offentlig orden"
+   },
+   {
+    "tipo": "li",
+    "texto": "Spre innhold eller propaganda av rasistisk, fremmedfiendtlig, ulovlig pornografisk karakter, som støtter terrorisme eller krenker menneskerettighetene"
+   },
+   {
+    "tipo": "li",
+    "texto": "Forårsake skade på de fysiske og logiske systemene til Eduardo González-Regalado Batllés, dets leverandører eller tredjeparter"
+   },
+   {
+    "tipo": "li",
+    "texto": "Introdusere eller spre datavirus eller andre fysiske eller logiske systemer på nettverket som kan forårsake den nevnte skaden"
+   },
+   {
+    "tipo": "h2",
+    "texto": "5. Ansvar"
+   },
+   {
+    "tipo": "p",
+    "texto": "Eduardo González-Regalado Batllés er ikke ansvarlig for informasjon og innhold lagret i fora, sosiale nettverk eller andre midler som lar tredjeparter publisere innhold uavhengig på leverandørens nettside."
+   },
+   {
+    "tipo": "p",
+    "texto": "Likevel, med tanke på artikkel 11 og 16 i LSSI-CE, forplikter Eduardo González-Regalado Batllés seg til å fjerne eller, der det er hensiktsmessig, blokkere innhold som kan påvirke eller stride mot nasjonal eller internasjonal lovgivning, tredjeparters rettigheter eller moral og offentlig orden."
+   },
+   {
+    "tipo": "h2",
+    "texto": "6. Lenker"
+   },
+   {
+    "tipo": "p",
+    "texto": "Nettstedet kan inneholde lenker til andre tredjepartssider. Eduardo González-Regalado Batllés påtar seg intet ansvar for innholdet, personvernreglene eller praksisene til tredjeparters nettsteder."
+   },
+   {
+    "tipo": "h2",
+    "texto": "7. Databeskyttelse"
+   },
+   {
+    "tipo": "p",
+    "texto": "For mer informasjon om behandling av personopplysninger, se vår Personvernerklæring."
+   },
+   {
+    "tipo": "h2",
+    "texto": "8. Gjeldende lovgivning og jurisdiksjon"
+   },
+   {
+    "tipo": "p",
+    "texto": "Forholdene etablert mellom Eduardo González-Regalado Batllés og brukeren vil bli styrt av gjeldende spansk lovgivning. I tilfelle kontrovers kan partene legge sine konflikter frem for voldgift eller gå til ordinær jurisdiksjon i samsvar med reglene om jurisdiksjon og kompetanse i denne forbindelse. Eduardo González-Regalado Batllés har sitt hjemsted i Spania."
+   },
+   {
+    "tipo": "h2",
+    "texto": "9. Endringer"
+   },
+   {
+    "tipo": "p",
+    "texto": "Eduardo González-Regalado Batllés forbeholder seg retten til å gjøre endringer det anser som hensiktsmessige på sitt nettsted uten forhåndsvarsel, og kan endre, slette eller legge til både innholdet og tjenestene som tilbys gjennom det, samt måten de presenteres eller lokaliseres på."
+   },
+   {
+    "tipo": "h2",
+    "texto": "10. Kontakt"
+   },
+   {
+    "tipo": "p",
+    "texto": "For spørsmål relatert til denne juridiske informasjonen, kan du kontakte oss på: contacto@regaladogourmet.com"
+   }
+  ]
+ }
+}

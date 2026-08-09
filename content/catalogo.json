@@ -1,0 +1,1078 @@
+{
+ "categorias": [
+  {
+   "slug": "quesos-manchegos-dop",
+   "nombre": {
+    "es": "Quesos Manchegos D.O.P.",
+    "en": "D.O.P. Manchego cheeses",
+    "nb": "Manchego-oster D.O.P.",
+    "fr": "Fromages Manchego A.O.P.",
+    "pt": "Queijos Manchego D.O.P.",
+    "it": "Formaggi Manchego D.O.P.",
+    "de": "Manchego-Käse g.U."
+   },
+   "total": 30
+  },
+  {
+   "slug": "jamones-ibericos-dop",
+   "nombre": {
+    "es": "Jamones Ibéricos D.O.P.",
+    "en": "D.O.P. Iberian hams",
+    "nb": "Iberisk skinke D.O.P.",
+    "fr": "Jambons ibériques A.O.P.",
+    "pt": "Presuntos ibéricos D.O.P.",
+    "it": "Prosciutti iberici D.O.P.",
+    "de": "Iberischer Schinken g.U."
+   },
+   "total": 0
+  },
+  {
+   "slug": "jamones-ibericos-serrano",
+   "nombre": {
+    "es": "Jamones Ibéricos y Serrano",
+    "en": "Iberian and Serrano hams",
+    "nb": "Iberisk skinke og Serrano",
+    "fr": "Jambons ibériques et Serrano",
+    "pt": "Presuntos ibéricos e Serrano",
+    "it": "Prosciutti iberici e Serrano",
+    "de": "Iberischer Schinken und Serrano"
+   },
+   "total": 8
+  },
+  {
+   "slug": "embutidos-ibericos",
+   "nombre": {
+    "es": "Embutidos Ibéricos",
+    "en": "Iberian cured sausages",
+    "nb": "Iberiske spekepølser",
+    "fr": "Charcuterie ibérique",
+    "pt": "Enchidos ibéricos",
+    "it": "Salumi iberici",
+    "de": "Iberische Wurstwaren"
+   },
+   "total": 12,
+   "subcategorias": [
+    {
+     "slug": "salchichon",
+     "nombre": {
+      "es": "Salchichón Ibérico",
+      "en": "Iberian salchichón",
+      "nb": "Iberisk salchichón",
+      "fr": "Salchichón ibérique",
+      "pt": "Salchichón ibérico",
+      "it": "Salchichón iberico",
+      "de": "Iberischer Salchichón"
+     }
+    },
+    {
+     "slug": "chorizo",
+     "nombre": {
+      "es": "Chorizo Ibérico",
+      "en": "Iberian chorizo",
+      "nb": "Iberisk chorizo",
+      "fr": "Chorizo ibérique",
+      "pt": "Chouriço ibérico",
+      "it": "Chorizo iberico",
+      "de": "Iberischer Chorizo"
+     }
+    },
+    {
+     "slug": "lomo",
+     "nombre": {
+      "es": "Lomo Ibérico",
+      "en": "Iberian loin",
+      "nb": "Iberisk lomo",
+      "fr": "Lomo ibérique",
+      "pt": "Lombo ibérico",
+      "it": "Lomo iberico",
+      "de": "Iberischer Lomo"
+     }
+    }
+   ]
+  },
+  {
+   "slug": "aceites-premium-do",
+   "nombre": {
+    "es": "Aceites de Oliva Virgen Extra Premium y D.O.",
+    "en": "Premium and D.O. extra virgin olive oils",
+    "nb": "Premium og D.O. ekstra virgin olivenolje",
+    "fr": "Huiles d’olive vierge extra premium et A.O.",
+    "pt": "Azeites virgem extra premium e D.O.",
+    "it": "Oli extravergine di oliva premium e D.O.",
+    "de": "Native Olivenöle extra, Premium und g.U."
+   },
+   "total": 11
+  },
+  {
+   "slug": "aceites-horeca",
+   "nombre": {
+    "es": "Aceites de Oliva Virgen Extra HORECA",
+    "en": "HORECA extra virgin olive oils",
+    "nb": "HORECA ekstra virgin olivenolje",
+    "fr": "Huiles d’olive vierge extra HORECA",
+    "pt": "Azeites virgem extra HORECA",
+    "it": "Oli extravergine di oliva HORECA",
+    "de": "Native Olivenöle extra für HORECA"
+   },
+   "total": 2
+  },
+  {
+   "slug": "otros-productos-salsas",
+   "nombre": {
+    "es": "Otros productos y salsas",
+    "en": "Other products and sauces",
+    "nb": "Andre produkter og sauser",
+    "fr": "Autres produits et sauces",
+    "pt": "Outros produtos e molhos",
+    "it": "Altri prodotti e salse",
+    "de": "Weitere Produkte und Saucen"
+   },
+   "total": 35
+  },
+  {
+   "slug": "infusiones-tes",
+   "nombre": {
+    "es": "Infusiones y tés",
+    "en": "Teas and infusions",
+    "nb": "Te og urtete",
+    "fr": "Infusions et thés",
+    "pt": "Infusões e chás",
+    "it": "Infusi e tè",
+    "de": "Tees und Kräutertees"
+   },
+   "total": 0
+  },
+  {
+   "slug": "vinos",
+   "nombre": {
+    "es": "Vinos",
+    "en": "Wines",
+    "nb": "Viner",
+    "fr": "Vins",
+    "pt": "Vinhos",
+    "it": "Vini",
+    "de": "Weine"
+   },
+   "total": 0
+  },
+  {
+   "slug": "tomates",
+   "nombre": {
+    "es": "Tomates",
+    "en": "Tomatoes",
+    "nb": "Tomater",
+    "fr": "Tomates",
+    "pt": "Tomates",
+    "it": "Pomodori",
+    "de": "Tomaten"
+   },
+   "total": 0
+  }
+ ],
+ "productos": [
+  {
+   "id": "a001",
+   "categoria": "aceites-premium-do",
+   "nombre": "ESTUCHE 6X1/2 V BOT. SELEC",
+   "formato": "VIDRIO · 5L",
+   "presentacion": "CAJA DE 6 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p001.png"
+  },
+  {
+   "id": "a002",
+   "categoria": "aceites-premium-do",
+   "nombre": "BOTELLA SELECCION AOVE 500 ML",
+   "formato": "VIDRIO · 500ml",
+   "presentacion": "CAJA DE 6 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p002.png"
+  },
+  {
+   "id": "a003",
+   "categoria": "aceites-premium-do",
+   "nombre": "SINGULAR BOTELLA 500ML",
+   "formato": "VIDRIO · 500ml",
+   "presentacion": "CAJA DE 6 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p003.png"
+  },
+  {
+   "id": "a004",
+   "categoria": "aceites-premium-do",
+   "nombre": "3X1/2 V BOT.ANIV ESTUCHE",
+   "formato": "VIDRIO · 500ml",
+   "presentacion": "CAJA DE 3 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p004.png"
+  },
+  {
+   "id": "a005",
+   "categoria": "aceites-premium-do",
+   "nombre": "ESTUCHE PREMIUM 3UD X 1/2",
+   "formato": "VIDRIO · 500mlx3",
+   "presentacion": "CAJA DE 2 BOTELLAS",
+   "unidad": "ESTUCHE",
+   "foto": "/productos/p005.png"
+  },
+  {
+   "id": "a006",
+   "categoria": "aceites-premium-do",
+   "nombre": "12X1/4 V FLAVIA DO BAENA",
+   "formato": "VIDRIO · 250ml",
+   "presentacion": "CAJA DE 12 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p006.png"
+  },
+  {
+   "id": "a007",
+   "categoria": "aceites-premium-do",
+   "nombre": "6X1/2 V FLAVIA DO BAENA",
+   "formato": "VIDRIO · 500ml",
+   "presentacion": "CAJA DE 6 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p007.png"
+  },
+  {
+   "id": "a008",
+   "categoria": "aceites-premium-do",
+   "nombre": "6X1 V DO BAENA",
+   "formato": "VIDRIO · 1l",
+   "presentacion": "CAJA DE 6 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p008.png"
+  },
+  {
+   "id": "a009",
+   "categoria": "aceites-horeca",
+   "nombre": "15X1 L DO BAENA",
+   "formato": "LATA · 1L",
+   "presentacion": "CAJA DE 15 LATAS",
+   "unidad": "LATA",
+   "foto": "/productos/p009.png"
+  },
+  {
+   "id": "a010",
+   "categoria": "aceites-horeca",
+   "nombre": "8X2 L DO BAENA",
+   "formato": "LATA · 2L",
+   "presentacion": "CAJA DE 8 LATAS",
+   "unidad": "LATA",
+   "foto": "/productos/p010.png"
+  },
+  {
+   "id": "a011",
+   "categoria": "aceites-premium-do",
+   "nombre": "ECO 6X1/2 V GOURMET ESTUCHE",
+   "formato": "VIDRIO · 500ml",
+   "presentacion": "CAJA DE 6 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p011.png"
+  },
+  {
+   "id": "a012",
+   "categoria": "aceites-premium-do",
+   "nombre": "ECO 12X1/4 V GOURMET",
+   "formato": "VIDRIO · 250ml",
+   "presentacion": "CAJA DE 12 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p012.png"
+  },
+  {
+   "id": "a013",
+   "categoria": "aceites-premium-do",
+   "nombre": "ECO 6X1/2 V GOURMET",
+   "formato": "VIDRIO · 500ml",
+   "presentacion": "CAJA DE 6 BOTELLAS",
+   "unidad": "BOTELLA",
+   "foto": "/productos/p013.png"
+  },
+  {
+   "id": "a014",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CAJA SAL Y PIMIENTA 1000 DUOS",
+   "formato": "",
+   "presentacion": "Caja de 1",
+   "unidad": "CAJ",
+   "foto": "/productos/p014.jpg"
+  },
+  {
+   "id": "a015",
+   "categoria": "otros-productos-salsas",
+   "nombre": "EXPOSITOR EDULCORANTE 250 sobres x 1gr",
+   "formato": "",
+   "presentacion": "Caja de 8",
+   "unidad": "UNI",
+   "foto": ""
+  },
+  {
+   "id": "a016",
+   "categoria": "otros-productos-salsas",
+   "nombre": "EXPOSITOR SAL 300 sobres x 0.8 gr",
+   "formato": "",
+   "presentacion": "Caja de 8",
+   "unidad": "UNI",
+   "foto": "/productos/p014.jpg"
+  },
+  {
+   "id": "a017",
+   "categoria": "otros-productos-salsas",
+   "nombre": "EXPOSITOR PIMIENTA 300 sobres x 0.2 gr",
+   "formato": "",
+   "presentacion": "Caja de 8",
+   "unidad": "UNI",
+   "foto": "/productos/p014.jpg"
+  },
+  {
+   "id": "a018",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CAJA SOBRES PIMIENTA 0.2 gr x 2000",
+   "formato": "",
+   "presentacion": "Caja de 1",
+   "unidad": "CAJ",
+   "foto": "/productos/p014.jpg"
+  },
+  {
+   "id": "a019",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CAJAS SOBRE SAL FINA 0,8 GR x 2000",
+   "formato": "",
+   "presentacion": "Caja de 1",
+   "unidad": "CAJ",
+   "foto": "/productos/p014.jpg"
+  },
+  {
+   "id": "a020",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CA MOLINILLO SAL ROSA HIMALAYA 6X390G",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "UNI",
+   "foto": "/productos/p015.png"
+  },
+  {
+   "id": "a021",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CA MOLINILLO FUSION PIMIENTA 6X170G",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "UNI",
+   "foto": "/productos/p016.jpg"
+  },
+  {
+   "id": "a022",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CA MOLINILLO SAL MARINA 6X350G",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "UNI",
+   "foto": "/productos/p017.png"
+  },
+  {
+   "id": "a023",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CHUPADEDOS PART 3X2,5 KG LATA",
+   "formato": "LATA",
+   "presentacion": "Caja de 3",
+   "unidad": "UNI",
+   "foto": "/productos/p018.jpg"
+  },
+  {
+   "id": "a024",
+   "categoria": "otros-productos-salsas",
+   "nombre": "COCKTAIL 3X2,5KG LATA",
+   "formato": "LATA",
+   "presentacion": "Caja de 3",
+   "unidad": "UNI",
+   "foto": "/productos/p018.jpg"
+  },
+  {
+   "id": "a025",
+   "categoria": "otros-productos-salsas",
+   "nombre": "MANZANILLA R/ANCHOA 3X2,5KG LATA",
+   "formato": "LATA",
+   "presentacion": "Caja de 3",
+   "unidad": "UNI",
+   "foto": "/productos/p018.jpg"
+  },
+  {
+   "id": "a026",
+   "categoria": "otros-productos-salsas",
+   "nombre": "GORDAL S/H ALIÑADA 3X2KG LATA",
+   "formato": "LATA",
+   "presentacion": "Caja de 3",
+   "unidad": "UNI",
+   "foto": "/productos/p018.jpg"
+  },
+  {
+   "id": "a027",
+   "categoria": "otros-productos-salsas",
+   "nombre": "COCO RALLADO 1KGX10 BL",
+   "formato": "BOLSA",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": ""
+  },
+  {
+   "id": "a028",
+   "categoria": "otros-productos-salsas",
+   "nombre": "ALMENDRA U F/SAL 1KGX10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p019.png"
+  },
+  {
+   "id": "a029",
+   "categoria": "otros-productos-salsas",
+   "nombre": "ALMENDRA U REP/CRUDA 1KGX10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p020.png"
+  },
+  {
+   "id": "a030",
+   "categoria": "otros-productos-salsas",
+   "nombre": "ANACARDO F/SAL 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p021.png"
+  },
+  {
+   "id": "a031",
+   "categoria": "otros-productos-salsas",
+   "nombre": "AVELLANA TOST 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p022.png"
+  },
+  {
+   "id": "a032",
+   "categoria": "otros-productos-salsas",
+   "nombre": "COCTEL SALADO 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p023.png"
+  },
+  {
+   "id": "a033",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CACAHUETE F/SAL 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p024.png"
+  },
+  {
+   "id": "a034",
+   "categoria": "otros-productos-salsas",
+   "nombre": "PISTACHO T/SAL 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p025.png"
+  },
+  {
+   "id": "a035",
+   "categoria": "otros-productos-salsas",
+   "nombre": "MAIZ FRITO 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p026.png"
+  },
+  {
+   "id": "a036",
+   "categoria": "otros-productos-salsas",
+   "nombre": "MIX BARBACOA 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p027.png"
+  },
+  {
+   "id": "a037",
+   "categoria": "otros-productos-salsas",
+   "nombre": "NUEZ USA GRANO 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p028.png"
+  },
+  {
+   "id": "a038",
+   "categoria": "otros-productos-salsas",
+   "nombre": "PASAS SULTANAS 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p029.png"
+  },
+  {
+   "id": "a039",
+   "categoria": "otros-productos-salsas",
+   "nombre": "PASAS S/PEPITAS 1KGx10 DP",
+   "formato": "DOY PACK",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p030.png"
+  },
+  {
+   "id": "a040",
+   "categoria": "otros-productos-salsas",
+   "nombre": "PISTACHO GRANO CRUDO 1KGx5 DP",
+   "formato": "DP",
+   "presentacion": "Caja de 5",
+   "unidad": "KG",
+   "foto": "/productos/p031.png"
+  },
+  {
+   "id": "a041",
+   "categoria": "otros-productos-salsas",
+   "nombre": "PISTACHO GRANILLO TOST. 2-4 1KGx5 DP",
+   "formato": "DP",
+   "presentacion": "Caja de 5",
+   "unidad": "KG",
+   "foto": "/productos/p032.png"
+  },
+  {
+   "id": "a042",
+   "categoria": "otros-productos-salsas",
+   "nombre": "PISTACHO HARINA TOST 1KGx10 BL",
+   "formato": "BL",
+   "presentacion": "Caja de 10",
+   "unidad": "KG",
+   "foto": "/productos/p033.png"
+  },
+  {
+   "id": "a043",
+   "categoria": "otros-productos-salsas",
+   "nombre": "BOLSA ALIÑO MEDIT 10 ml x 10 ml + SAL (5 unid)",
+   "formato": "TARRINAS",
+   "presentacion": "Caja de 10",
+   "unidad": "UNI",
+   "foto": "/productos/p034.jpg"
+  },
+  {
+   "id": "a044",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CAJA SET TOMATE ALU 25 gr x 10 ml SAL 220 unid",
+   "formato": "TARRINAS",
+   "presentacion": "Caja de 1",
+   "unidad": "CAJ",
+   "foto": "/productos/p035.jpg"
+  },
+  {
+   "id": "a045",
+   "categoria": "otros-productos-salsas",
+   "nombre": "CUBO CUADRA.SET TOMA + SAL 25 gr x 10 ml (40 uni)",
+   "formato": "TARRINAS",
+   "presentacion": "Caja de 1",
+   "unidad": "CAJ",
+   "foto": "/productos/p034.jpg"
+  },
+  {
+   "id": "a046",
+   "categoria": "otros-productos-salsas",
+   "nombre": "BOLSA TARRINA CA PATE IBERICO 8x25 GR",
+   "formato": "TARRINAS",
+   "presentacion": "Caja de 10",
+   "unidad": "UNI",
+   "foto": "/productos/p036.jpg"
+  },
+  {
+   "id": "a047",
+   "categoria": "otros-productos-salsas",
+   "nombre": "BOLSA TARRINA CA CREMA DE YORK 8x25 GR",
+   "formato": "TARRINAS",
+   "presentacion": "Caja de 10",
+   "unidad": "UNI",
+   "foto": "/productos/p037.jpg"
+  },
+  {
+   "id": "a048",
+   "categoria": "embutidos-ibericos",
+   "nombre": "LOMO CRUCE DUROC (1/3)",
+   "formato": "",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p038.png",
+   "subcategoria": "lomo",
+   "gama": "seleccion"
+  },
+  {
+   "id": "a049",
+   "categoria": "embutidos-ibericos",
+   "nombre": "LOMO DE CEBO IBERICO 50% RAZA IBERICA (1/3)",
+   "formato": "",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p039.png",
+   "subcategoria": "lomo",
+   "gama": "seleccion"
+  },
+  {
+   "id": "a050",
+   "categoria": "embutidos-ibericos",
+   "nombre": "CHORIZO CULAR IBERICO EXTRA",
+   "formato": "Pieza entera / media",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p040.png",
+   "subcategoria": "chorizo",
+   "gama": "premium"
+  },
+  {
+   "id": "a051",
+   "categoria": "embutidos-ibericos",
+   "nombre": "SALCHICHON CULAR IBERICO EXTRA",
+   "formato": "Pieza entera / media",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p041.png",
+   "subcategoria": "salchichon",
+   "gama": "premium"
+  },
+  {
+   "id": "a052",
+   "categoria": "embutidos-ibericos",
+   "nombre": "SALCHICHON VELITA IBERICO 200 gr",
+   "formato": "",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p042.png",
+   "subcategoria": "salchichon"
+  },
+  {
+   "id": "a053",
+   "categoria": "embutidos-ibericos",
+   "nombre": "CHORIZO VELITA IBERICO 200 gr",
+   "formato": "",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p043.png",
+   "subcategoria": "chorizo"
+  },
+  {
+   "id": "a054",
+   "categoria": "embutidos-ibericos",
+   "nombre": "CHORIZO IBERICO DE BELLOTA CAMPAÑA",
+   "formato": "Pieza entera / media",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p044.png",
+   "subcategoria": "chorizo",
+   "gama": "premium"
+  },
+  {
+   "id": "a055",
+   "categoria": "embutidos-ibericos",
+   "nombre": "SALCHICHON IBERICO DE BELLOTA CAMPAÑA",
+   "formato": "Pieza entera / media",
+   "presentacion": "",
+   "unidad": "€/KG",
+   "foto": "/productos/p045.png",
+   "subcategoria": "salchichon",
+   "gama": "premium"
+  },
+  {
+   "id": "a056",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "PLATO \"TAPAS\" JAMON DE BELLOTA IBERICO 50% RAZA IBERICA",
+   "formato": "80 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p046.png"
+  },
+  {
+   "id": "a057",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "PLATO \"TAPAS\" JAMON DE CEBO IBERICO 50% RAZA IBERICA",
+   "formato": "90 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p047.png"
+  },
+  {
+   "id": "a058",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "LONCHEADO SOSTENIBLE JAMON DE CEBO IBERICO 50% RI",
+   "formato": "100 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p048.png"
+  },
+  {
+   "id": "a059",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "LONCHEADO SOSTENIBLE PALETA DE CEBO IBERICA 50% RI",
+   "formato": "100 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p049.png"
+  },
+  {
+   "id": "a060",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "LONCHEADO JAMON DE CEBO IBERICO 50% RI",
+   "formato": "150 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p050.png"
+  },
+  {
+   "id": "a061",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "LONCHEADO JAMON DE CEBO IBERICO 50% RI",
+   "formato": "200 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p051.png"
+  },
+  {
+   "id": "a062",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "LONCHEADO PALETA DE CEBO IBERICA 50% RI",
+   "formato": "150 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p052.png"
+  },
+  {
+   "id": "a063",
+   "categoria": "jamones-ibericos-serrano",
+   "nombre": "LONCHEADO PALETA DE CEBO IBERICA 50% RI",
+   "formato": "200 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p053.png"
+  },
+  {
+   "id": "a064",
+   "categoria": "embutidos-ibericos",
+   "nombre": "LONCHEADO SOSTENIBLE LOMO CRUCE DUROC",
+   "formato": "100 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p054.png",
+   "subcategoria": "lomo",
+   "gama": "seleccion"
+  },
+  {
+   "id": "a065",
+   "categoria": "embutidos-ibericos",
+   "nombre": "LONCHEADO SOSTENIBLE LOMO CEBO IBERICO 50% RI",
+   "formato": "100 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p055.png",
+   "subcategoria": "lomo",
+   "gama": "seleccion"
+  },
+  {
+   "id": "a066",
+   "categoria": "embutidos-ibericos",
+   "nombre": "LONCHEADO SOSTENIBLE CHORIZO IBERICO EXTRA",
+   "formato": "100 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p056.png",
+   "subcategoria": "chorizo",
+   "gama": "premium"
+  },
+  {
+   "id": "a067",
+   "categoria": "embutidos-ibericos",
+   "nombre": "LONCHEADO SOSTENIBLE SALCHICHON IBERICO EXTRA",
+   "formato": "100 gr",
+   "presentacion": "",
+   "unidad": "€/UD",
+   "foto": "/productos/p057.png",
+   "subcategoria": "salchichon",
+   "gama": "premium"
+  },
+  {
+   "id": "a068",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED 1 kg",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a069",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED 2 kg",
+   "formato": "",
+   "presentacion": "Caja de 2",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a070",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED 3 kg",
+   "formato": "",
+   "presentacion": "Caja de 2",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a071",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED ⅟2",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a072",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED ¼ kilo wedges",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/kg",
+   "foto": "/productos/p059.png"
+  },
+  {
+   "id": "a073",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED ¼ kilo wedges (price per unit 750g)",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/Unit",
+   "foto": "/productos/p059.png"
+  },
+  {
+   "id": "a074",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED ⅟12 kilo wedges",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/kg",
+   "foto": "/productos/p059.png"
+  },
+  {
+   "id": "a075",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED ⅟12 kilo wedges (price per unit 250g)",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/Unit",
+   "foto": "/productos/p059.png"
+  },
+  {
+   "id": "a076",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. SEMICURED 150g wegde",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "€/Unit",
+   "foto": "/productos/p059.png"
+  },
+  {
+   "id": "a077",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED 1 kg",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a078",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED 2 kg",
+   "formato": "",
+   "presentacion": "Caja de 2",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a079",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED 3 kg",
+   "formato": "",
+   "presentacion": "Caja de 2",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a080",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED ⅟2",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a081",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED ¼ kilo wedges",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/kg",
+   "foto": "/productos/p060.png"
+  },
+  {
+   "id": "a082",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED ¼ kilo wedges (price per unit 700g)",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/Unit",
+   "foto": "/productos/p060.png"
+  },
+  {
+   "id": "a083",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED ⅟12 kilo wedges",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/kg",
+   "foto": "/productos/p060.png"
+  },
+  {
+   "id": "a084",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED ⅟12 kilo wedges (price per unit 240g)",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/Unit",
+   "foto": "/productos/p060.png"
+  },
+  {
+   "id": "a085",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. CURED 150g wegde",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/Unit",
+   "foto": "/productos/p060.png"
+  },
+  {
+   "id": "a086",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA 1 kg",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a087",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA 2 kg",
+   "formato": "",
+   "presentacion": "Caja de 2",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a088",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA 3 kg",
+   "formato": "",
+   "presentacion": "Caja de 2",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a089",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA ⅟2",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/kg",
+   "foto": "/productos/p058.webp"
+  },
+  {
+   "id": "a090",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA ¼ kilo wedges",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/kg",
+   "foto": "/productos/p061.png"
+  },
+  {
+   "id": "a091",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA ¼ kilo wedges (price per unit 680g)",
+   "formato": "",
+   "presentacion": "Caja de 4",
+   "unidad": "€/Unit",
+   "foto": "/productos/p061.png"
+  },
+  {
+   "id": "a092",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA ⅟ 12 kilo wedges",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/kg",
+   "foto": "/productos/p061.png"
+  },
+  {
+   "id": "a093",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA ⅟ 12 kilo wedges (price per unit 230g)",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/Unit",
+   "foto": "/productos/p061.png"
+  },
+  {
+   "id": "a094",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA 200g wegde",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/Unit",
+   "foto": "/productos/p061.png"
+  },
+  {
+   "id": "a095",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. GRAN RESERVA 150g wegde",
+   "formato": "",
+   "presentacion": "Caja de 24",
+   "unidad": "€/Unit",
+   "foto": "/productos/p061.png"
+  },
+  {
+   "id": "a096",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. 3 varieties assortment gift box (3 ⅟ 12 kilo wedges)",
+   "formato": "",
+   "presentacion": "Caja de 6",
+   "unidad": "€/Unit",
+   "foto": "/productos/p062.webp"
+  },
+  {
+   "id": "a097",
+   "categoria": "quesos-manchegos-dop",
+   "nombre": "Queso Manchego D.O. Gourmet tray Cut by hand (200 g)",
+   "formato": "",
+   "presentacion": "Caja de 20",
+   "unidad": "€/Unit",
+   "foto": "/productos/p062.webp"
+  },
+  {
+   "id": "p098",
+   "categoria": "otros-productos-salsas",
+   "nombre": "Miel artesana de lavanda",
+   "formato": "Tarro de cristal 400 g",
+   "presentacion": "Caja de 12 / 24",
+   "unidad": "unidad",
+   "foto": ""
+  }
+ ]
+}

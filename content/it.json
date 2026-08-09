@@ -1,0 +1,441 @@
+{
+ "index": {
+  "titulo": "Home",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "González-Regalado Gourmet"
+   },
+   {
+    "tipo": "p",
+    "texto": "Selezione gourmet spagnola premium"
+   },
+   {
+    "tipo": "p",
+    "texto": "Travel Retail e distribuzione internazionale"
+   },
+   {
+    "tipo": "p",
+    "texto": "Prodotti spagnoli D.O.P. accuratamente selezionati, sviluppati per la vendita negli aeroporti e per il retail internazionale."
+   }
+  ]
+ },
+ "about": {
+  "titulo": "Chi siamo",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "González-Regalado"
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado è una casa spagnola dedicata alla selezione e allo sviluppo di prodotti gastronomici di alta espressione, con particolare attenzione alle Denominazioni di Origine Protetta e alle lavorazioni rappresentative del patrimonio culinario spagnolo."
+   },
+   {
+    "tipo": "p",
+    "texto": "L’azienda nasce da una prospettiva internazionale, in cui il valore del prodotto d’origine si percepisce con particolare chiarezza. Questo sguardo esterno ha permesso di strutturare una proposta concepita per portare l’eccellenza gastronomica spagnola in contesti globali di alta esigenza, in particolare nel Travel Retail e nella distribuzione specializzata."
+   },
+   {
+    "tipo": "p",
+    "texto": "Ogni edizione risponde a un processo di curatela rigoroso: selezione dell’origine, coerenza estetica, adattamento del formato, conformità normativa e adeguatezza logistica per i mercati internazionali. Il risultato è una proposta equilibrata tra autenticità, raffinatezza e sostenibilità commerciale."
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado non opera come produttore, ma come casa di selezione e sviluppo strategico, preservando l’identità del prodotto e collocandolo in un contesto contemporaneo e internazionale."
+   },
+   {
+    "tipo": "p",
+    "texto": "Un’interpretazione sobria e attuale dell’eccellenza gastronomica spagnola, con uno sguardo europeo e globale."
+   },
+   {
+    "tipo": "h2",
+    "texto": "Fondatore"
+   },
+   {
+    "tipo": "p",
+    "texto": "L’azienda è guidata da Eduardo González-Regalado Batlles, la cui esperienza personale fuori dalla Spagna gli ha permesso di individuare il valore distintivo del prodotto gastronomico spagnolo nei mercati internazionali."
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado nasce con una visione chiara: strutturare una proposta solida, conforme dal punto di vista normativo e strategicamente posizionata per la distribuzione internazionale e il Travel Retail."
+   },
+   {
+    "tipo": "p",
+    "texto": "La sua direzione mira a preservare l’autenticità dell’origine, garantire standard internazionali e proiettare il prodotto spagnolo in una cornice premium contemporanea."
+   }
+  ]
+ },
+ "products": {
+  "titulo": "Catalogo",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Catalogo prodotti"
+   }
+  ]
+ },
+ "contact": {
+  "titulo": "Contatti",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Contatti"
+   },
+   {
+    "tipo": "p",
+    "texto": "Per richieste commerciali, informazioni sui prodotti o sulla distribuzione internazionale, può contattarci attraverso i seguenti canali."
+   },
+   {
+    "tipo": "p",
+    "texto": "E-mail contacto@regaladogourmet.com Telefono Spagna +34 671 474 116 Telefono Norvegia +47 98 63 43 85 Risponderemo alla sua richiesta nel più breve tempo possibile."
+   }
+  ]
+ },
+ "terms": {
+  "titulo": "Termini e Condizioni",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Termini e Condizioni"
+   },
+   {
+    "tipo": "h2",
+    "texto": "1. Informazioni generali"
+   },
+   {
+    "tipo": "p",
+    "texto": "Benvenuto in González-Regalado Gourmet. I presenti termini e condizioni descrivono le regole applicabili all’uso del nostro sito web e dei nostri servizi."
+   },
+   {
+    "tipo": "h2",
+    "texto": "2. Uso del sito web"
+   },
+   {
+    "tipo": "p",
+    "texto": "Accedendo a questo sito web, si presume che l’utente accetti integralmente i presenti termini e condizioni. Non proseguire nell’uso del sito di González-Regalado Gourmet se non si accettano tutti i termini e le condizioni indicati in questa pagina."
+   },
+   {
+    "tipo": "h2",
+    "texto": "3. Proprietà intellettuale"
+   },
+   {
+    "tipo": "p",
+    "texto": "Tutti i contenuti presenti in questo sito web, quali testi, grafica, loghi e immagini, nonché la loro compilazione, sono di proprietà di González-Regalado Gourmet o dei suoi fornitori di contenuti e sono protetti dalle leggi spagnole e internazionali sulla proprietà intellettuale."
+   },
+   {
+    "tipo": "h2",
+    "texto": "4. Prodotti e servizi"
+   },
+   {
+    "tipo": "p",
+    "texto": "I nostri prodotti sono soggetti a disponibilità e possono essere modificati o ritirati senza preavviso. Le immagini dei prodotti sono indicative e possono differire leggermente dal prodotto reale."
+   },
+   {
+    "tipo": "h2",
+    "texto": "5. Prezzi e pagamenti"
+   },
+   {
+    "tipo": "p",
+    "texto": "Tutti i prezzi possono essere modificati senza preavviso. Ci riserviamo il diritto di modificare o ritirare qualsiasi prodotto senza preavviso."
+   },
+   {
+    "tipo": "h2",
+    "texto": "6. Responsabilità"
+   },
+   {
+    "tipo": "p",
+    "texto": "González-Regalado Gourmet non sarà responsabile per alcun danno diretto, indiretto, incidentale, speciale o consequenziale derivante dall’uso o dall’impossibilità di usare i nostri prodotti o servizi."
+   },
+   {
+    "tipo": "h2",
+    "texto": "7. Modifiche"
+   },
+   {
+    "tipo": "p",
+    "texto": "Ci riserviamo il diritto di rivedere i presenti termini in qualsiasi momento. Utilizzando questo sito web, l’utente accetta di essere vincolato alla versione vigente dei presenti termini e condizioni."
+   },
+   {
+    "tipo": "h2",
+    "texto": "8. Legge applicabile"
+   },
+   {
+    "tipo": "p",
+    "texto": "I presenti termini sono regolati e interpretati in conformità alle leggi spagnole e l’utente si sottopone irrevocabilmente alla giurisdizione esclusiva dei tribunali di tale Paese."
+   },
+   {
+    "tipo": "h2",
+    "texto": "9. Contatti"
+   },
+   {
+    "tipo": "p",
+    "texto": "Per qualsiasi domanda sui presenti Termini e Condizioni, può scriverci a: contacto@regaladogourmet.com"
+   }
+  ]
+ },
+ "privacy": {
+  "titulo": "Informativa sulla privacy",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Informativa sulla privacy"
+   },
+   {
+    "tipo": "h2",
+    "texto": "1. Introduzione"
+   },
+   {
+    "tipo": "p",
+    "texto": "In González-Regalado Gourmet ci impegniamo a proteggere la sua privacy. La presente informativa spiega come raccogliamo, utilizziamo, comunichiamo e proteggiamo i suoi dati personali."
+   },
+   {
+    "tipo": "h2",
+    "texto": "2. Dati che raccogliamo"
+   },
+   {
+    "tipo": "p",
+    "texto": "Possiamo raccogliere i seguenti dati:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Nome e dati di contatto"
+   },
+   {
+    "tipo": "li",
+    "texto": "Informazioni demografiche"
+   },
+   {
+    "tipo": "li",
+    "texto": "Informazioni commerciali e sugli ordini"
+   },
+   {
+    "tipo": "li",
+    "texto": "Dati di navigazione e di utilizzo del sito web"
+   },
+   {
+    "tipo": "h2",
+    "texto": "3. Come utilizziamo i suoi dati"
+   },
+   {
+    "tipo": "p",
+    "texto": "Utilizziamo i dati raccolti per:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Elaborare e gestire gli ordini"
+   },
+   {
+    "tipo": "li",
+    "texto": "Migliorare i nostri prodotti e servizi"
+   },
+   {
+    "tipo": "li",
+    "texto": "Inviare comunicazioni promozionali (con il suo consenso)"
+   },
+   {
+    "tipo": "li",
+    "texto": "Adempiere agli obblighi di legge"
+   },
+   {
+    "tipo": "li",
+    "texto": "Personalizzare la sua esperienza sul nostro sito web"
+   },
+   {
+    "tipo": "h2",
+    "texto": "4. Protezione dei dati"
+   },
+   {
+    "tipo": "p",
+    "texto": "Adottiamo misure di sicurezza tecniche e organizzative adeguate per proteggere i suoi dati personali da accessi non autorizzati, alterazioni, divulgazioni o distruzioni."
+   },
+   {
+    "tipo": "h2",
+    "texto": "5. Condivisione dei dati"
+   },
+   {
+    "tipo": "p",
+    "texto": "Non vendiamo, scambiamo né trasferiamo i suoi dati personali a terzi senza il suo consenso, salvo quando sia necessario per fornire i nostri servizi o quando la legge lo richieda."
+   },
+   {
+    "tipo": "h2",
+    "texto": "6. I suoi diritti"
+   },
+   {
+    "tipo": "p",
+    "texto": "Ai sensi del GDPR, lei ha diritto a:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Accedere ai suoi dati personali"
+   },
+   {
+    "tipo": "li",
+    "texto": "Rettificare dati inesatti"
+   },
+   {
+    "tipo": "li",
+    "texto": "Chiedere la cancellazione dei suoi dati"
+   },
+   {
+    "tipo": "li",
+    "texto": "Opporsi al trattamento dei suoi dati"
+   },
+   {
+    "tipo": "li",
+    "texto": "Chiedere la portabilità dei suoi dati"
+   },
+   {
+    "tipo": "li",
+    "texto": "Revocare il consenso in qualsiasi momento"
+   },
+   {
+    "tipo": "h2",
+    "texto": "7. Conservazione dei dati"
+   },
+   {
+    "tipo": "p",
+    "texto": "Conserviamo i suoi dati personali solo per il tempo necessario alle finalità indicate nella presente informativa o richiesto dalla legge."
+   },
+   {
+    "tipo": "h2",
+    "texto": "8. Modifiche alla presente informativa"
+   },
+   {
+    "tipo": "p",
+    "texto": "Ci riserviamo il diritto di aggiornare la presente informativa in qualsiasi momento. La informeremo di eventuali modifiche significative pubblicando la nuova informativa in questa pagina."
+   },
+   {
+    "tipo": "h2",
+    "texto": "9. Contatti"
+   },
+   {
+    "tipo": "p",
+    "texto": "Per domande sulla presente informativa o per esercitare i suoi diritti, può scriverci a: contacto@regaladogourmet.com"
+   }
+  ]
+ },
+ "legal": {
+  "titulo": "Note legali",
+  "bloques": [
+   {
+    "tipo": "h1",
+    "texto": "Note legali"
+   },
+   {
+    "tipo": "h2",
+    "texto": "1. Dati identificativi"
+   },
+   {
+    "tipo": "p",
+    "texto": "In adempimento dell’articolo 10 della legge spagnola 34/2002 dell’11 luglio, sui servizi della società dell’informazione e sul commercio elettronico, il Titolare rende noti i propri dati identificativi:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Titolare: Eduardo González-Regalado Batllés"
+   },
+   {
+    "tipo": "li",
+    "texto": "Posta elettronica: contacto@regaladogourmet.com"
+   },
+   {
+    "tipo": "h2",
+    "texto": "2. Oggetto"
+   },
+   {
+    "tipo": "p",
+    "texto": "Le presenti note legali disciplinano l’uso del sito web www.regaladogourmet.com, di cui è titolare Eduardo González-Regalado Batllés."
+   },
+   {
+    "tipo": "p",
+    "texto": "La navigazione nel sito web attribuisce la qualifica di utente dello stesso e comporta l’accettazione piena e senza riserve di tutte e ciascuna delle disposizioni contenute nelle presenti note legali."
+   },
+   {
+    "tipo": "h2",
+    "texto": "3. Proprietà intellettuale e industriale"
+   },
+   {
+    "tipo": "p",
+    "texto": "Tutti i contenuti del sito web, inclusi a titolo esemplificativo e non esaustivo testi, fotografie, grafica, immagini, icone, tecnologia, software, nonché il design grafico e i codici sorgente, costituiscono un’opera di proprietà di Eduardo González-Regalado Batllés, senza che possa intendersi ceduto all’utente alcun diritto di sfruttamento sugli stessi oltre a quanto strettamente necessario al corretto uso del sito."
+   },
+   {
+    "tipo": "p",
+    "texto": "In definitiva, gli utenti che accedono a questo sito web possono visualizzare i contenuti ed effettuare, se del caso, copie private autorizzate, a condizione che gli elementi riprodotti non siano successivamente ceduti a terzi, né installati su server collegati a reti, né siano oggetto di alcun tipo di sfruttamento."
+   },
+   {
+    "tipo": "h2",
+    "texto": "4. Obblighi dell’utente"
+   },
+   {
+    "tipo": "p",
+    "texto": "L’utente si impegna a fare un uso adeguato dei contenuti e dei servizi che Eduardo González-Regalado Batllés offre attraverso il suo sito web e, a titolo esemplificativo ma non esaustivo, a non impiegarli per:"
+   },
+   {
+    "tipo": "li",
+    "texto": "Svolgere attività illecite, illegali o contrarie alla buona fede e all’ordine pubblico"
+   },
+   {
+    "tipo": "li",
+    "texto": "Diffondere contenuti o propaganda di carattere razzista, xenofobo, pornografico illegale, di apologia del terrorismo o lesivi dei diritti umani"
+   },
+   {
+    "tipo": "li",
+    "texto": "Provocare danni ai sistemi fisici e logici di Eduardo González-Regalado Batllés, dei suoi fornitori o di terzi"
+   },
+   {
+    "tipo": "li",
+    "texto": "Introdurre o diffondere in rete virus informatici o qualsiasi altro sistema fisico o logico suscettibile di provocare i danni sopra indicati"
+   },
+   {
+    "tipo": "h2",
+    "texto": "5. Responsabilità"
+   },
+   {
+    "tipo": "p",
+    "texto": "Eduardo González-Regalado Batllés non è responsabile delle informazioni e dei contenuti conservati in forum, social network o qualsiasi altro mezzo che consenta a terzi di pubblicare contenuti in modo indipendente nella pagina web del prestatore."
+   },
+   {
+    "tipo": "p",
+    "texto": "Tuttavia, tenuto conto degli articoli 11 e 16 della LSSI-CE, Eduardo González-Regalado Batllés si impegna alla rimozione o, se del caso, al blocco dei contenuti che possano ledere o contravvenire alla legislazione nazionale o internazionale, ai diritti di terzi o alla morale e all’ordine pubblico."
+   },
+   {
+    "tipo": "h2",
+    "texto": "6. Collegamenti"
+   },
+   {
+    "tipo": "p",
+    "texto": "Il sito web può contenere collegamenti ad altri siti di terzi. Eduardo González-Regalado Batllés non si assume alcuna responsabilità per i contenuti, l’informativa sulla privacy o le pratiche dei siti web di terzi."
+   },
+   {
+    "tipo": "h2",
+    "texto": "7. Protezione dei dati"
+   },
+   {
+    "tipo": "p",
+    "texto": "Per maggiori informazioni sul trattamento dei dati personali, consulti la nostra informativa sulla privacy."
+   },
+   {
+    "tipo": "h2",
+    "texto": "8. Legislazione applicabile e foro competente"
+   },
+   {
+    "tipo": "p",
+    "texto": "I rapporti tra Eduardo González-Regalado Batllés e l’utente sono regolati dalla normativa spagnola vigente. In caso di controversia, le parti potranno sottoporre i propri conflitti ad arbitrato o rivolgersi alla giurisdizione ordinaria nel rispetto delle norme sulla giurisdizione e sulla competenza. Eduardo González-Regalado Batllés ha domicilio in Spagna."
+   },
+   {
+    "tipo": "h2",
+    "texto": "9. Modifiche"
+   },
+   {
+    "tipo": "p",
+    "texto": "Eduardo González-Regalado Batllés si riserva il diritto di apportare senza preavviso le modifiche che riterrà opportune al proprio sito web, potendo cambiare, sopprimere o aggiungere sia i contenuti e i servizi prestati attraverso lo stesso sia la forma in cui questi appaiono presentati o collocati."
+   },
+   {
+    "tipo": "h2",
+    "texto": "10. Contatti"
+   },
+   {
+    "tipo": "p",
+    "texto": "Per qualsiasi domanda relativa alle presenti note legali, può scriverci a: contacto@regaladogourmet.com"
+   }
+  ]
+ }
+}

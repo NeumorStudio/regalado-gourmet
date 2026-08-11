@@ -47,7 +47,14 @@ export default async function Contacto({
           </div>
           {CONTACTO.telefonos.map((tel) => (
             <div key={tel.numero} className="bg-white px-6 py-8">
-              <dt className="etiqueta">{t.telefono} {tel.pais[l]}</dt>
+              {/* Solo el país. Con "Teléfono" delante, "TELÉFONO NORUEGA" no
+                  cabía en su columna y se partía en dos líneas mientras
+                  "TELÉFONO ESPAÑA" se quedaba en una, así que los dos números
+                  arrancaban a alturas distintas. Y sobraba: la portada ya
+                  etiqueta sus teléfonos solo con el país, y un `tel:` dentro de
+                  una lista de definición no necesita que le digan que es un
+                  teléfono. */}
+              <dt className="etiqueta">{tel.pais[l]}</dt>
               <dd className="mt-2">
                 <a
                   className="inline-flex min-h-11 items-center whitespace-nowrap text-tinta underline-offset-4 hover:text-oro-tinta hover:underline"

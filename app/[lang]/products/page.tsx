@@ -115,7 +115,7 @@ export default async function Catalogo({
           </div>
           <Link
             href={`/${l}/contact/`}
-            className="inline-flex items-center gap-2 placa bg-oro px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro hover:bg-oro-fuerte"
+            className="inline-flex items-center gap-2 placa oro-lamina px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro"
           >
             {t.solicitarPrecio}
             <span aria-hidden>→</span>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lora } from "next/font/google";
+import { Cormorant_Garamond, Lora } from "next/font/google";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,6 +16,14 @@ const lora = Lora({
   style: ["normal", "italic"],
   display: "swap",
   variable: "--fuente-lora",
+});
+
+// Solo titula, así que no necesita cursiva ni la seminegrita: dos pesos.
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--fuente-cormorant",
 });
 
 export function generateStaticParams() {
@@ -66,7 +74,7 @@ export default async function Layout({
   const t = T[lang as Idioma];
 
   return (
-    <html lang={lang} className={lora.variable}>
+    <html lang={lang} className={`${lora.variable} ${cormorant.variable}`}>
       {/* Extensiones como ColorZilla o Grammarly inyectan atributos en <body>
           antes de que React hidrate (cz-shortcut-listen, data-gr-*), y eso
           dispara un aviso de hidratación que no viene de este código. Se
@@ -99,7 +107,13 @@ export default async function Layout({
 
         <main className="flex-1">{children}</main>
 
-        <footer className="mt-24 border-t border-linea bg-crema">
+        {/* Sin margen superior. Lo llevaba, y sobraba dos veces: la última
+            sección de cada página ya trae su propio `py`, así que en las
+            claras el hueco salía doble; y en las que cierran con una banda
+            negra a sangre —catálogo y ficha de categoría— ese margen dibujaba
+            una franja blanca de 96 px entre el negro y la crema del pie, que
+            no se leía como aire sino como un fallo de maquetación. */}
+        <footer className="border-t border-linea bg-crema">
           <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-2">
               <Image

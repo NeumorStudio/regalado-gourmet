@@ -32,6 +32,7 @@ la raíz.
 |---|---|
 | Textos de una página | `content/{idioma}.json` |
 | Productos y categorías | `content/catalogo.json` |
+| Juntar variantes de un producto | `grupos` en `content/catalogo.json` |
 | Ferias y eventos | `content/ferias.json` |
 | Entrevistas y prensa | `content/publicaciones.json` |
 | Etiquetas de interfaz, contacto, idiomas | `lib/contenido.ts` |
@@ -40,6 +41,21 @@ la raíz.
 **Añadir un idioma**: crear `content/<código>.json`, importarlo en
 `lib/contenido.ts` y añadirlo a `IDIOMAS`, `NOMBRE_IDIOMA`, `T` y a los nombres
 de categoría de `catalogo.json`.
+
+**La web es el escaparate, no la tarifa.** El `nombre` de cada fila de
+`productos` es el código del proveedor —`6X1/2 V FLAVIA DO BAENA` son 6
+botellas de medio litro en vidrio—, y se conserva intacto para poder cotejar
+cada ficha con el albarán, **pero no se publica**. Lo que se publica sale de la
+lista `grupos`: antetítulo (la línea o la curación), título y una línea de
+carácter (D.O. Baena, ecológico, 50 % raza ibérica), los tres en los siete
+idiomas. Ni pesos, ni unidades por caja, ni materiales de envase: eso va en el
+catálogo detallado que se manda aparte.
+
+Cada producto apunta con `grupo` a la ficha en la que sale. Varias filas
+comparten ficha cuando son el mismo producto en otro envase: **las 92 filas del
+catálogo se publican en 63 fichas**. Una fila sin `grupo` sale con su nombre en
+crudo antes que no salir; es el aviso de que a un producto nuevo le falta el
+nombre de escaparate.
 
 **Ferias y publicaciones** no aparecen en el menú ni en el sitemap mientras su
 lista esté vacía: no se anuncia una sección sin contenido. En cuanto se añade
@@ -64,12 +80,19 @@ desplegar**; no hay que tocar el código.
 - `content/ferias.json` y `content/publicaciones.json` llevan **entradas de
   muestra**, inventadas para enseñar el diseño. Vaciar las listas o
   sustituirlas por datos reales. Cada fichero lo avisa en su campo `_DEMO`.
-- Las **fotos de ambiente** son provisionales, de Unsplash (origen y licencia
-  en `content/creditos.json`). Sustituir por las del cliente conservando el
-  nombre del fichero.
+- Las **fotos de ambiente** están generadas con IA (nano_banana_pro, 11/08/2026;
+  receta y escena de cada una en `content/creditos.json`). Son atmósfera y
+  ninguna representa un artículo concreto, pero conviene sustituirlas por las
+  del cliente conservando el nombre del fichero. Al hacerlo hay que **borrar
+  `.next/dev/cache/images`**: Next cachea la versión optimizada por ruta, y con
+  el mismo nombre sigue sirviendo la anterior.
 - Las **fotos de producto** vienen de los catálogos de proveedor y en varias se
   lee la marca del proveedor, que es justo lo que el cliente no quiere en su
-  web.
+  web. Además faltan doce, y ahí sí se nota porque ya no hay dos fichas iguales
+  que disimulen: **nueve fichas repiten foto** (estuche y bandeja de manchego;
+  dúos, sal y pimienta en sobre; las cuatro aceitunas en lata) y **tres no
+  tienen ninguna** (edulcorante, coco rallado y miel de lavanda), que salen con
+  el nombre sobre un plano en crema.
 - Las dos **gamas de embutidos** (premium y selección) están deducidas del
   nombre del producto; faltan los dos "velita", sin clasificar.
 

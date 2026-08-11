@@ -19,18 +19,33 @@
   --color-crema: #fcf7ec;
   --color-linea: #e7e2d6;
 
-  --font-display: "Lora", Georgia, "Times New Roman", serif;
+  /* La sombra no es gris: la luz de esta web es cálida, y una sombra fría bajo
+     una luz cálida es lo que hace que un objeto parezca plástico. Marrón muy
+     oscuro, el color de la sombra sobre papel. */
+  --sombra-rgb: 74 54 22;
+
+  /* Dos serifas con oficios distintos: Cormorant Garamond titula (alto
+     contraste, trazo fino, cuerpo pequeño: lee a etiqueta de botella) y Lora
+     sostiene el texto largo, que es donde una display cansa.
+     Van por `var()` a propósito: `next/font` no registra la familia con su
+     nombre real, la sirve bajo un alias que expone en esa variable. Pedir
+     "Lora" a secas —como estaba— caía en Georgia y la web no llegó a usar
+     ninguna de las dos. */
+  --font-display: var(--fuente-lora), Georgia, "Times New Roman", serif;
+  --font-titulo: var(--fuente-cormorant), Georgia, "Times New Roman", serif;
   --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* escala modular 1.25, fluida en los títulos */
   /* "González-Regalado" es un apellido y no se parte por el guion, así que el
      titular no puede medir más que la columna: es la palabra la que fija el
-     tamaño en los dos extremos. El techo de 3.75rem lo mantiene en una línea
-     en pantalla grande; el suelo y la pendiente están calculados para que a
-     320 px quepa entero en los 272 px que deja el margen. */
-  --text-display: clamp(1.75rem, 1.1rem + 4vw, 3.75rem);
-  --text-titulo: clamp(1.9rem, 1.35rem + 2.2vw, 3rem);
-  --text-seccion: clamp(1.45rem, 1.2rem + 1.1vw, 2rem);
+     tamaño en los dos extremos. El suelo y la pendiente están calculados para
+     que a 320 px quepa entero en los 272 px que deja el margen.
+     La escala sube respecto a la anterior porque Cormorant tiene la altura de
+     x y el ancho muy por debajo de Lora: al mismo tamaño en píxeles se ve más
+     pequeña y ocupa ~12 % menos, así que cabe más titular en la misma caja. */
+  --text-display: clamp(2rem, 1.35rem + 3.4vw, 4.5rem);
+  --text-titulo: clamp(2.15rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-seccion: clamp(1.65rem, 1.35rem + 1.3vw, 2.3rem);
 
   --ease-salida: cubic-bezier(0.22, 1, 0.36, 1);   /* out-quint */
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);      /* out-expo, más decidido */
@@ -39,6 +54,30 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+}
+
+/* --------------------------------------------------------------- cabecera
+   Alto en reposo y condensado. Van en `:root` y no dentro de `.cabecera`
+   porque el hueco que la cabecera deja de ocupar lo reserva `main`. */
+:root {
+  --alto-cabecera: clamp(4.75rem, 3.6rem + 2.6vw, 6rem);
+  --alto-cabecera-min: 4rem;
+}
+
+/* La cabecera es `fixed` para poder flotar sobre el hero, así que ya no
+   empuja nada: el hueco lo pone `main`. Las secciones que abren en oscuro se
+   lo devuelven con un margen negativo y se meten ellas por dentro el mismo
+   hueco, de modo que la foto sube hasta el borde de la pantalla sin que su
+   contenido quede debajo de la barra.
+   Esto NO usa `:has()` a propósito: si un navegador no lo soportara se
+   perdería el color de la cabecera flotante, que es cosmético, y no la
+   maquetación de todas las páginas, que no lo es. */
+main {
+  padding-top: var(--alto-cabecera);
+}
+.abre-oscuro {
+  margin-top: calc(-1 * var(--alto-cabecera));
+  padding-top: var(--alto-cabecera);
 }
 
 body {
@@ -50,9 +89,44 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Solo h1 y h2 cambian de fuente. El h3 se queda en Lora seminegrita: dentro
+   de un texto largo, dos serifas seguidas compiten y no jerarquizan. */
+h1,
+h2 {
+  font-family: var(--font-titulo);
+  font-weight: 500;
+  /* "opprinnelsesbetegnelse" en noruego no cabe entera en una línea de 320 px
+     y empujaba el documento 28 px hacia la derecha. Solo actúa cuando la
+     palabra no cabe sola, así que ningún titular que ya encajaba se toca. */
+  overflow-wrap: break-word;
+}
+
 ::selection {
   background: var(--color-oro);
   color: var(--color-negro);
+}
+
+/* ------------------------------------------------------------------- grano
+   Una sola capa fija de ruido, en multiplicar: sobre el blanco y la crema
+   imprime el grano del papel; sobre el negro no hace nada, porque multiplicar
+   por negro es negro. Es justo lo que se quiere: los fondos oscuros ya tienen
+   su atmósfera y el grano ahí solo sería suciedad.
+   Va en un pseudoelemento fijo y no en el fondo de cada sección para no
+   pagarlo en cada capa: se compone una vez y no se repinta al desplazar. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  /* Medido, no estimado: al 0,05 el grano movía el crema 4 niveles de 255 y
+     no se veía nada. Al 0,14 la desviación es de ~1,7 niveles sobre un
+     recorrido de 13, que es el punto donde la superficie deja de ser plana sin
+     llegar a leerse como ruido. Por encima de 0,2 ensucia. */
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
 }
 
 :focus-visible {
@@ -100,6 +174,114 @@ body {
   max-width: 68ch;
 }
 
+/* ------------------------------------------------------- barra de navegación
+   Dos estados sobre la misma barra. En reposo sobre una sección oscura no
+   tiene fondo: solo un velo que se desvanece hacia abajo, para que el bodegón
+   llegue al borde de la pantalla y el texto de arriba siga legible. En cuanto
+   se pasa esa sección —y siempre, en las páginas que abren en claro— se
+   condensa: crema, filete dorado y menos alto. */
+.cabecera {
+  --tinta-nav: var(--color-tinta-2);
+  --tinta-nav-fuerte: var(--color-tinta);
+  --tinta-nav-activo: var(--color-oro-tinta);
+  --alto-barra: var(--alto-cabecera);
+  /* El desplegable de idiomas cambia de estado con la barra. Si no, sobre el
+     hero aparecía un panel color crema —el color de la barra sólida— flotando
+     sobre el negro: se leía como un trozo de otra web pegado encima. */
+  --fondo-menu: var(--color-crema);
+  --linea-menu: var(--color-linea);
+  --tinta-menu: var(--color-tinta-2);
+  --realce-menu: #fff;
+  --sombra-menu: 0 12px 28px -14px rgb(var(--sombra-rgb) / 0.45);
+  background-color: color-mix(in oklab, var(--color-crema) 93%, transparent);
+  backdrop-filter: blur(10px);
+  /* Era la única línea de la web que no era dorada. */
+  border-bottom: 1px solid rgb(217 179 86 / 0.4);
+}
+.cabecera::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(14 14 17 / 0.62) 0%,
+    rgb(14 14 17 / 0.32) 55%,
+    transparent 100%
+  );
+}
+.cabecera[data-solida] {
+  --alto-barra: var(--alto-cabecera-min);
+}
+
+/* El color cambia de golpe y solo se anima el alto. Al principio el fondo se
+   fundía en 0,4 s, y quedaba bonito hasta que se midió: cualquier
+   interpolación entre "blanco sobre negro" y "tinta sobre crema" pasa por el
+   cruce, y a mitad de camino el menú bajaba a 1,05:1. No hay orden de fundido
+   que lo salve, así que el cambio de color es atómico. El alto sí se anima:
+   no afecta a la legibilidad y es el que da el gesto. */
+@media (scripting: enabled) {
+  /* Sin JavaScript nunca aparece `data-solida`, así que la cabecera se
+     quedaría flotante para siempre —menú blanco sobre el catálogo blanco— en
+     las dos páginas que abren en oscuro. Encerrado aquí, sin JS cae en el
+     estilo base, que es la barra crema legible. */
+  body:has(.abre-oscuro) .cabecera:not([data-solida]) {
+    --tinta-nav: rgb(255 255 255 / 0.82);
+    --tinta-nav-fuerte: #fff;
+    --tinta-nav-activo: var(--color-oro);
+    --fondo-menu: rgb(20 20 25 / 0.94);
+    --linea-menu: rgb(232 197 112 / 0.3);
+    --tinta-menu: rgb(255 255 255 / 0.78);
+    --realce-menu: rgb(255 255 255 / 0.07);
+    --sombra-menu: 0 18px 44px -16px rgb(0 0 0 / 0.7);
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    border-bottom-color: transparent;
+  }
+  body:has(.abre-oscuro) .cabecera:not([data-solida])::before {
+    opacity: 1;
+  }
+  /* El anillo de foco de toda la web es `oro-tinta`, calculado para dar 5,5:1
+     sobre crema. Sobre la foto del hero se queda en 2:1, por debajo del 3:1
+     que pide WCAG para un indicador de foco, y es el único que tiene la
+     cabecera. Aquí manda el oro claro, que da 7:1 en el peor caso medido. */
+  body:has(.abre-oscuro) .cabecera:not([data-solida]) :focus-visible {
+    outline-color: var(--color-oro);
+  }
+}
+
+/* Y con el color de la barra tienen que saltar también los enlaces. Llevan
+   `transition-colors` de Tailwind: 200 ms en los que el texto viaja del blanco
+   a la tinta cuando el fondo ya es crema, y por el camino se queda invisible
+   (medido: 1,00:1). El filete de debajo no se toca, que es un `span` y anima
+   `transform`, no color. */
+.cabecera a,
+.cabecera summary {
+  transition-property: none;
+}
+
+/* El desplegable de idiomas, con el color que le toque a la barra. */
+.menu-idiomas {
+  background-color: var(--fondo-menu);
+  border: 1px solid var(--linea-menu);
+  box-shadow: var(--sombra-menu);
+  backdrop-filter: blur(12px);
+}
+
+/* `relative` para quedar por delante del velo del pseudoelemento. */
+.barra {
+  position: relative;
+  height: var(--alto-barra);
+  transition: height 0.4s var(--ease-salida);
+}
+/* El logo respira con la barra en vez de quedarse fijo dentro de ella. */
+.logo-marca {
+  height: calc(var(--alto-barra) * 0.56);
+  width: auto;
+  transition: height 0.4s var(--ease-salida);
+}
+
 /* --------------------------------------------------------------- atmósfera
    Nada de degradados de color: en esta marca el "premium" viene de la luz,
    no del tinte. Un negro plano parece pintura; un negro con una zona más
@@ -118,6 +300,28 @@ body {
     radial-gradient(75% 70% at 12% 0%, rgba(232, 197, 112, 0.13), transparent 68%),
     radial-gradient(100% 100% at 80% 100%, rgba(232, 197, 112, 0.05), transparent 60%),
     #0e0e11;
+}
+
+/* Velo del hero. Antes era una banda plana del 60-85 % sobre unas fotos al
+   20 %: el titular se leía perfectamente y el producto —lo único que esta casa
+   vende— no se veía. Aquí el oscurecimiento se concentra donde cae el texto y
+   suelta los flancos, así que la comida se ve en el margen y el centro sigue
+   siendo negro para el texto. Es la luz de un bodegón, no una cortina.
+   Medido sobre la foto más clara de las tres (chacinas, media 0,61 en el
+   centro): detrás del párrafo quedan ~0,12 sRGB, que dan 9:1 contra el crema
+   del texto, muy por encima del 4,5:1 exigido. La primera capa de la lista es
+   la de arriba. */
+.velo-hero {
+  background:
+    radial-gradient(70% 60% at 50% 45%,
+      rgba(14, 14, 17, 0.72) 0%,
+      rgba(14, 14, 17, 0.4) 60%,
+      transparent 88%),
+    linear-gradient(180deg,
+      rgba(14, 14, 17, 0.55) 0%,
+      rgba(14, 14, 17, 0.22) 35%,
+      rgba(14, 14, 17, 0.28) 60%,
+      rgba(14, 14, 17, 0.7) 100%);
 }
 
 /* El blanco puro corta con la crema del pie; esto lo templa hacia abajo. */
@@ -177,7 +381,10 @@ body {
      línea clara. Sobresaliendo un píxel no hay rendija posible. */
   inset: -1px;
   opacity: 0;
-  animation: fundir 21s linear infinite;
+  /* Dos animaciones sobre el mismo reloj: la que cruza y la que deriva. */
+  animation:
+    fundir 21s linear infinite,
+    deriva 21s linear infinite;
 }
 .fundido > *:nth-child(1) { animation-delay: 0s; }
 .fundido > *:nth-child(2) { animation-delay: 7s; }
@@ -191,11 +398,26 @@ body {
   100% { opacity: 0; }
 }
 
+/* Deriva lentísima mientras la foto está a la vista: 7 puntos de escala en
+   siete segundos, imperceptible como movimiento pero suficiente para que la
+   imagen no parezca un cromo pegado. Vuelve de golpe al 35 %, un punto por
+   detrás de donde `fundir` ya la ha dejado en opacidad 0.
+   El mínimo es 1.02 y no 1: es lo que tapa la rendija de subpíxel del
+   perímetro, que antes se corregía con `inset: -1px`. */
+@keyframes deriva {
+  0%   { transform: scale(1.02); }
+  34%  { transform: scale(1.09); }
+  35%  { transform: scale(1.02); }
+  100% { transform: scale(1.02); }
+}
+
 /* Va DESPUÉS del bloque general de movimiento reducido a propósito: aquel
    deja las animaciones en 0,01 ms, y con `opacity: 0` de base eso apagaría
    las tres fotos. Aquí se fija la primera visible y se acabó el movimiento. */
 @media (prefers-reduced-motion: reduce) {
-  .fundido > * { animation: none; opacity: 0; }
+  /* La escala se queda puesta a mano: sin animación no hay quien tape la
+     rendija de subpíxel del perímetro. */
+  .fundido > * { animation: none; opacity: 0; transform: scale(1.02); }
   .fundido > *:nth-child(1) { opacity: 1; }
 }
 
@@ -207,16 +429,16 @@ body {
 .tarjeta {
   position: relative;
   box-shadow:
-    0 1px 2px rgba(23, 24, 28, 0.06),
-    0 5px 8px -4px rgba(23, 24, 28, 0.14);
+    0 1px 2px rgb(var(--sombra-rgb) / 0.09),
+    0 5px 8px -4px rgb(var(--sombra-rgb) / 0.2);
   transition:
     box-shadow 0.25s var(--ease-salida),
     transform 0.25s var(--ease-salida);
 }
 .tarjeta:hover {
   box-shadow:
-    0 2px 4px rgba(23, 24, 28, 0.07),
-    0 10px 14px -6px rgba(23, 24, 28, 0.18);
+    0 2px 4px rgb(var(--sombra-rgb) / 0.11),
+    0 10px 14px -6px rgb(var(--sombra-rgb) / 0.26);
   transform: translateY(-2px);
 }
 
@@ -227,6 +449,15 @@ body {
    etiqueta. Va en un pseudoelemento y no en un borde para poder moverlo y
    para no sumar un borde de 1 px a la sombra, que es el look de plantilla.
    `z-index: 1` porque cruza por encima de la foto de la tarjeta. */
+/* El `position: relative` va aquí y no en cada sitio que use la clase: el
+   filete es `absolute`, y sin un ancestro posicionado se ancla al bloque
+   contenedor inicial y dibuja un rectángulo del tamaño del viewport cruzando
+   la página entera. Pasó con la tarjeta de categoría vacía, que es la única
+   que no llevaba `.tarjeta` —y era `.tarjeta` quien lo posicionaba de rebote—.
+   Puesto en `.grabado`, la clase se basta sola y no puede repetirse. */
+.grabado {
+  position: relative;
+}
 .grabado::after {
   content: "";
   position: absolute;
@@ -289,6 +520,34 @@ body {
 /* Sobre fondo oscuro el filete es dorado, no del color del texto. */
 .placa-oro {
   --filete: var(--color-oro);
+}
+
+/* ------------------------------------------------------------ pan de oro
+   El oro plano es amarillo. Lo que lo convierte en metal es que no tenga un
+   solo valor: un reflejo que lo cruza y dos cantos más apagados. El recorrido
+   es corto a propósito —del #d9b356 al #f2d894, tres pasos de nada— porque en
+   cuanto se nota el degradado deja de parecer lámina y parece un botón de
+   plantilla con degradado.
+   El fondo mide el doble que el botón: al pasar por encima no cambia de
+   color, es el reflejo el que se desplaza. El mismo gesto que el filete de
+   `.placa`, que se abre a la vez.
+   Lleva su propia `transition` porque la de `.placa` anima `background-color`,
+   que aquí ya no existe; va después para ganar la cascada. */
+.oro-lamina {
+  background-image: linear-gradient(105deg,
+    var(--color-oro-fuerte) 0%,
+    var(--color-oro) 30%,
+    #f2d894 45%,
+    var(--color-oro) 60%,
+    var(--color-oro-fuerte) 100%);
+  background-size: 220% 100%;
+  background-position: 78% 0;
+  transition:
+    background-position 0.55s var(--ease-salida),
+    border-color 0.2s var(--ease-salida);
+}
+.oro-lamina:hover {
+  background-position: 12% 0;
 }
 
 /* Aquí vivían `.funde-borde` y un fondo negro para `.entra-foto`: hacían

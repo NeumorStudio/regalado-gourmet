@@ -72,6 +72,38 @@ export type Producto = {
   foto: string;
   subcategoria?: string;
   gama?: Gama;
+  /** La ficha en la que sale publicado. Varias filas comparten ficha cuando
+   *  son el mismo producto en otro envase: el queso manchego venía como 30
+   *  filas que eran tres curaciones repetidas por cada peso, y los aceites
+   *  traen una fila por formato de botella. */
+  grupo?: string;
+};
+
+/** Texto de ficha en los siete idiomas, o "" cuando esa ficha no lo lleva. */
+export type Multi = Record<Idioma, string> | "";
+export function enIdioma(m: Multi, lang: Idioma): string {
+  return m ? m[lang] : "";
+}
+
+/**
+ * Lo que se publica de un producto.
+ *
+ * El `nombre` de una fila es el código del proveedor —"6X1/2 V FLAVIA DO
+ * BAENA" son 6 botellas de medio litro en vidrio— y se conserva intacto para
+ * poder cotejar cada ficha con el albarán, pero no se enseña: la web es el
+ * escaparate y la tarifa se manda aparte. Aquí va el nombre de escaparate.
+ *
+ * `antetitulo` es la línea o la curación; `caracter`, lo que define al
+ * producto (D.O. Baena, ecológico, 50 % raza ibérica). Ni pesos, ni cajas, ni
+ * materiales de envase: eso es logística.
+ */
+export type Grupo = {
+  slug: string;
+  categoria: string;
+  foto: string;
+  antetitulo: Multi;
+  titulo: Multi;
+  caracter: Multi;
 };
 export type Subcategoria = { slug: string; nombre: Record<Idioma, string> };
 export type Categoria = {
@@ -83,6 +115,7 @@ export type Categoria = {
 
 export const CATEGORIAS = catalogo.categorias as Categoria[];
 export const PRODUCTOS = catalogo.productos as Producto[];
+export const GRUPOS = catalogo.grupos as Grupo[];
 
 /** Las que ya tienen referencias. Las demás se publican igual, pero con un
  *  aviso en vez de una rejilla vacía: el cliente quiere que se vea el alcance
@@ -136,6 +169,50 @@ export function gamasDe(productos: Producto[]): Gama[] {
   return (["premium", "seleccion"] as const).filter((g) =>
     productos.some((p) => p.gama === g),
   );
+}
+
+/** Una tarjeta de la rejilla, ya resuelta en un idioma. */
+export type Ficha = {
+  clave: string;
+  antetitulo: string;
+  titulo: string;
+  caracter: string;
+  foto: string;
+};
+
+/**
+ * Reparte una lista de filas de tarifa en las fichas que se publican. Cada
+ * ficha ocupa el sitio de su primera fila, así que se respeta el orden del
+ * catálogo, y las demás filas del mismo producto desaparecen de la rejilla.
+ *
+ * Una fila sin ficha sale con su nombre en crudo antes que no salir: es un
+ * producto nuevo al que todavía no se le ha escrito el nombre de escaparate,
+ * y verlo feo en la web avisa; verlo desaparecer, no.
+ */
+export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
+  const fichas: Ficha[] = [];
+  const hechos = new Set<string>();
+  for (const p of productos) {
+    const g = p.grupo ? GRUPOS.find((x) => x.slug === p.grupo) : undefined;
+    if (!g) {
+      fichas.push({
+        clave: p.id, antetitulo: "", titulo: p.nombre,
+        caracter: p.formato, foto: p.foto,
+      });
+      continue;
+    }
+    if (hechos.has(g.slug)) continue;
+    hechos.add(g.slug);
+    fichas.push({
+      clave: g.slug,
+      antetitulo: enIdioma(g.antetitulo, lang),
+      titulo: enIdioma(g.titulo, lang),
+      caracter: enIdioma(g.caracter, lang),
+      // si la ficha no fija foto se queda con la de su primera fila
+      foto: g.foto || p.foto,
+    });
+  }
+  return fichas;
 }
 
 // ------------------------------------------------------------ ferias y eventos
@@ -226,12 +303,12 @@ export function fechaLarga(iso: string, lang: Idioma): string {
 type Clave =
   | "verCatalogo" | "catalogo" | "solicitarPrecio" | "todas"
   | "productosIntro" | "precioNota" | "escaparateTitulo" | "escaparateTexto"
-  | "contactoTitulo" | "menu" | "cerrar" | "formato" | "presentacion"
+  | "contactoTitulo" | "menu" | "cerrar"
   | "verCategoria" | "enPreparacion" | "enPreparacionNota" | "volverCatalogo"
   | "gamaPremium" | "gamaSeleccion"
   | "ferias" | "feriasIntro" | "feriasProximas" | "feriasPasadas" | "feriasVacio"
   | "publicaciones" | "publicacionesIntro" | "publicacionesVacio" | "leer"
-  | "telefono" | "respuesta" | "derechos" | "disenadoPor";
+  | "respuesta" | "derechos" | "disenadoPor";
 
 export const T: Record<Idioma, Record<Clave, string>> = {
   es: {
@@ -248,8 +325,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     contactoTitulo: "Hablemos",
     menu: "Menú",
     cerrar: "Cerrar",
-    formato: "Formato",
-    presentacion: "Presentación",
     verCategoria: "Ver categoría",
     enPreparacion: "En preparación",
     enPreparacionNota:
@@ -270,7 +345,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos reuniendo las entrevistas y publicaciones. Escríbanos si desea material sobre la casa.",
     leer: "Leer",
-    telefono: "Teléfono",
     respuesta:
       "Responderemos a su consulta a la mayor brevedad posible.",
     derechos: "Todos los derechos reservados.",
@@ -290,8 +364,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     contactoTitulo: "Get in touch",
     menu: "Menu",
     cerrar: "Close",
-    formato: "Format",
-    presentacion: "Packaging",
     verCategoria: "View category",
     enPreparacion: "Coming soon",
     enPreparacionNota:
@@ -312,7 +384,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "We are gathering the interviews and features. Write to us if you would like material about the house.",
     leer: "Read",
-    telefono: "Phone",
     respuesta:
       "We will respond to your inquiry as soon as possible.",
     derechos: "All rights reserved.",
@@ -332,8 +403,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     contactoTitulo: "Ta kontakt",
     menu: "Meny",
     cerrar: "Lukk",
-    formato: "Format",
-    presentacion: "Pakning",
     verCategoria: "Se kategori",
     enPreparacion: "Kommer snart",
     enPreparacionNota:
@@ -354,7 +423,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Vi samler intervjuene og omtalene. Ta kontakt hvis du ønsker materiale om huset.",
     leer: "Les",
-    telefono: "Telefon",
     respuesta:
       "Vi vil svare på din henvendelse så snart som mulig.",
     derechos: "Alle rettigheter reservert.",
@@ -374,8 +442,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     contactoTitulo: "Parlons-en",
     menu: "Menu",
     cerrar: "Fermer",
-    formato: "Format",
-    presentacion: "Conditionnement",
     verCategoria: "Voir la catégorie",
     enPreparacion: "Bientôt disponible",
     enPreparacionNota:
@@ -396,7 +462,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Nous réunissons les entretiens et les articles. Écrivez-nous si vous souhaitez de la documentation sur la maison.",
     leer: "Lire",
-    telefono: "Téléphone",
     respuesta:
       "Nous répondrons à votre demande dans les meilleurs délais.",
     derechos: "Tous droits réservés.",
@@ -416,8 +481,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     contactoTitulo: "Vamos falar",
     menu: "Menu",
     cerrar: "Fechar",
-    formato: "Formato",
-    presentacion: "Embalagem",
     verCategoria: "Ver categoria",
     enPreparacion: "Em preparação",
     enPreparacionNota:
@@ -438,7 +501,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos a reunir as entrevistas e publicações. Escreva-nos se desejar material sobre a casa.",
     leer: "Ler",
-    telefono: "Telefone",
     respuesta:
       "Responderemos à sua consulta com a maior brevidade possível.",
     derechos: "Todos os direitos reservados.",
@@ -458,8 +520,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     contactoTitulo: "Parliamone",
     menu: "Menu",
     cerrar: "Chiudi",
-    formato: "Formato",
-    presentacion: "Confezione",
     verCategoria: "Vedi categoria",
     enPreparacion: "In preparazione",
     enPreparacionNota:
@@ -480,7 +540,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Stiamo raccogliendo le interviste e gli articoli. Ci scriva se desidera materiale sulla casa.",
     leer: "Leggi",
-    telefono: "Telefono",
     respuesta:
       "Risponderemo alla sua richiesta nel più breve tempo possibile.",
     derechos: "Tutti i diritti riservati.",
@@ -500,8 +559,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     contactoTitulo: "Sprechen wir",
     menu: "Menü",
     cerrar: "Schließen",
-    formato: "Format",
-    presentacion: "Verpackung",
     verCategoria: "Kategorie ansehen",
     enPreparacion: "In Vorbereitung",
     enPreparacionNota:
@@ -522,7 +579,6 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Wir stellen die Interviews und Berichte gerade zusammen. Schreiben Sie uns, wenn Sie Material über das Haus wünschen.",
     leer: "Lesen",
-    telefono: "Telefon",
     respuesta:
       "Wir beantworten Ihre Anfrage so schnell wie möglich.",
     derechos: "Alle Rechte vorbehalten.",

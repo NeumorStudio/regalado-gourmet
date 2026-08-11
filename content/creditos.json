@@ -1,49 +1,27 @@
 {
-  "nota": "Fotografía de ambiente provisional. Licencia Unsplash (uso comercial permitido, sin atribución obligatoria). SUSTITUIR por fotos propias del cliente cuando las envíe: basta con reemplazar el fichero en public/ambiente/ conservando el nombre.",
+  "nota": "Fotografía de ambiente generada con IA el 11/08/2026, no fotografiada. Sustituye a las provisionales de Unsplash. Son imágenes de atmósfera —aceite, queso, ibéricos, especias— y ninguna representa un artículo concreto del catálogo ni lleva marca de proveedor, que es el motivo por el que se generaron. SUSTITUIR por fotos propias del cliente cuando las envíe: basta con reemplazar el fichero en public/ambiente/ conservando el nombre. OJO: Next cachea las versiones optimizadas en .next/dev/cache/images; si se cambia un fichero sin cambiar de nombre hay que borrar esa carpeta o se sigue sirviendo la anterior.",
+  "generacion": {
+    "modelo": "nano_banana_pro (Google), vía Higgsfield",
+    "fecha": "2026-08-11",
+    "salida": "3:2 a 2528x1696, instaladas a 2400 px de ancho en JPEG q82",
+    "coste": "28 créditos",
+    "receta": "Bodegón editorial para casa gourmet española. Una sola luz de ventana en dirección desde arriba a la izquierda, claroscuro profundo cayendo a un fondo casi negro, tonos ámbar y crema, poca profundidad de campo, 85 mm, grano de película. Sin texto, etiquetas, logotipos ni envases impresos en ningún plano.",
+    "encuadre": "3:2 a propósito: el mismo fichero sirve de tarjeta 4:5 en la rejilla y de cabecera panorámica en la página de categoría, y a 3:2 los dos recortes salen bien. El asunto va centrado por eso."
+  },
   "fotos": [
-    {
-      "fichero": "hero-aceite.jpg",
-      "uso": "portada",
-      "origen": "https://unsplash.com/photos/photo-1474979266404-7eaacbcd87c5",
-      "nota": "Recortada: la original traía una pared muy clara en el borde izquierdo que hacía línea contra el negro del hero."
-    },
-    {
-      "fichero": "aceites.jpg",
-      "uso": "Aceite de oliva",
-      "origen": "https://unsplash.com/photos/photo-1707827914998-0d56ee13c161"
-    },
-    {
-      "fichero": "quesos.jpg",
-      "uso": "Quesos",
-      "origen": "https://unsplash.com/photos/photo-1748040584633-55bb02ca6ee7"
-    },
-    {
-      "fichero": "chacinas.jpg",
-      "uso": "Chacinas e ibéricos",
-      "origen": "https://unsplash.com/photos/photo-1650921220190-e325bad9385e"
-    },
-    {
-      "fichero": "aceitunas.jpg",
-      "uso": "Aceitunas",
-      "origen": "https://unsplash.com/photos/photo-1737681159526-0561967bd0e5"
-    },
-    {
-      "fichero": "frutos-secos.jpg",
-      "uso": "Frutos secos",
-      "origen": "https://unsplash.com/photos/photo-1769255484682-c7260b13d564"
-    },
-    {
-      "fichero": "sal-y-especias.jpg",
-      "uso": "Sal, pimienta y especias",
-      "origen": "https://unsplash.com/photos/photo-1558394299-f2e6198506a6"
-    },
-    {
-      "fichero": "monodosis.jpg",
-      "uso": "Monodosis y sets",
-      "origen": "https://unsplash.com/photos/photo-1574785289548-b6604d39125d"
-    }
-  ],
-  "descartadas": [
-    "photo-1656423521731-9665583f100c: llevaba una botella de ginebra de marca ajena bien visible"
+    { "fichero": "hero-aceite.jpg", "uso": "portada", "escena": "Aceitera de vidrio sin etiqueta, aceitunas verdes y rama de olivo sobre roble oscuro" },
+    { "fichero": "aceites.jpg", "uso": "Aceites de Oliva Virgen Extra Premium y D.O.", "escena": "Tres botellas de vidrio verde sin etiquetar sobre piedra, plato de cata con aceite" },
+    { "fichero": "aceites-horeca.jpg", "uso": "Aceites de Oliva Virgen Extra HORECA", "escena": "Lata metálica lisa en cocina profesional, un plato aliñándose al fondo" },
+    { "fichero": "quesos.jpg", "uso": "Quesos Manchegos D.O.P.", "escena": "Cuña de manchego con su corteza de pleita, nueces y romero sobre pizarra" },
+    { "fichero": "jamones.jpg", "uso": "Jamones Ibéricos y Serrano", "escena": "Lonchas cortadas a cuchillo en plato blanco y jamonero" },
+    { "fichero": "jamones-dop.jpg", "uso": "Jamones Ibéricos D.O.P.", "escena": "Pata entera en soporte de madera en bodega de piedra" },
+    { "fichero": "chacinas.jpg", "uso": "Embutidos Ibéricos", "escena": "Chorizos y salchichones colgados en secadero, uno cortado en tabla" },
+    { "fichero": "aceitunas.jpg", "uso": "Aceitunas", "escena": "Cuencos de cerámica con manzanilla, gordal y aceituna negra, laurel y ajo" },
+    { "fichero": "frutos-secos.jpg", "uso": "Frutos secos", "escena": "Almendra marcona, pistacho, avellana y pasas en catas de madera sobre lino" },
+    { "fichero": "sal-y-especias.jpg", "uso": "Otros productos y salsas", "escena": "Escamas de sal, pimienta en mortero y pimentón en cuencos sobre pizarra" },
+    { "fichero": "monodosis.jpg", "uso": "Monodosis", "escena": "Mesa de desayuno de hotel con taza de porcelana y monodosis en blanco, sin imprimir" },
+    { "fichero": "infusiones.jpg", "uso": "Infusiones y tés", "escena": "Tetera de vidrio en infusión, manzanilla y tila sueltas sobre pizarra" },
+    { "fichero": "vinos.jpg", "uso": "Vinos", "escena": "Botellas sin etiqueta tumbadas en botellero de piedra y copa de tinto" },
+    { "fichero": "tomates.jpg", "uso": "Tomates", "escena": "Tomate seco en aceite en cuenco de barro, tomate de rama y orégano" }
   ]
 }

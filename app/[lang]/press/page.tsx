@@ -92,7 +92,7 @@ export default async function Prensa({
             <p className="text-lg text-tinta-2 text-pretty">{t.publicacionesVacio}</p>
             <Link
               href={`/${l}/contact/`}
-              className="mt-8 inline-flex items-center gap-2 placa bg-oro px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro hover:bg-oro-fuerte"
+              className="mt-8 inline-flex items-center gap-2 placa oro-lamina px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro"
             >
               {t.contactoTitulo}
               <span aria-hidden>→</span>

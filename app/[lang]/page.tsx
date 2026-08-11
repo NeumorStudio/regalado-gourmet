@@ -24,11 +24,14 @@ export default async function Inicio({ params }: { params: Promise<{ lang: strin
           sobre ellas. Antes escritorio partía la pantalla en dos columnas y
           móvil hacía esto; con una única versión no hay dos diseños que
           mantener ni dos sitios donde se rompa nada. */}
-      <section className="fondo-hondo relative flex min-h-[78vh] items-center overflow-hidden text-white">
+      <section className="abre-oscuro fondo-hondo relative flex min-h-[78vh] items-center overflow-hidden text-white">
         <div aria-hidden className="entra-foto absolute inset-0 overflow-hidden">
           {/* La opacidad va aquí y no en el contenedor: `entra-foto` anima su
-              propia opacidad de 0 a 1 al cargar y machacaría el valor. */}
-          <div className="fundido absolute inset-0 opacity-20">
+              propia opacidad de 0 a 1 al cargar y machacaría el valor.
+              55 % y no 20 %: a 20 % la foto era una mancha y el producto no se
+              veía. Quien sostiene ahora el contraste del texto es `velo-hero`,
+              que oscurece el centro y suelta los flancos. */}
+          <div className="fundido absolute inset-0 opacity-55">
             {[AMBIENTE_PORTADA, "/ambiente/quesos.jpg", "/ambiente/chacinas.jpg"].map(
               (src, i) => (
                 <Image
@@ -48,12 +51,9 @@ export default async function Inicio({ params }: { params: Promise<{ lang: strin
 
         {/* El contraste del titular no puede depender de qué foto esté
             cruzándose en ese momento; el velo lo fija. */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-negro/80 via-negro/60 to-negro/85"
-        />
+        <div aria-hidden className="velo-hero pointer-events-none absolute inset-0" />
 
-        <div className="relative z-10 mx-auto w-full max-w-3xl px-6 py-24 text-center sm:py-28">
+        <div className="ancla-cabecera relative z-10 mx-auto w-full max-w-3xl px-6 py-24 text-center sm:py-28">
             {/* Aquí había una etiqueta con "González-Regalado Gourmet" encima
                 del titular, que dice exactamente lo mismo. El nombre se lee
                 una vez, en el h1. */}
@@ -79,7 +79,7 @@ export default async function Inicio({ params }: { params: Promise<{ lang: strin
             >
               <Link
                 href={`/${l}/products/`}
-                className="group inline-flex items-center gap-2 placa bg-oro px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro hover:bg-oro-fuerte"
+                className="group inline-flex items-center gap-2 placa oro-lamina px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro"
               >
                 {t.verCatalogo}
                 <span aria-hidden className="transition-transform duration-200 ease-[var(--ease-salida)] group-hover:translate-x-1">

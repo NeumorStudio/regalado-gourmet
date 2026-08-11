@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
-  esIdioma, categoria, bloquesDe, gamasDe, AMBIENTE, IDIOMAS, CATEGORIAS,
+  esIdioma, categoria, bloquesDe, gamasDe, fichasDe, AMBIENTE, IDIOMAS, CATEGORIAS,
   SITIO, T, CONTACTO, ruta, type Idioma, type Producto,
 } from "@/lib/contenido";
 
@@ -39,17 +39,31 @@ export async function generateMetadata({
   };
 }
 
-/** La rejilla de productos. Sin precio: la web no los publica, se piden. */
-function Rejilla({ productos, t }: { productos: Producto[]; t: Record<string, string> }) {
+/**
+ * La rejilla de productos. Ni precios ni cantidades: la web es el escaparate y
+ * la tarifa detallada se manda aparte.
+ *
+ * Una tarjeta por producto, no por línea de tarifa. El queso manchego llegaba
+ * como treinta filas que eran tres curaciones repetidas por cada peso, con la
+ * misma foto doce veces, y los aceites como una fila por formato de botella;
+ * las 92 filas del catálogo se publican en 63 fichas. Ver `fichasDe`.
+ */
+function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
+  const fichas = fichasDe(productos, lang);
+  // Si alguna ficha de esta rejilla lleva antetítulo, todas le guardan el
+  // sitio: sin eso el nombre de las que no lo tienen sube una línea y la fila
+  // queda descuadrada. Cuando no lo lleva ninguna (los frutos secos, por
+  // ejemplo) no se reserva nada y no sobra un hueco en cada tarjeta.
+  const conAntetitulo = fichas.some((f) => f.antetitulo);
   return (
-    <ul className="mt-8 grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
-      {productos.map((p) => (
-        <li key={p.id} className="group flex flex-col">
+    <ul className="mt-8 grid grid-cols-2 items-start gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
+      {fichas.map((f) => (
+        <li key={f.clave} className="group flex flex-col">
           <div className="grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-white">
-            {p.foto ? (
+            {f.foto ? (
               <Image
-                src={p.foto}
-                alt={p.nombre}
+                src={f.foto}
+                alt={f.titulo}
                 width={340}
                 height={340}
                 loading="lazy"
@@ -57,25 +71,26 @@ function Rejilla({ productos, t }: { productos: Producto[]; t: Record<string, st
               />
             ) : (
               <div className="grid h-full w-full place-items-center bg-crema px-3 text-center font-sans text-[0.65rem] uppercase tracking-wider text-tinta-3">
-                {p.nombre}
+                {f.titulo}
               </div>
             )}
           </div>
-          <p className="mt-3 text-sm leading-snug text-balance">{p.nombre}</p>
-          <dl className="mt-1.5 font-sans text-xs text-tinta-3">
-            {p.formato && (
-              <div>
-                <dt className="sr-only">{t.formato}</dt>
-                <dd>{p.formato}</dd>
-              </div>
-            )}
-            {p.presentacion && (
-              <div>
-                <dt className="sr-only">{t.presentacion}</dt>
-                <dd>{p.presentacion}</dd>
-              </div>
-            )}
-          </dl>
+
+          {/* La línea o la curación van de antetítulo: es lo que separa esta
+              ficha de sus hermanas y lo que el comprador busca primero.
+              El alto mínimo va en `1lh` y no en `em`: es exactamente una línea
+              de ESTE párrafo, así que el hueco que se reserva cuando la ficha
+              no tiene antetítulo mide lo mismo que el antetítulo al que
+              sustituye, pase lo que pase con la fuente. */}
+          {conAntetitulo && (
+            <p className="etiqueta mt-3 min-h-[1lh]">{f.antetitulo}</p>
+          )}
+          <p className={`leading-snug text-balance ${conAntetitulo ? "mt-1" : "mt-3"}`}>
+            {f.titulo}
+          </p>
+          {f.caracter && (
+            <p className="mt-1 font-sans text-xs text-tinta-3">{f.caracter}</p>
+          )}
         </li>
       ))}
     </ul>
@@ -97,12 +112,12 @@ export default async function Categoria({
     <>
       {/* Cabecera con la foto de la categoría de fondo: es la que el visitante
           acaba de pulsar en el índice, así que la continuidad se agradece. */}
-      <section className="relative overflow-hidden bg-negro text-white">
+      <section className="abre-oscuro relative overflow-hidden bg-negro text-white">
         {foto && (
           <Image src={foto} alt="" fill priority sizes="100vw" className="object-cover opacity-45" />
         )}
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-negro via-negro/70 to-negro/30" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
+        <div className="ancla-cabecera relative mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
           <Link
             href={`/${l}/products/`}
             className="-mt-2 inline-flex min-h-11 items-center font-sans text-sm text-white/70 underline-offset-4 hover:text-oro hover:underline"
@@ -122,7 +137,7 @@ export default async function Categoria({
           <p className="mt-4 text-lg text-tinta-2 text-pretty">{t.enPreparacionNota}</p>
           <Link
             href={`/${l}/contact/`}
-            className="mt-8 inline-flex items-center gap-2 placa bg-oro px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro hover:bg-oro-fuerte"
+            className="mt-8 inline-flex items-center gap-2 placa oro-lamina px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro"
           >
             {t.solicitarPrecio}
             <span aria-hidden>→</span>
@@ -150,16 +165,16 @@ export default async function Categoria({
                       <p className="etiqueta">
                         {g === "premium" ? t.gamaPremium : t.gamaSeleccion}
                       </p>
-                      <Rejilla productos={grupo.productos.filter((p) => p.gama === g)} t={t} />
+                      <Rejilla productos={grupo.productos.filter((p) => p.gama === g)} lang={l} />
                     </div>
                   ))
                 ) : (
-                  <Rejilla productos={grupo.productos} t={t} />
+                  <Rejilla productos={grupo.productos} lang={l} />
                 )}
                 {/* Los que aún no tienen gama asignada no se pierden. */}
                 {gamas.length > 1 && grupo.productos.some((p) => !p.gama) && (
                   <div className="mt-8">
-                    <Rejilla productos={grupo.productos.filter((p) => !p.gama)} t={t} />
+                    <Rejilla productos={grupo.productos.filter((p) => !p.gama)} lang={l} />
                   </div>
                 )}
               </div>
@@ -178,7 +193,7 @@ export default async function Categoria({
           </div>
           <Link
             href={`/${l}/contact/`}
-            className="inline-flex items-center gap-2 placa bg-oro px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro hover:bg-oro-fuerte"
+            className="inline-flex items-center gap-2 placa oro-lamina px-7 py-3.5 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-negro"
           >
             {t.solicitarPrecio}
             <span aria-hidden>→</span>

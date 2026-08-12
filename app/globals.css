@@ -396,6 +396,204 @@ body::after {
   }
 }
 
+/* ============================================================== movimiento
+   Todo lo que viene aquí abajo es CSS nativo: `animation-timeline` para lo
+   que va ligado al scroll y la View Transitions API para lo que va ligado a
+   la navegación. Cero librerías —ni GSAP, ni Lenis, ni Framer— porque no
+   hacen falta y porque esta web tiene UN solo componente de cliente y no
+   merece la pena perder eso por un fundido.
+   El scroll se deja nativo a propósito: el suavizado por JavaScript es lo
+   que hace que una web gane un premio y pierda al comprador, y esta vende a
+   distribución, no a un jurado. */
+
+/* ---------------------------------------------- morphing entre páginas
+   La foto de la tarjeta de categoría y la de la cabecera de esa categoría
+   son el mismo fichero. Con el mismo nombre en las dos, el navegador la
+   MUEVE de una posición a otra en vez de hacer desaparecer una y aparecer
+   la otra: se lee como que el objeto continúa, que es lo que dice el ojo
+   cuando algo persiste a través de un corte. */
+/* Los selectores llevan `*` y no una clase: `view-transition-class` solo se
+   puede poner desde el `<ViewTransition>` de React, que aquí no se usa. Con la
+   API del navegador cada elemento tiene NOMBRE, no clase, así que se ajustan
+   todos los grupos menos la raíz, que se apaga justo debajo. */
+::view-transition-group(*) {
+  animation-duration: 420ms;
+  animation-timing-function: var(--ease-salida);
+}
+/* El desenfoque de paso tapa los artefactos de interpolación: al escalar una
+   foto de 4:5 hasta una banda panorámica, los píxeles intermedios se estiran
+   y sin él se ve el pixelado a mitad de vuelo. */
+::view-transition-image-pair(*) {
+  animation-name: morph-desenfoque;
+}
+@keyframes morph-desenfoque {
+  30% { filter: blur(3px); }
+}
+
+/* Sin esto la web entera parpadea en cada navegación: el fundido por defecto
+   de la API se aplica a la raíz. Aquí solo debe moverse lo que tiene nombre. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* --------------------------------------------- entrada de la rejilla
+   Las fichas asoman al entrar en pantalla. Va con `animation-timeline: view()`
+   y no con un IntersectionObserver: es CSS, no baja un solo kilobyte de JS y
+   el navegador lo resuelve en el hilo de composición.
+   El escalonado se hace con `animation-range` y NO con `animation-delay`
+   incremental: "Otros productos y salsas" tiene 32 fichas, y un retardo por
+   índice haría que la última tardase casi tres segundos en aparecer. Eso no
+   es elegante, es lento. Aquí cada columna termina su entrada un poco más
+   tarde que la anterior, así que la fila entra en cascada de izquierda a
+   derecha y el retraso máximo es el de una sola fila, no el del catálogo. */
+/* La opacidad NO arranca en 0, y no es un capricho: con `view()` el progreso
+   depende de dónde esté el elemento, así que una ficha que ya está a media
+   altura de la pantalla cuando la página carga se queda a medio camino hasta
+   que alguien se desplace. Medido antes de corregirlo: las dos primeras
+   fichas de "Embutidos" abrían a 0,74 y 0,58 de opacidad y se quedaban ahí.
+   Y "Aceites HORECA" tiene UNA ficha: si cabe entera sin scroll, no hay
+   desplazamiento que termine nunca la animación.
+   Partiendo de 0,35 el peor caso es una ficha ligeramente atenuada —se lee,
+   se entiende, no parece rota— y el gesto lo lleva el desplazamiento, que sí
+   puede recorrerse entero sin que nada quede a medias. */
+.ficha-asoma {
+  animation: asomar linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+@keyframes asomar {
+  from { opacity: 0.35; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+/* dos columnas en móvil */
+.ficha-asoma:nth-child(2n + 2) { animation-range: entry 0% cover 26%; }
+/* tres a partir de sm */
+@media (min-width: 640px) {
+  .ficha-asoma:nth-child(2n + 2) { animation-range: entry 0% cover 20%; }
+  .ficha-asoma:nth-child(3n + 2) { animation-range: entry 0% cover 25%; }
+  .ficha-asoma:nth-child(3n + 3) { animation-range: entry 0% cover 30%; }
+}
+/* cuatro a partir de lg */
+@media (min-width: 1024px) {
+  .ficha-asoma:nth-child(3n + 2),
+  .ficha-asoma:nth-child(3n + 3) { animation-range: entry 0% cover 20%; }
+  .ficha-asoma:nth-child(4n + 2) { animation-range: entry 0% cover 24%; }
+  .ficha-asoma:nth-child(4n + 3) { animation-range: entry 0% cover 28%; }
+  .ficha-asoma:nth-child(4n + 4) { animation-range: entry 0% cover 32%; }
+}
+
+/* ------------------------------------------------------------- parallax
+   El bodegón de cabecera se desplaza a media velocidad mientras el texto
+   sube a la suya. Son 40 px en todo el recorrido: si se nota como
+   movimiento está mal, tiene que notarse como profundidad.
+   `scroll()` y no `view()` porque el elemento ya está en pantalla al cargar
+   y lo que interesa es su recorrido dentro del documento. */
+.parallax-fondo {
+  animation: parallax linear both;
+  /* `scroll(root)` y NO `scroll()` a secas. Sin argumento se engancha al
+     scroller más cercano, y la sección de cabecera lleva `overflow-hidden`
+     —que ES un contenedor de scroll aunque no se desplace nunca—, así que el
+     progreso se quedaba clavado en 0 y la foto no se movía ni un píxel.
+     Comprobado midiendo `transform` a 0, 150, 300 y 500 de scroll: daba
+     `none` en los cuatro. Que la propiedad esté declarada no significa que la
+     animación corra. */
+  animation-timeline: scroll(root);
+  animation-range: 0 60vh;
+  /* La foto sobresale por arriba y por abajo del hueco que tiene que tapar.
+     Sin esto, al desplazarse hacia abajo destapa el borde superior de la
+     cabecera y aparece una franja negra: medido, a 150 px de scroll ya no
+     llegaba. El margen (7 % del alto) es mayor que el recorrido (18 px en
+     cada sentido), así que cubre en todo el trayecto.
+     El recorrido va de -18 a +18 y no de 0 a 40 por lo mismo: repartido
+     alrededor del centro, el margen necesario es la mitad. */
+  inset: -7% 0;
+  will-change: transform;
+}
+@keyframes parallax {
+  from { transform: translateY(-18px) scale(1.02); }
+  to   { transform: translateY(18px) scale(1.06); }
+}
+
+/* --------------------------------------------------- el titular respira
+   Solo el del hero. En los h2 de sección repetir el gesto lo convierte en
+   tic: hay seis categorías y treinta y dos fichas, y el movimiento deja de
+   significar nada cuando pasa todo el rato. */
+.titular-respira {
+  animation: respirar linear both;
+  animation-timeline: view();
+  animation-range: exit 0% exit 90%;
+}
+@keyframes respirar {
+  to { opacity: 0.25; transform: translateY(-22px) scale(0.97); filter: blur(2px); }
+}
+
+/* -------------------------------------------- avance de lectura
+   El filete dorado de la cabecera hace de barra de progreso. No se añade
+   ningún elemento: es el mismo borde de abajo, que se escala.
+   Va en la barra sólida y no en la flotante: sobre el hero en negro una
+   línea dorada creciendo compite con el titular. */
+.cabecera[data-solida] .avance {
+  transform-origin: left;
+  animation: avanzar linear both;
+  animation-timeline: scroll();
+}
+@keyframes avanzar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* El movimiento ligado al scroll también se apaga con la preferencia del
+   sistema. El bloque general de arriba solo toca duraciones, y estas
+   animaciones no dependen del tiempo sino del desplazamiento: hay que
+   quitarles la línea de tiempo y dejarlas en su estado final. */
+@media (prefers-reduced-motion: reduce) {
+  .ficha-asoma,
+  .parallax-fondo,
+  .titular-respira,
+  .cabecera[data-solida] .avance {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* ------------------------------------------- salto entre categorías
+   La barra que deja ir de una familia a otra sin volver al índice. Se
+   arrastra en horizontal porque los nombres son largos de verdad —"Aceites de
+   Oliva Virgen Extra Premium y D.O." no se abrevia sin inventarse un nombre
+   que el cliente no ha dado—, pero la barra de desplazamiento del sistema se
+   oculta: aquí sobra, se sabe que hay más por el corte del último elemento, y
+   dibujada encima del crema se lee como un fallo de maquetación. */
+.salto-categorias ul {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.salto-categorias ul::-webkit-scrollbar {
+  display: none;
+}
+
+/* --------------------------------------------------------------- visor
+   El fondo se funde al abrir. `@starting-style` da el estado de partida a un
+   elemento que acaba de nacer, así que no hace falta ni una clase que se
+   añada un tic después ni un `requestAnimationFrame`. */
+.visor {
+  background: rgb(8 8 10 / 0.94);
+  backdrop-filter: blur(6px);
+  transition: opacity 0.3s var(--ease-salida);
+  opacity: 1;
+}
+@starting-style {
+  .visor { opacity: 0; }
+}
+
 /* ------------------------------------------------- fundido de fotos del hero
    Tres imágenes que se cruzan solas, sin flechas ni puntos: no es un carrusel
    de contenido (donde la 2.ª y la 3.ª diapositiva no las ve nadie), es
@@ -522,6 +720,11 @@ body::after {
    El filete es un pseudoelemento y no un segundo borde para poder moverlo:
    al pasar por encima se abre hacia el canto, como si la placa respirara.
    Nada de sombra difusa detrás; el relieve lo da el propio grabado. */
+/* Aquí llegó a haber un imán que inclinaba la placa hacia el cursor. Se quitó:
+   estos botones son "Ver el catálogo" y "Solicitar precios", o sea la acción
+   que la web existe para provocar, y un blanco que se mueve cuando vas a
+   pulsarlo estorba en vez de gustar. El movimiento va donde no compite con
+   una decisión: la foto que viaja entre páginas, la rejilla que asoma. */
 .placa {
   position: relative;
   border-radius: 2px;

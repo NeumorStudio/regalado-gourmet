@@ -78,7 +78,17 @@ export default async function Layout({
   const t = T[lang as Idioma];
 
   return (
-    <html lang={lang} className={`${lora.variable} ${cormorant.variable}`}>
+    /* `data-scroll-behavior` lo pide Next expresamente cuando el CSS lleva
+       `scroll-behavior: smooth` en `<html>`, que es el caso. Sin él, al
+       cambiar de página el navegador intenta DESPLAZARSE suavemente hasta
+       arriba en vez de saltar, y ese viaje se solapa con la animación de la
+       transición. Con el atributo puesto, Next sabe que el suavizado es
+       intencionado y lo desactiva mientras dura la navegación. */
+    <html
+      lang={lang}
+      data-scroll-behavior="smooth"
+      className={`${lora.variable} ${cormorant.variable}`}
+    >
       {/* Extensiones como ColorZilla o Grammarly inyectan atributos en <body>
           antes de que React hidrate (cz-shortcut-listen, data-gr-*), y eso
           dispara un aviso de hidratación que no viene de este código. Se

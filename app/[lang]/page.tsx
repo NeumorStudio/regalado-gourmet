@@ -53,7 +53,11 @@ export default async function Inicio({ params }: { params: Promise<{ lang: strin
             cruzándose en ese momento; el velo lo fija. */}
         <div aria-hidden className="velo-hero pointer-events-none absolute inset-0" />
 
-        <div className="ancla-cabecera relative z-10 mx-auto w-full max-w-3xl px-6 py-24 text-center sm:py-28">
+        {/* `titular-respira` ata el bloque al scroll: al salir de pantalla se
+            aleja y se desenfoca en vez de limitarse a irse hacia arriba. Es el
+            único sitio de la web donde se hace; repetirlo en cada sección es
+            lo que convierte un gesto en un tic. */}
+        <div className="ancla-cabecera titular-respira relative z-10 mx-auto w-full max-w-3xl px-6 py-24 text-center sm:py-28">
             {/* Aquí había una etiqueta con "González-Regalado Gourmet" encima
                 del titular, que dice exactamente lo mismo. El nombre se lee
                 una vez, en el h1. */}
@@ -107,9 +111,14 @@ export default async function Inicio({ params }: { params: Promise<{ lang: strin
           </h2>
         </div>
 
+        {/* Estas tarjetas sí llevan la entrada escalonada y las del índice del
+            catálogo NO, y la diferencia es deliberada: allí la foto es el
+            destino del morphing al volver de una categoría, y aterrizar sobre
+            una tarjeta a media opacidad estropea justo el efecto que se
+            quiere. Aquí no hay nada que aterrizar. */}
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIAS_CON_PRODUCTO.map((c) => (
-            <li key={c.slug}>
+            <li key={c.slug} className="ficha-asoma">
               <Link
                 href={`/${l}/products/${c.slug}/`}
                 className="tarjeta grabado group block overflow-hidden rounded-sm bg-white p-2.5"

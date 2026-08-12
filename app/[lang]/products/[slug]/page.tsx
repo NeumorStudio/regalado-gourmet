@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import VolverAlCatalogo from "../../volver";
+import RejillaCliente from "./rejilla";
 import {
   esIdioma, categoria, bloquesDe, gamasDe, fichasDe, AMBIENTE, IDIOMAS, CATEGORIAS,
+  CATEGORIAS_CON_PRODUCTO, pagina,
   SITIO, T, CONTACTO, ruta, type Idioma, type Producto,
 } from "@/lib/contenido";
 
@@ -55,54 +58,15 @@ function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
   // queda descuadrada. Cuando no lo lleva ninguna (los frutos secos, por
   // ejemplo) no se reserva nada y no sobra un hueco en cada tarjeta.
   const conAntetitulo = fichas.some((f) => f.antetitulo);
+  // La rejilla se pinta en cliente porque cada ficha abre su visor, pero las
+  // fichas van ya traducidas: al navegador no baja ni el catálogo ni la
+  // lógica de idioma, solo las que se ven en esta categoría.
   return (
-    <ul className="mt-8 grid grid-cols-2 items-start gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
-      {fichas.map((f) => (
-        <li key={f.clave} className="group flex flex-col">
-          {/* `object-cover` sin relleno, y el fondo en negro y no en blanco.
-              Con los recortes de proveedor sobre blanco hacía falta
-              `object-contain` y un margen para que el envase no llegara al
-              canto; ahora la ficha es un bodegón cuadrado que se compuso ya
-              con su aire dentro, y dejarlo `contain` sobre blanco lo dibujaba
-              flotando en un marco claro que partía la rejilla en dos
-              lenguajes. El negro es además lo que hay bajo la foto mientras
-              carga, así que no hay destello blanco. */}
-          <div className="grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-negro">
-            {f.foto ? (
-              <Image
-                src={f.foto}
-                alt={f.titulo}
-                width={680}
-                height={680}
-                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
-              />
-            ) : (
-              <div className="grid h-full w-full place-items-center bg-crema px-3 text-center font-sans text-[0.65rem] uppercase tracking-wider text-tinta-3">
-                {f.titulo}
-              </div>
-            )}
-          </div>
-
-          {/* La línea o la curación van de antetítulo: es lo que separa esta
-              ficha de sus hermanas y lo que el comprador busca primero.
-              El alto mínimo va en `1lh` y no en `em`: es exactamente una línea
-              de ESTE párrafo, así que el hueco que se reserva cuando la ficha
-              no tiene antetítulo mide lo mismo que el antetítulo al que
-              sustituye, pase lo que pase con la fuente. */}
-          {conAntetitulo && (
-            <p className="etiqueta mt-3 min-h-[1lh]">{f.antetitulo}</p>
-          )}
-          <p className={`leading-snug text-balance ${conAntetitulo ? "mt-1" : "mt-3"}`}>
-            {f.titulo}
-          </p>
-          {f.caracter && (
-            <p className="mt-1 font-sans text-xs text-tinta-3">{f.caracter}</p>
-          )}
-        </li>
-      ))}
-    </ul>
+    <RejillaCliente
+      fichas={fichas}
+      conAntetitulo={conAntetitulo}
+      textoCerrar={T[lang].cerrar}
+    />
   );
 }
 
@@ -123,16 +87,33 @@ export default async function Categoria({
           acaba de pulsar en el índice, así que la continuidad se agradece. */}
       <section className="abre-oscuro relative overflow-hidden bg-negro text-white">
         {foto && (
-          <Image src={foto} alt="" fill priority sizes="100vw" className="object-cover opacity-45" />
+          /* El otro extremo del morphing: mismo `name` que la tarjeta del
+             índice, así que la foto que se acaba de pulsar crece hasta aquí
+             en vez de aparecer de la nada. Ver `products/page.tsx`.
+             El parallax va DENTRO, en un div aparte: si se le pone la
+             animación de scroll al mismo elemento que tiene nombre de
+             transición, el navegador la interpola contra la posición ya
+             desplazada y el morphing llega torcido. */
+          <div className="parallax-fondo absolute inset-0">
+            <Image
+              src={foto}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              style={{ viewTransitionName: `cat-${cat.slug}` }}
+              className="object-cover opacity-45"
+            />
+          </div>
         )}
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-negro via-negro/70 to-negro/30" />
         <div className="ancla-cabecera relative mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
-          <Link
+          <VolverAlCatalogo
             href={`/${l}/products/`}
             className="-mt-2 inline-flex min-h-11 items-center font-sans text-sm text-white/70 underline-offset-4 hover:text-oro hover:underline"
           >
             ← {t.volverCatalogo}
-          </Link>
+          </VolverAlCatalogo>
           <h1 className="mt-5 text-balance" style={{ fontSize: "var(--text-titulo)", lineHeight: 1.12 }}>
             {cat.nombre[l]}
           </h1>
@@ -153,6 +134,42 @@ export default async function Categoria({
           </Link>
         </section>
       ) : (
+        <>
+        {/* Saltar de una categoría a otra sin pasar por el índice.
+            Antes, para ver otra familia había que volver al catálogo y entrar
+            otra vez, y con "Otros productos" —32 fichas de una tirada— eso
+            significaba subir toda la lista primero. La barra se queda pegada
+            bajo la de navegación, así que está donde se necesita: al final de
+            una categoría, que es cuando apetece ver la siguiente.
+            El desplazamiento horizontal es SOLO de esta barra y no de la
+            página: en móvil las seis no caben, y una lista corta que se
+            arrastra con el dedo es el patrón que la gente ya conoce. */}
+        <nav
+          aria-label={pagina(l, "products").titulo}
+          className="salto-categorias sticky top-[var(--alto-cabecera-min)] z-30 border-b border-linea bg-crema/92 backdrop-blur"
+        >
+          <ul className="mx-auto flex w-full max-w-6xl gap-1 overflow-x-auto px-6 py-2.5">
+            {CATEGORIAS_CON_PRODUCTO.map((c) => {
+              const actual = c.slug === cat.slug;
+              return (
+                <li key={c.slug} className="shrink-0">
+                  <Link
+                    href={`/${l}/products/${c.slug}/`}
+                    aria-current={actual ? "page" : undefined}
+                    className={`inline-flex min-h-11 items-center whitespace-nowrap rounded-sm px-3 font-sans text-[0.78rem] uppercase tracking-[0.1em] transition-colors ${
+                      actual
+                        ? "bg-negro text-oro"
+                        : "text-tinta-2 hover:bg-oro-tenue hover:text-oro-tinta"
+                    }`}
+                  >
+                    {c.nombre[l]}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
         <section className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
           {grupos.map((grupo) => {
             const gamas = gamasDe(grupo.productos);
@@ -190,6 +207,7 @@ export default async function Categoria({
             );
           })}
         </section>
+        </>
       )}
 
       <section className="bg-negro py-16 text-white">

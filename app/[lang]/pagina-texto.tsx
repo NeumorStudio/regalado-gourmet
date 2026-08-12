@@ -33,7 +33,12 @@ export default function PaginaTexto({
     return (
       <>
         <section className="abre-oscuro relative overflow-hidden bg-negro text-white">
-          <Image src={foto} alt="" fill priority sizes="100vw" className="object-cover opacity-45" />
+          {/* Mismo parallax que la cabecera de categoría: las tres cabeceras
+              oscuras de la web se comportan igual o se nota que una de ellas
+              está quieta. */}
+          <div className="parallax-fondo absolute inset-0">
+            <Image src={foto} alt="" fill priority sizes="100vw" className="object-cover opacity-45" />
+          </div>
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-negro via-negro/70 to-negro/30" />
           <div className="ancla-cabecera relative mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
             <h1 className="text-balance" style={{ fontSize: "var(--text-titulo)", lineHeight: 1.12 }}>

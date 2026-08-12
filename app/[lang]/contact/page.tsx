@@ -28,14 +28,16 @@ export default async function Contacto({
           `abre-oscuro` y `ancla-cabecera` son las que gobiernan la barra
           flotante; sin ellas el menú entra blanco sobre fondo blanco. */}
       <section className="abre-oscuro relative overflow-hidden bg-negro text-white">
-        <Image
-          src="/ambiente/contacto.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-45"
-        />
+        <div className="parallax-fondo absolute inset-0">
+          <Image
+            src="/ambiente/contacto.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-45"
+          />
+        </div>
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-negro via-negro/70 to-negro/30" />
         <div className="ancla-cabecera relative mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
           <h1 className="text-balance" style={{ fontSize: "var(--text-titulo)", lineHeight: 1.12 }}>

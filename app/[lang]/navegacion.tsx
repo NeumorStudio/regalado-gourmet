@@ -96,6 +96,16 @@ export default function Navegacion({
       className="cabecera fixed inset-x-0 top-0 z-40"
       data-solida={condensada ? "" : undefined}
     >
+      {/* Avance de lectura. No es una barra añadida encima de la web: se monta
+          sobre el filete dorado que la cabecera ya tenía de borde, así que
+          cuando está a cero no se ve nada nuevo. Solo aparece con la barra
+          condensada —sobre el hero en negro, una línea dorada creciendo le
+          quitaría el sitio al titular—. Se pinta y se anima entero en CSS
+          (`animation-timeline: scroll()`), sin escuchar el scroll desde JS. */}
+      <div
+        aria-hidden
+        className="avance pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left bg-oro"
+      />
       <div className="barra mx-auto flex w-full max-w-6xl items-center gap-6 px-6">
         <Link href={`/${lang}/`} className="shrink-0" aria-label="González-Regalado Gourmet">
           <Image

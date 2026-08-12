@@ -50,11 +50,30 @@ export default async function Catalogo({
                     la tarjeta en dos con una banda blanca. */}
                 <div className="relative aspect-[4/5] overflow-hidden bg-negro">
                   {foto && (
+                    /* Esta foto y la cabecera de la categoría son el MISMO
+                       fichero. Con el mismo `view-transition-name` en las dos
+                       páginas, el navegador la MUEVE de una posición a otra en
+                       vez de hacer desaparecer una y aparecer la otra: el ojo
+                       sigue el objeto y entiende que ha entrado en esa
+                       categoría, no en una página cualquiera.
+                       Va como propiedad CSS y NO con el `<ViewTransition>` de
+                       React: ese componente solo existe en el runtime
+                       experimental de React, que Next únicamente carga si se
+                       activa `blockingSSR`, `taint`, `transitionIndicator` o
+                       `gestureTransition`. Sin uno de esos flags el componente
+                       se monta y no hace nada —comprobado: cero nombres
+                       aplicados al arrancar la transición—, y no se va a meter
+                       un React experimental en la web de un cliente por una
+                       animación. La API del navegador es estable y basta.
+                       Las categorías vacías no lo llevan: no son enlaces, y
+                       dos elementos con el mismo nombre cancelan la
+                       transición entera. */
                     <Image
                       src={foto}
                       alt=""
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      style={vacia ? undefined : { viewTransitionName: `cat-${c.slug}` }}
                       className={`object-cover transition-transform duration-500 ease-[var(--ease-salida)] ${
                         vacia ? "opacity-35 saturate-50" : "opacity-90 group-hover:scale-105"
                       }`}

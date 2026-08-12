@@ -324,6 +324,33 @@ body::after {
       rgba(14, 14, 17, 0.7) 100%);
 }
 
+/* En un móvil el mismo velo tapa la foto entera, y el producto —lo único que
+   esta casa vende— desaparece justo donde más se mira. No es un problema de
+   valores sino de geometría: el radial mide un 60 % del ALTO, y en una
+   pantalla de 390x575 esos 345 px de radio cubren los 575 de largo, mientras
+   que en un escritorio de 1536 dejan 230 px de flanco a cada lado por donde
+   respira el bodegón.
+   Aquí el radial se encoge hasta ser una mancha detrás del texto y el lineal
+   suelta la franja de arriba, así que la foto vuelve a verse por el borde
+   superior y por los lados sin tocar el contraste del titular.
+   Medido sobre la foto más clara de las tres (chacinas, 0,61 de media) con
+   las fotos al 55 %: detrás del párrafo quedan ~0,05 de luminancia, que dan
+   9,8:1 contra el crema del texto. El mínimo exigido es 4,5:1. */
+@media (max-width: 639px) {
+  .velo-hero {
+    background:
+      radial-gradient(60% 34% at 50% 47%,
+        rgba(14, 14, 17, 0.7) 0%,
+        rgba(14, 14, 17, 0.36) 62%,
+        transparent 92%),
+      linear-gradient(180deg,
+        rgba(14, 14, 17, 0.45) 0%,
+        rgba(14, 14, 17, 0.1) 26%,
+        rgba(14, 14, 17, 0.16) 60%,
+        rgba(14, 14, 17, 0.62) 100%);
+  }
+}
+
 /* El blanco puro corta con la crema del pie; esto lo templa hacia abajo. */
 .fondo-calido {
   background: linear-gradient(180deg, #ffffff 0%, #fffdf8 55%, #fdf9f0 100%);

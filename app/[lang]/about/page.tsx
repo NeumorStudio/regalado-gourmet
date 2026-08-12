@@ -11,5 +11,5 @@ export async function generateMetadata({
 
 export default async function Pagina({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return <PaginaTexto lang={lang} nombre="about" retrato />;
+  return <PaginaTexto lang={lang} nombre="about" retrato foto="/ambiente/quienes-somos.jpg" />;
 }

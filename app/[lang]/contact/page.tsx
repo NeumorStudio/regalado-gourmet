@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { esIdioma, metadatos, titular, cuerpo, CONTACTO, T, type Idioma } from "@/lib/contenido";
 
@@ -22,13 +23,26 @@ export default async function Contacto({
 
   return (
     <>
-      <section className="border-b border-linea bg-crema">
-        <div className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
+      {/* La misma cabecera oscura que las categorías y "quiénes somos": es la
+          pieza que ata todas las páginas de la web a un solo lenguaje.
+          `abre-oscuro` y `ancla-cabecera` son las que gobiernan la barra
+          flotante; sin ellas el menú entra blanco sobre fondo blanco. */}
+      <section className="abre-oscuro relative overflow-hidden bg-negro text-white">
+        <Image
+          src="/ambiente/contacto.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-45"
+        />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-negro via-negro/70 to-negro/30" />
+        <div className="ancla-cabecera relative mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
           <h1 className="text-balance" style={{ fontSize: "var(--text-titulo)", lineHeight: 1.12 }}>
             {titular(l, "contact")}
           </h1>
           <div className="filete my-6" />
-          <p className="max-w-2xl text-lg text-tinta-2 text-pretty">{intro}</p>
+          <p className="max-w-2xl text-lg text-white/80 text-pretty">{intro}</p>
         </div>
       </section>
 

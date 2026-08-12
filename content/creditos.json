@@ -22,6 +22,26 @@
     { "fichero": "monodosis.jpg", "uso": "Monodosis", "escena": "Mesa de desayuno de hotel con taza de porcelana y monodosis en blanco, sin imprimir" },
     { "fichero": "infusiones.jpg", "uso": "Infusiones y tés", "escena": "Tetera de vidrio en infusión, manzanilla y tila sueltas sobre pizarra" },
     { "fichero": "vinos.jpg", "uso": "Vinos", "escena": "Botellas sin etiqueta tumbadas en botellero de piedra y copa de tinto" },
-    { "fichero": "tomates.jpg", "uso": "Tomates", "escena": "Tomate seco en aceite en cuenco de barro, tomate de rama y orégano" }
-  ]
+    { "fichero": "tomates.jpg", "uso": "Tomates", "escena": "Tomate seco en aceite en cuenco de barro, tomate de rama y orégano" },
+    { "fichero": "quienes-somos.jpg", "uso": "cabecera de Quiénes somos", "escena": "Mesa larga de roble con la selección repartida, el fondo cayendo a negro" },
+    { "fichero": "contacto.jpg", "uso": "cabecera de Contacto", "escena": "Rincón de oficina: aceitera sin etiqueta, cuaderno y café con luz de ventana" }
+  ],
+
+  "fotos_de_ficha": {
+    "nota": "Las 63 fichas del catálogo. Generadas el 11/08/2026, no fotografiadas. Sustituyen a los packshots de proveedor, que llevaban marca ajena visible —Borges, Sánchez Alcaraz, Caprico Andaluz, Dehesa de los Llanos— y son justo lo que el cliente no quiere enseñar: quien las veía podía saltárselo e ir al fabricante. Ninguna representa un envase concreto: son bodegones del PRODUCTO, sin etiqueta posible. SUSTITUIR por fotos propias del cliente cuando las envíe, conservando el nombre del fichero. OJO: Next cachea las versiones optimizadas en .next/dev/cache/images; si se cambia un fichero sin cambiar de nombre hay que borrar esa carpeta o se sigue sirviendo la anterior.",
+    "por_que_todas_iguales": "El catálogo antiguo tenía 32 relaciones de aspecto distintas, 31 anchos (trece fotos medían 160 px y se servían escaladas a 680), tres formatos mezclados y el brillo medio yendo de 91 a 245. No había un solo parámetro constante, y eso es lo que hacía que no pareciera profesional por mucho que cada foto suelta estuviese bien. Ahora las 63 comparten receta, encuadre, luz, formato y tamaño.",
+
+    "por_que_macro": "La PRIMERA tanda se rehízo entera. Eran bodegones correctos pero el producto salía a media distancia, ocupando un tercio del encuadre y rodeado de mesa, ventana y atrezzo: no se veía la textura y no apetecía. El salchichón de bellota era el caso claro —colgado al fondo con bellotas alrededor, sin corte a la vista—. Dos frases del prompt lo causaban: `85mm lens` y `resting on aged dark oak`, que juntas le piden al modelo una ESCENA DE MESA; el `fills about 65% of the frame` no lo compensa, se ignora. Lo que sí funciona es `macro lens, camera 25cm` + `FILLS THE ENTIRE FRAME edge to edge: no table, no room, no window` y describir la textura concreta.",
+
+    "receta": "Extreme close-up food photography, macro lens, camera 25cm from the subject. The product FILLS THE ENTIRE FRAME edge to edge: no table visible, no room, no window, no props. Front tack sharp so every detail of the surface texture reads, background falling to near black. Single soft raking light from the upper left, warm amber and cream tones, fine film grain. SUBJECT: <el producto, con su textura y su color descritos>. Appetising: <corte fresco, brillo, jugosidad>. Square composition. Absolutely no text, no labels, no logos, no printed packaging, no branding of any kind.",
+
+    "filtro_nsfw": "Nueve prompts fueron rechazados por el filtro con un falso positivo, todos de aceitunas, sal y pimienta. Lo dispara el vocabulario de apetitosidad en macro extremo: `plump`, `wet`, `moist`, `flesh`, `taut skins`, `beaded`, `mouth-watering`, `split open showing the flesh`, y `heap of fine white powder` para la sal. Pasan sin problema reescritos en lenguaje culinario neutro: `coated in brine so they reflect the light`, `arranged closely across the frame`, `the interior visible`. La textura no se pierde; lo que se quita es el adjetivo, no el detalle.",
+
+    "producto_verificado": "Tres errores de la primera tanda salían de no saber cómo es el producto, no de la foto. CULAR es una pieza recta de 40-60 mm de calibre en tripa gruesa, no una herradura (ese es otro formato); VELA es delgada, recta y de 400-450 g. El LOMO EMBUCHADO al corte es rosado-rojizo con vetas de grasa blanca asimétricas y un anillo de pimentón en el canto: si sale pálido parece jamón cocido. El MANCHEGO tiene ojos PEQUEÑOS y desigualmente repartidos, nunca agujeros de emmental, y la pleita —la marca en zigzag del esparto— va en el canto. La PALETA da lonchas más pequeñas y de rojo más intenso que el jamón.",
+
+    "modelo": "nano_banana_2 (Google), vía Higgsfield. 66 de la primera tanda + 74 de la segunda (incluidos reintentos), 258 créditos en total",
+    "salida": "1:1 a 2048x2048, instaladas a 1200 px en JPEG q82 progresivo",
+    "por_que_1_1": "La rejilla es `aspect-square` y ahora las sirve con `object-cover` sin relleno. Las de ambiente siguen a 3:2 porque hacen de cabecera panorámica y de tarjeta 4:5 a la vez.",
+    "cuidado": "Un aceite sin etiqueta es igual que otro aceite sin etiqueta: los siete AOVE se distinguen por el atrezzo (rama de olivo, estuche, copa de cata, lata lisa) y sobre todo por el antetítulo de la ficha, que es quien dice si es Selección, Singular o D.O. Baena. Si algún día se quita el antetítulo, esas siete fichas dejan de diferenciarse."
+  }
 }

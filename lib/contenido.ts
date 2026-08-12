@@ -676,6 +676,8 @@ export function metadatos(lang: Idioma, nombre: string) {
       siteName: "González-Regalado Gourmet",
       locale: lang,
       type: "website" as const,
+      // misma tarjeta que la portada: estas páginas no tienen foto propia
+      images: [{ url: "/portada-og.jpg", width: 1200, height: 675 }],
     },
   };
 }

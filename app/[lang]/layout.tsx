@@ -58,6 +58,10 @@ export async function generateMetadata({
       siteName: "González-Regalado Gourmet",
       locale: lang,
       type: "website",
+      /* Sin esto, compartir el enlace en WhatsApp o LinkedIn dejaba una
+         tarjeta con el titular y un hueco gris. Las páginas de categoría ya
+         ponen la suya; esta es la de todas las demás. */
+      images: [{ url: "/portada-og.jpg", width: 1200, height: 675 }],
     },
   };
 }

@@ -59,15 +59,24 @@ function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
     <ul className="mt-8 grid grid-cols-2 items-start gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
       {fichas.map((f) => (
         <li key={f.clave} className="group flex flex-col">
-          <div className="grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-white">
+          {/* `object-cover` sin relleno, y el fondo en negro y no en blanco.
+              Con los recortes de proveedor sobre blanco hacía falta
+              `object-contain` y un margen para que el envase no llegara al
+              canto; ahora la ficha es un bodegón cuadrado que se compuso ya
+              con su aire dentro, y dejarlo `contain` sobre blanco lo dibujaba
+              flotando en un marco claro que partía la rejilla en dos
+              lenguajes. El negro es además lo que hay bajo la foto mientras
+              carga, así que no hay destello blanco. */}
+          <div className="grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-negro">
             {f.foto ? (
               <Image
                 src={f.foto}
                 alt={f.titulo}
-                width={340}
-                height={340}
+                width={680}
+                height={680}
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                 loading="lazy"
-                className="h-full w-full object-contain p-4 transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
+                className="h-full w-full object-cover transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
               />
             ) : (
               <div className="grid h-full w-full place-items-center bg-crema px-3 text-center font-sans text-[0.65rem] uppercase tracking-wider text-tinta-3">

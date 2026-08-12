@@ -533,9 +533,16 @@ body::after {
    El filete dorado de la cabecera hace de barra de progreso. No se añade
    ningún elemento: es el mismo borde de abajo, que se escala.
    Va en la barra sólida y no en la flotante: sobre el hero en negro una
-   línea dorada creciendo compite con el titular. */
-.cabecera[data-solida] .avance {
+   línea dorada creciendo compite con el titular.
+   El reposo es `scaleX(0)` y tiene que estar escrito: sin animación el
+   elemento NO desaparece, se queda a escala 1, y sobre el hero se veía una
+   línea dorada de lado a lado cortando el bodegón. Que una animación no corra
+   no significa que lo que anima esté oculto. */
+.avance {
   transform-origin: left;
+  transform: scaleX(0);
+}
+.cabecera[data-solida] .avance {
   animation: avanzar linear both;
   animation-timeline: scroll();
 }

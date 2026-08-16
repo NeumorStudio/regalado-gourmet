@@ -118,21 +118,38 @@ function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
           {/* En qué formatos se sirve. Lo pidió el cliente para el queso y el
               embutido: "lo más importante es que se vea en los formatos que se
               pueden entregar". Es el tamaño de la pieza, no la unidad de
-              venta: "caja de 24" sigue siendo tarifa y no se publica. */}
+              venta: "caja de 24" sigue siendo tarifa y no se publica.
+              Los términos ya no se pintan: la curación se reconoce por ir en
+              versalitas doradas y los pesos por ir en placa, que es como lo
+              resuelve una etiqueta y no una ficha técnica. */}
           {f.formatos.length > 0 && (
-            <dl className="mt-2.5 border-t border-linea pt-2.5 font-sans text-xs">
-              {f.formatos.map((g) => (
-                <div key={g.forma || "todos"} className="flex gap-2 py-0.5">
-                  {/* Sin forma marcada no hay término que enseñar, pero el
-                      `dt` tiene que existir: un `dd` suelto no es una lista de
-                      definición válida. */}
-                  <dt className={g.forma ? "shrink-0 text-tinta-3" : "sr-only"}>
-                    {g.forma ? t[g.forma] : t.formatos}
-                  </dt>
-                  <dd className="text-tinta-2">{g.valores.join(" · ")}</dd>
-                </div>
-              ))}
-            </dl>
+            <>
+              <div className="filete mt-3.5" />
+              <dl className="mt-3">
+                {f.formatos.map((g) => (
+                  <div key={g.forma || "todos"} className="mt-2.5 first:mt-0">
+                    {/* El `dt` sigue existiendo aunque no se vea: sin él, un
+                        lector de pantalla suelta una ristra de cifras sin
+                        decir de qué son. Y un `dd` sin `dt` tampoco es una
+                        lista de definición válida. */}
+                    <dt className="sr-only">{g.forma ? t[g.forma] : t.formatos}</dt>
+                    <dd>
+                      {g.forma === "curacion" ? (
+                        <p className="curaciones">{g.valores.join(" · ")}</p>
+                      ) : (
+                        <ul className="formatos">
+                          {g.valores.map((v) => (
+                            <li key={v} className="placa-formato">
+                              {v}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </>
           )}
         </li>
       ))}

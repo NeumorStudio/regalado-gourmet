@@ -555,6 +555,54 @@ body::after {
    foto, para que el canto entre las dos no dibujara una costura. Ahora la
    foto es el fondo de toda la sección y no hay canto que fundir. */
 
+/* ------------------------------------------ formatos y curación de la ficha
+   Los pesos van en placas con el filete impreso por dentro: el mismo gesto que
+   los botones y el borde de las tarjetas, así que se leen como impresas sobre
+   la etiqueta. Sin sombra y sin `hover` a propósito —no se pulsan, y cualquier
+   reacción al cursor prometería que sí—, que es lo único que separa una placa
+   impresa de un botón de talla en una tienda. */
+.formatos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.placa-formato {
+  position: relative;
+  padding: 0.34rem 0.6rem;
+  border: 1px solid var(--color-linea);
+  border-radius: 2px;
+  background: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--color-tinta-2);
+  /* "½ pieza" y "3 × 250 g" son una unidad: no se parten. */
+  white-space: nowrap;
+}
+.placa-formato::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid var(--color-oro);
+  border-radius: 1px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* La curación no es un dato de la ficha, es lo que el producto ES: va en
+   versalitas doradas, como el antetítulo. Más pequeña que `.etiqueta` porque
+   aquí tienen que caber tres palabras largas en una tarjeta de 230 px. */
+.curaciones {
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--color-oro-tinta);
+}
+
 /* ------------------------------------------- comparador de fotografía
    Solo existe mientras la web está en pruebas. Las dos fotos van en el HTML y
    aquí se decide cuál se ve, así que cambiar de una a otra no vuelve a pedir

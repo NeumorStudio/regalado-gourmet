@@ -30,86 +30,32 @@
  },
  "ferias": [
   {
-   "id": "alimentaria-2027",
-   "nombre": "Alimentaria",
-   "ciudad": "Barcelona",
+   "id": "sial-paris-2026",
+   "nombre": "SIAL Paris",
+   "ciudad": "Paris",
    "pais": {
-    "es": "España",
-    "en": "Spain",
-    "nb": "Spania",
-    "fr": "Espagne",
-    "pt": "Espanha",
-    "it": "Spagna",
-    "de": "Spanien"
+    "es": "Francia",
+    "en": "France",
+    "nb": "Frankrike",
+    "fr": "France",
+    "pt": "França",
+    "it": "Francia",
+    "de": "Frankreich"
    },
-   "inicio": "2027-03-22",
-   "fin": "2027-03-25",
-   "stand": "Pabellón 3, stand C-114",
-   "url": "https://www.alimentaria.com",
-   "foto": "/ambiente/quesos.jpg",
+   "inicio": "2026-10-17",
+   "fin": "2026-10-21",
+   "url": "https://www.sialparis.com",
+   "foto": "/ferias/sial-paris-2026.jpg",
+   "reunion": true,
    "nota": {
-    "es": "Presentación de la selección de quesos manchegos D.O.P. y de los ibéricos.",
-    "en": "",
-    "nb": "",
-    "fr": "",
-    "pt": "",
-    "it": "",
-    "de": ""
-   }
-  },
-  {
-   "id": "gourmets-2027",
-   "nombre": "Salón Gourmets",
-   "ciudad": "Madrid",
-   "pais": {
-    "es": "España",
-    "en": "Spain",
-    "nb": "Spania",
-    "fr": "Espagne",
-    "pt": "Espanha",
-    "it": "Spagna",
-    "de": "Spanien"
-   },
-   "inicio": "2027-04-12",
-   "fin": "2027-04-15",
-   "url": "https://www.gourmets.net",
-   "foto": "",
-   "nota": {
-    "es": "",
-    "en": "",
-    "nb": "",
-    "fr": "",
-    "pt": "",
-    "it": "",
-    "de": ""
-   }
-  },
-  {
-   "id": "anuga-2025",
-   "nombre": "Anuga",
-   "ciudad": "Colonia",
-   "pais": {
-    "es": "Alemania",
-    "en": "Germany",
-    "nb": "Tyskland",
-    "fr": "Allemagne",
-    "pt": "Alemanha",
-    "it": "Germania",
-    "de": "Deutschland"
-   },
-   "inicio": "2025-10-04",
-   "fin": "2025-10-08",
-   "foto": "/ambiente/aceites.jpg",
-   "nota": {
-    "es": "Primera presentación del catálogo en el mercado alemán.",
-    "en": "",
-    "nb": "",
-    "fr": "",
-    "pt": "",
-    "it": "",
-    "de": ""
+    "es": "Asistimos como visitantes, con acceso a la zona de reuniones. Escríbanos y concertamos una cita durante la feria.",
+    "en": "We attend as visitors, with access to the meeting area. Write to us and we will arrange a meeting during the show.",
+    "nb": "Vi deltar som besøkende, med tilgang til møteområdet. Ta kontakt, så avtaler vi et møte under messen.",
+    "fr": "Nous y serons comme visiteurs, avec accès à l'espace réunions. Écrivez-nous et nous fixerons un rendez-vous pendant le salon.",
+    "pt": "Estaremos como visitantes, com acesso à zona de reuniões. Escreva-nos e marcamos um encontro durante a feira.",
+    "it": "Partecipiamo come visitatori, con accesso all'area riunioni. Scriveteci e fissiamo un incontro durante la fiera.",
+    "de": "Wir sind als Besucher vor Ort, mit Zugang zum Meetingbereich. Schreiben Sie uns und wir vereinbaren einen Termin während der Messe."
    }
   }
- ],
- "_DEMO": "ATENCIÓN: las entradas de la lista son de MUESTRA, inventadas para enseñar el diseño al cliente. Vaciar la lista antes de publicar en el dominio real, o sustituirlas por datos verdaderos."
+ ]
 }

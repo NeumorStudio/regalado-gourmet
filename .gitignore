@@ -41,6 +41,11 @@ yarn-error.log*
 # resultados de búsqueda de imágenes, no forman parte del proyecto
 /.firecrawl
 
+# material de trabajo del cliente y catálogo previo: tarifas de proveedor con
+# precios y márgenes, correos y fotos en bruto. Lo que entra en la web se copia
+# a public/ ya tratado; el original no se versiona.
+/material
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

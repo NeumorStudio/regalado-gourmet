@@ -104,6 +104,24 @@ export type Grupo = {
   antetitulo: Multi;
   titulo: Multi;
   caracter: Multi;
+  /** Fuera de la web, pero sin borrar. Los frutos secos esperan a que el
+   *  cliente confirme que tiene permiso para comercializarlos; el día que
+   *  llegue se quita esta línea y vuelven, con su ficha intacta. */
+  oculto?: boolean;
+  /** En qué formatos se sirve. No es la unidad de venta —"caja de 24" es
+   *  tarifa y no se publica—: es el tamaño de la pieza, que para el queso y
+   *  el embutido es lo primero que el comprador quiere ver.
+   *  Un valor es texto tal cual cuando es una cifra ("150 g", igual en los
+   *  siete idiomas) o va traducido cuando es una palabra ("Pieza entera"). */
+  formatos?: Formato[];
+};
+export type Formato = {
+  /** El término que encabeza la fila, o "" para una fila sin término visible.
+   *  Cada valor es una clave de `T`, así que la etiqueta sale traducida sola.
+   *  "formatos" es la genérica: se usa cuando la forma ya la dice el
+   *  antetítulo de la ficha y repetirla en la lista sobraría. */
+  forma: "" | "pieza" | "cuna" | "curacion" | "formatos";
+  valores: (string | Multi)[];
 };
 export type Subcategoria = { slug: string; nombre: Record<Idioma, string> };
 export type Categoria = {
@@ -178,6 +196,12 @@ export type Ficha = {
   titulo: string;
   caracter: string;
   foto: string;
+  /** La del catálogo del proveedor, cuando la ficha ha estrenado otra. Es la
+   *  misma que serviría de respaldo si la ficha no fijara foto, así que no
+   *  hace falta guardarla en ninguna parte: ya está en su fila de tarifa.
+   *  La usa el comparador de `CambioFotos`. "" si no hay otra que enseñar. */
+  fotoProveedor: string;
+  formatos: { forma: Formato["forma"]; valores: string[] }[];
 };
 
 /**
@@ -187,7 +211,8 @@ export type Ficha = {
  *
  * Una fila sin ficha sale con su nombre en crudo antes que no salir: es un
  * producto nuevo al que todavía no se le ha escrito el nombre de escaparate,
- * y verlo feo en la web avisa; verlo desaparecer, no.
+ * y verlo feo en la web avisa; verlo desaparecer, no. Una ficha marcada como
+ * `oculto` sí desaparece, que para eso está.
  */
 export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
   const fichas: Ficha[] = [];
@@ -197,11 +222,11 @@ export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
     if (!g) {
       fichas.push({
         clave: p.id, antetitulo: "", titulo: p.nombre,
-        caracter: p.formato, foto: p.foto,
+        caracter: p.formato, foto: p.foto, fotoProveedor: "", formatos: [],
       });
       continue;
     }
-    if (hechos.has(g.slug)) continue;
+    if (g.oculto || hechos.has(g.slug)) continue;
     hechos.add(g.slug);
     fichas.push({
       clave: g.slug,
@@ -210,6 +235,11 @@ export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
       caracter: enIdioma(g.caracter, lang),
       // si la ficha no fija foto se queda con la de su primera fila
       foto: g.foto || p.foto,
+      fotoProveedor: g.foto && p.foto !== g.foto ? p.foto : "",
+      formatos: (g.formatos ?? []).map((f) => ({
+        forma: f.forma,
+        valores: f.valores.map((v) => (typeof v === "string" ? v : enIdioma(v, lang))),
+      })),
     });
   }
   return fichas;
@@ -228,6 +258,10 @@ export type Feria = {
   url?: string;
   foto?: string;
   nota?: Partial<Record<Idioma, string>>;
+  /** Se puede pedir cita durante la feria. Sin formulario ni backend: un
+   *  `mailto:` con el asunto y el cuerpo ya escritos, que es lo que la web
+   *  usa para todo lo demás y funciona desde el primer día. */
+  reunion?: boolean;
 };
 
 export const FERIAS = ferias.ferias as Feria[];
@@ -305,9 +339,10 @@ type Clave =
   | "productosIntro" | "precioNota" | "escaparateTitulo" | "escaparateTexto"
   | "contactoTitulo" | "menu" | "cerrar"
   | "verCategoria" | "enPreparacion" | "enPreparacionNota" | "volverCatalogo"
-  | "gamaPremium" | "gamaSeleccion"
+  | "gamaPremium" | "gamaSeleccion" | "pieza" | "cuna" | "curacion" | "formatos"
   | "ferias" | "feriasIntro" | "feriasProximas" | "feriasPasadas" | "feriasVacio"
   | "publicaciones" | "publicacionesIntro" | "publicacionesVacio" | "leer"
+  | "pedirReunion" | "asuntoReunion"
   | "respuesta" | "derechos" | "disenadoPor";
 
 export const T: Record<Idioma, Record<Clave, string>> = {
@@ -332,6 +367,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     volverCatalogo: "Volver al catálogo",
     gamaPremium: "Gama premium",
     gamaSeleccion: "Gama selección",
+    pieza: "Pieza",
+    cuna: "Cuña",
+    curacion: "Curación",
+    formatos: "Formatos",
     ferias: "Ferias y eventos",
     feriasIntro:
       "Dónde encontrarnos. Las ferias en las que participamos y aquellas en las que ya hemos estado.",
@@ -345,6 +384,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos reuniendo las entrevistas y publicaciones. Escríbanos si desea material sobre la casa.",
     leer: "Leer",
+    pedirReunion: "Solicitar una reunión",
+    asuntoReunion: "Reunión en {feria}",
     respuesta:
       "Responderemos a su consulta a la mayor brevedad posible.",
     derechos: "Todos los derechos reservados.",
@@ -371,6 +412,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     volverCatalogo: "Back to the catalogue",
     gamaPremium: "Premium range",
     gamaSeleccion: "Selection range",
+    pieza: "Whole",
+    cuna: "Wedge",
+    curacion: "Curing",
+    formatos: "Formats",
     ferias: "Trade fairs and events",
     feriasIntro:
       "Where to find us. The fairs we are taking part in and those we have already attended.",
@@ -384,6 +429,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "We are gathering the interviews and features. Write to us if you would like material about the house.",
     leer: "Read",
+    pedirReunion: "Request a meeting",
+    asuntoReunion: "Meeting at {feria}",
     respuesta:
       "We will respond to your inquiry as soon as possible.",
     derechos: "All rights reserved.",
@@ -410,6 +457,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     volverCatalogo: "Tilbake til katalogen",
     gamaPremium: "Premium-serie",
     gamaSeleccion: "Utvalgt serie",
+    pieza: "Hel ost",
+    cuna: "Kile",
+    curacion: "Modning",
+    formatos: "Formater",
     ferias: "Messer og arrangementer",
     feriasIntro:
       "Hvor du finner oss. Messene vi deltar på og dem vi allerede har vært på.",
@@ -423,6 +474,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Vi samler intervjuene og omtalene. Ta kontakt hvis du ønsker materiale om huset.",
     leer: "Les",
+    pedirReunion: "Be om et møte",
+    asuntoReunion: "Møte på {feria}",
     respuesta:
       "Vi vil svare på din henvendelse så snart som mulig.",
     derechos: "Alle rettigheter reservert.",
@@ -449,6 +502,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     volverCatalogo: "Retour au catalogue",
     gamaPremium: "Gamme premium",
     gamaSeleccion: "Gamme sélection",
+    pieza: "Pièce",
+    cuna: "Portion",
+    curacion: "Affinage",
+    formatos: "Formats",
     ferias: "Salons et événements",
     feriasIntro:
       "Où nous rencontrer. Les salons auxquels nous participons et ceux auxquels nous avons déjà participé.",
@@ -462,6 +519,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Nous réunissons les entretiens et les articles. Écrivez-nous si vous souhaitez de la documentation sur la maison.",
     leer: "Lire",
+    pedirReunion: "Demander un rendez-vous",
+    asuntoReunion: "Rendez-vous à {feria}",
     respuesta:
       "Nous répondrons à votre demande dans les meilleurs délais.",
     derechos: "Tous droits réservés.",
@@ -488,6 +547,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     volverCatalogo: "Voltar ao catálogo",
     gamaPremium: "Gama premium",
     gamaSeleccion: "Gama seleção",
+    pieza: "Peça",
+    cuna: "Cunha",
+    curacion: "Cura",
+    formatos: "Formatos",
     ferias: "Feiras e eventos",
     feriasIntro:
       "Onde nos encontrar. As feiras em que participamos e aquelas onde já estivemos.",
@@ -501,6 +564,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos a reunir as entrevistas e publicações. Escreva-nos se desejar material sobre a casa.",
     leer: "Ler",
+    pedirReunion: "Solicitar uma reunião",
+    asuntoReunion: "Reunião na {feria}",
     respuesta:
       "Responderemos à sua consulta com a maior brevidade possível.",
     derechos: "Todos os direitos reservados.",
@@ -527,6 +592,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     volverCatalogo: "Torna al catalogo",
     gamaPremium: "Gamma premium",
     gamaSeleccion: "Gamma selezione",
+    pieza: "Forma",
+    cuna: "Spicchio",
+    curacion: "Stagionatura",
+    formatos: "Formati",
     ferias: "Fiere ed eventi",
     feriasIntro:
       "Dove trovarci. Le fiere a cui partecipiamo e quelle a cui siamo già stati.",
@@ -540,6 +609,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Stiamo raccogliendo le interviste e gli articoli. Ci scriva se desidera materiale sulla casa.",
     leer: "Leggi",
+    pedirReunion: "Richiedere un incontro",
+    asuntoReunion: "Incontro a {feria}",
     respuesta:
       "Risponderemo alla sua richiesta nel più breve tempo possibile.",
     derechos: "Tutti i diritti riservati.",
@@ -566,6 +637,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     volverCatalogo: "Zurück zum Katalog",
     gamaPremium: "Premium-Linie",
     gamaSeleccion: "Auswahl-Linie",
+    pieza: "Laib",
+    cuna: "Stück",
+    curacion: "Reifung",
+    formatos: "Formate",
     ferias: "Messen und Veranstaltungen",
     feriasIntro:
       "Wo Sie uns finden. Die Messen, an denen wir teilnehmen, und jene, auf denen wir bereits waren.",
@@ -579,6 +654,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Wir stellen die Interviews und Berichte gerade zusammen. Schreiben Sie uns, wenn Sie Material über das Haus wünschen.",
     leer: "Lesen",
+    pedirReunion: "Termin anfragen",
+    asuntoReunion: "Termin auf der {feria}",
     respuesta:
       "Wir beantworten Ihre Anfrage so schnell wie möglich.",
     derechos: "Alle Rechte vorbehalten.",

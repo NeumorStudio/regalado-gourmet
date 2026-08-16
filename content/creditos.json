@@ -1,27 +1,124 @@
 {
-  "nota": "Fotografía de ambiente generada con IA el 11/08/2026, no fotografiada. Sustituye a las provisionales de Unsplash. Son imágenes de atmósfera —aceite, queso, ibéricos, especias— y ninguna representa un artículo concreto del catálogo ni lleva marca de proveedor, que es el motivo por el que se generaron. SUSTITUIR por fotos propias del cliente cuando las envíe: basta con reemplazar el fichero en public/ambiente/ conservando el nombre. OJO: Next cachea las versiones optimizadas en .next/dev/cache/images; si se cambia un fichero sin cambiar de nombre hay que borrar esa carpeta o se sigue sirviendo la anterior.",
+ "nota": "Este fichero documenta el origen de TODA la fotografía de la web: la de ambiente en `fotos`, la de producto generada en `productos`, y el resto en `otras_secciones`. Las fotos de producto que no aparecen aquí vienen de los catálogos de proveedor.",
+ "nota_ambiente": "Fotografía de ambiente. TRES son del cliente (quesos, jamones-dop, infusiones), de material que envió por correo en agosto de 2026; el resto están generadas con IA el 11/08/2026 y siguen siendo provisionales. Ninguna representa un artículo concreto del catálogo ni lleva marca de proveedor. SUSTITUIR por fotos propias conservando el nombre del fichero. OJO: Next cachea las versiones optimizadas en .next/dev/cache/images; si se cambia un fichero sin cambiar de nombre hay que borrar esa carpeta o se sigue sirviendo la anterior.",
+ "generacion": {
+  "modelo": "nano_banana_pro (Google), vía Higgsfield",
+  "fecha": "2026-08-11",
+  "salida": "3:2 a 2528x1696, instaladas a 2400 px de ancho en JPEG q82",
+  "coste": "28 créditos",
+  "receta": "Bodegón editorial para casa gourmet española. Una sola luz de ventana en dirección desde arriba a la izquierda, claroscuro profundo cayendo a un fondo casi negro, tonos ámbar y crema, poca profundidad de campo, 85 mm, grano de película. Sin texto, etiquetas, logotipos ni envases impresos en ningún plano.",
+  "encuadre": "3:2 a propósito: el mismo fichero sirve de tarjeta 4:5 en la rejilla y de cabecera panorámica en la página de categoría, y a 3:2 los dos recortes salen bien. El asunto va centrado por eso."
+ },
+ "fotos": [
+  {
+   "fichero": "hero-aceite.jpg",
+   "uso": "portada",
+   "escena": "Aceitera de vidrio sin etiqueta, aceitunas verdes y rama de olivo sobre roble oscuro"
+  },
+  {
+   "fichero": "aceites.jpg",
+   "uso": "Aceites de Oliva Virgen Extra Premium y D.O.",
+   "escena": "Tres botellas de vidrio verde sin etiquetar sobre piedra, plato de cata con aceite"
+  },
+  {
+   "fichero": "aceites-horeca.jpg",
+   "uso": "Aceites de Oliva Virgen Extra HORECA",
+   "escena": "Lata metálica lisa en cocina profesional, un plato aliñándose al fondo"
+  },
+  {
+   "fichero": "quesos.jpg",
+   "uso": "Quesos Manchegos D.O.P.",
+   "escena": "Ruedas de manchego artesano en la quesería: la pleita en zigzag del canto y la flor de cuatro pétalos de la cara. Sin marca a la vista.",
+   "origen": "Fotografía de Dehesa de los Llanos. El cliente la envió reducida (1200x1189) en su correo; aquí va el original a 2000x1982 de su propio CDN. Se usa por ser la única del juego sin logotipo: no hay nada que borrar. CONFIRMAR con Dehesa que se puede publicar."
+  },
+  {
+   "fichero": "jamones.jpg",
+   "uso": "Jamones Ibéricos y Serrano",
+   "escena": "Lonchas cortadas a cuchillo en plato blanco y jamonero"
+  },
+  {
+   "fichero": "jamones-dop.jpg",
+   "uso": "Jamones Ibéricos D.O.P.",
+   "escena": "Del cliente: cerdos ibéricos pastando en la dehesa (Los Pedroches)",
+   "origen": "cliente, agosto 2026"
+  },
+  {
+   "fichero": "chacinas.jpg",
+   "uso": "Embutidos Ibéricos",
+   "escena": "Chorizos y salchichones colgados en secadero, uno cortado en tabla"
+  },
+  {
+   "fichero": "aceitunas.jpg",
+   "uso": "Aceitunas",
+   "escena": "Cuencos de cerámica con manzanilla, gordal y aceituna negra, laurel y ajo"
+  },
+  {
+   "fichero": "frutos-secos.jpg",
+   "uso": "Frutos secos",
+   "escena": "Almendra marcona, pistacho, avellana y pasas en catas de madera sobre lino"
+  },
+  {
+   "fichero": "sal-y-especias.jpg",
+   "uso": "Otros productos y salsas",
+   "escena": "Escamas de sal, pimienta en mortero y pimentón en cuencos sobre pizarra"
+  },
+  {
+   "fichero": "monodosis.jpg",
+   "uso": "Monodosis",
+   "escena": "Mesa de desayuno de hotel con taza de porcelana y monodosis en blanco, sin imprimir"
+  },
+  {
+   "fichero": "infusiones.jpg",
+   "uso": "Infusiones y tés",
+   "escena": "Del cliente: latas de infusión sobre madera con romero y naranja seca",
+   "origen": "cliente, agosto 2026"
+  },
+  {
+   "fichero": "vinos.jpg",
+   "uso": "Vinos",
+   "escena": "Botellas sin etiqueta tumbadas en botellero de piedra y copa de tinto"
+  },
+  {
+   "fichero": "tomates.jpg",
+   "uso": "Tomates",
+   "escena": "Tomate seco en aceite en cuenco de barro, tomate de rama y orégano"
+  }
+ ],
+ "productos": {
+  "nota": "Fotografía de producto generada con IA. Las cuatro fichas de queso manchego iban con los recortes del catálogo de Dehesa de los Llanos: fondo blanco con reflejo, la caja de la marca al lado, el logotipo en la esquina y la marca impresa en la etiqueta pegada al queso. Retocarlas no valía —la marca va sobre el propio producto— y el cliente pidió expresamente «quitar las marcas o no dar muchas pistas». Una rueda de manchego con su pleita en zigzag y la flor de la cara no identifica a ningún fabricante: eso es la D.O.P., no la marca. SUSTITUIR por las del cliente cuando las consiga, conservando el nombre del fichero (y borrando .next/dev/cache/images).",
   "generacion": {
-    "modelo": "nano_banana_pro (Google), vía Higgsfield",
-    "fecha": "2026-08-11",
-    "salida": "3:2 a 2528x1696, instaladas a 2400 px de ancho en JPEG q82",
-    "coste": "28 créditos",
-    "receta": "Bodegón editorial para casa gourmet española. Una sola luz de ventana en dirección desde arriba a la izquierda, claroscuro profundo cayendo a un fondo casi negro, tonos ámbar y crema, poca profundidad de campo, 85 mm, grano de película. Sin texto, etiquetas, logotipos ni envases impresos en ningún plano.",
-    "encuadre": "3:2 a propósito: el mismo fichero sirve de tarjeta 4:5 en la rejilla y de cabecera panorámica en la página de categoría, y a 3:2 los dos recortes salen bien. El asunto va centrado por eso."
+   "modelo": "nano_banana_pro (Google), vía Higgsfield",
+   "fecha": "2026-08-16",
+   "salida": "1:1 a 1024x1024, instaladas a 800x800 en JPEG q82, que es la medida del resto del catálogo",
+   "receta": "Fotografía editorial de producto. Fondo de travertino claro y pared cálida desenfocada, luz suave desde arriba a la izquierda, sombra corta a la derecha, paleta crema y ámbar apagado, poca profundidad de campo, 85 mm, grano de película. Sujeto centrado con aire alrededor. Sin etiquetas, pegatinas, texto, logotipos ni envase de ningún tipo.",
+   "referencia": "La cuña y la rueda NO salen de la nada: llevan de referencia `GR-Reducida-scaled-1-1200x800.jpg` del material del cliente —una rueda de manchego con una cuña cortada, sobre madera, sin ninguna marca a la vista—, y de ahí sale la pasta con sus ojos irregulares y el tejido de esparto de la pleita. Se le pidió al modelo quedarse con ese queso y quitar todo lo demás: la tabla, la lavanda, las nueces y, en la rueda, el corte que le falta. Por el nombre del fichero (prefijo GR, medidas de WordPress) parece de la web anterior del cliente; CONFIRMAR con él que la foto es suya antes de dar por buena esta procedencia.",
+   "encuadre": "Cuadrado y sobre crema, no bodegón oscuro: la tarjeta de producto es blanca y pinta la foto con `object-contain`, así que una toma oscura sería un cuadrado negro flotando dentro de la tarjeta. La de ambiente sí es oscura porque va a sangre."
   },
   "fotos": [
-    { "fichero": "hero-aceite.jpg", "uso": "portada", "escena": "Aceitera de vidrio sin etiqueta, aceitunas verdes y rama de olivo sobre roble oscuro" },
-    { "fichero": "aceites.jpg", "uso": "Aceites de Oliva Virgen Extra Premium y D.O.", "escena": "Tres botellas de vidrio verde sin etiquetar sobre piedra, plato de cata con aceite" },
-    { "fichero": "aceites-horeca.jpg", "uso": "Aceites de Oliva Virgen Extra HORECA", "escena": "Lata metálica lisa en cocina profesional, un plato aliñándose al fondo" },
-    { "fichero": "quesos.jpg", "uso": "Quesos Manchegos D.O.P.", "escena": "Cuña de manchego con su corteza de pleita, nueces y romero sobre pizarra" },
-    { "fichero": "jamones.jpg", "uso": "Jamones Ibéricos y Serrano", "escena": "Lonchas cortadas a cuchillo en plato blanco y jamonero" },
-    { "fichero": "jamones-dop.jpg", "uso": "Jamones Ibéricos D.O.P.", "escena": "Pata entera en soporte de madera en bodega de piedra" },
-    { "fichero": "chacinas.jpg", "uso": "Embutidos Ibéricos", "escena": "Chorizos y salchichones colgados en secadero, uno cortado en tabla" },
-    { "fichero": "aceitunas.jpg", "uso": "Aceitunas", "escena": "Cuencos de cerámica con manzanilla, gordal y aceituna negra, laurel y ajo" },
-    { "fichero": "frutos-secos.jpg", "uso": "Frutos secos", "escena": "Almendra marcona, pistacho, avellana y pasas en catas de madera sobre lino" },
-    { "fichero": "sal-y-especias.jpg", "uso": "Otros productos y salsas", "escena": "Escamas de sal, pimienta en mortero y pimentón en cuencos sobre pizarra" },
-    { "fichero": "monodosis.jpg", "uso": "Monodosis", "escena": "Mesa de desayuno de hotel con taza de porcelana y monodosis en blanco, sin imprimir" },
-    { "fichero": "infusiones.jpg", "uso": "Infusiones y tés", "escena": "Tetera de vidrio en infusión, manzanilla y tila sueltas sobre pizarra" },
-    { "fichero": "vinos.jpg", "uso": "Vinos", "escena": "Botellas sin etiqueta tumbadas en botellero de piedra y copa de tinto" },
-    { "fichero": "tomates.jpg", "uso": "Tomates", "escena": "Tomate seco en aceite en cuenco de barro, tomate de rama y orégano" }
+   {
+    "fichero": "manchego-rueda.jpg",
+    "uso": "Queso Manchego D.O.P. · Pieza entera",
+    "escena": "Rueda entera sobre travertino, pleita de esparto tejida en el canto. Partiendo de la foto del cliente, con el corte que le falta reconstruido"
+   },
+   {
+    "fichero": "manchego-cuna.jpg",
+    "uso": "Queso Manchego D.O.P. · Cuña",
+    "escena": "Una cuña de pie, con la pasta y sus ojos a la vista y la corteza al fondo. Partiendo de la foto del cliente, sacada de la rueda que la acompañaba"
+   },
+   {
+    "fichero": "manchego-estuche.jpg",
+    "uso": "Estuche de degustación",
+    "escena": "Tres cuñas de las tres curaciones, de la más pálida a la más ambarina. Sin caja: la del proveedor lleva su marca"
+   },
+   {
+    "fichero": "manchego-bandeja.jpg",
+    "uso": "Bandeja gourmet",
+    "escena": "Cortado a mano en plato de cerámica crema, lascas irregulares con tiras de corteza"
+   }
   ]
+ },
+ "otras_secciones": {
+  "/publicaciones/isn-magazine-2026.jpg": "Retrato del fundador, el mismo que ilustra la entrevista en International Supermarket News. Original del cliente.",
+  "/ferias/sial-paris-2026.jpg": "Tarjeta oficial de visitante de SIAL París 2026 con su foto. La entrega SIAL a los asistentes. El billete con el código de barras NO se publica."
+ }
 }

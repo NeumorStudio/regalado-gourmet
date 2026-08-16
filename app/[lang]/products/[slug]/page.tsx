@@ -6,6 +6,7 @@ import {
   esIdioma, categoria, bloquesDe, gamasDe, fichasDe, AMBIENTE, IDIOMAS, CATEGORIAS,
   SITIO, T, CONTACTO, ruta, type Idioma, type Producto,
 } from "@/lib/contenido";
+import { EN_PRUEBAS } from "@/lib/pruebas";
 
 export function generateStaticParams() {
   return IDIOMAS.flatMap((lang) => CATEGORIAS.map((c) => ({ lang, slug: c.slug })));
@@ -44,11 +45,12 @@ export async function generateMetadata({
  * la tarifa detallada se manda aparte.
  *
  * Una tarjeta por producto, no por línea de tarifa. El queso manchego llegaba
- * como treinta filas que eran tres curaciones repetidas por cada peso, con la
- * misma foto doce veces, y los aceites como una fila por formato de botella;
- * las 92 filas del catálogo se publican en 63 fichas. Ver `fichasDe`.
+ * como veintidós filas que eran tres curaciones repetidas por cada peso, con
+ * la misma foto doce veces, y los aceites como una fila por formato de
+ * botella; las 92 filas del catálogo se publican en 45 fichas. Ver `fichasDe`.
  */
 function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
+  const t = T[lang];
   const fichas = fichasDe(productos, lang);
   // Si alguna ficha de esta rejilla lleva antetítulo, todas le guardan el
   // sitio: sin eso el nombre de las que no lo tienen sube una línea y la fila
@@ -59,16 +61,37 @@ function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
     <ul className="mt-8 grid grid-cols-2 items-start gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
       {fichas.map((f) => (
         <li key={f.clave} className="group flex flex-col">
-          <div className="grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-white">
+          <div
+            className={`grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-white ${
+              EN_PRUEBAS && f.fotoProveedor ? "con-alternativa" : ""
+            }`}
+          >
             {f.foto ? (
-              <Image
-                src={f.foto}
-                alt={f.titulo}
-                width={340}
-                height={340}
-                loading="lazy"
-                className="h-full w-full object-contain p-4 transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
-              />
+              <>
+                <Image
+                  src={f.foto}
+                  alt={f.titulo}
+                  width={340}
+                  height={340}
+                  loading="lazy"
+                  className="foto-ia h-full w-full object-contain p-4 transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
+                />
+                {/* La del catálogo del proveedor, para poder comparar mientras
+                    se decide qué fotografía se queda. Solo va en el HTML si la
+                    web está en pruebas —abierta al público es una foto por
+                    ficha—, y el CSS enseña una u otra sin volver a pintar la
+                    página. Ver `cambio-fotos.tsx`. */}
+                {EN_PRUEBAS && f.fotoProveedor && (
+                  <Image
+                    src={f.fotoProveedor}
+                    alt={f.titulo}
+                    width={340}
+                    height={340}
+                    loading="lazy"
+                    className="foto-proveedor absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
+                  />
+                )}
+              </>
             ) : (
               <div className="grid h-full w-full place-items-center bg-crema px-3 text-center font-sans text-[0.65rem] uppercase tracking-wider text-tinta-3">
                 {f.titulo}
@@ -90,6 +113,26 @@ function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
           </p>
           {f.caracter && (
             <p className="mt-1 font-sans text-xs text-tinta-3">{f.caracter}</p>
+          )}
+
+          {/* En qué formatos se sirve. Lo pidió el cliente para el queso y el
+              embutido: "lo más importante es que se vea en los formatos que se
+              pueden entregar". Es el tamaño de la pieza, no la unidad de
+              venta: "caja de 24" sigue siendo tarifa y no se publica. */}
+          {f.formatos.length > 0 && (
+            <dl className="mt-2.5 border-t border-linea pt-2.5 font-sans text-xs">
+              {f.formatos.map((g) => (
+                <div key={g.forma || "todos"} className="flex gap-2 py-0.5">
+                  {/* Sin forma marcada no hay término que enseñar, pero el
+                      `dt` tiene que existir: un `dd` suelto no es una lista de
+                      definición válida. */}
+                  <dt className={g.forma ? "shrink-0 text-tinta-3" : "sr-only"}>
+                    {g.forma ? t[g.forma] : t.formatos}
+                  </dt>
+                  <dd className="text-tinta-2">{g.valores.join(" · ")}</dd>
+                </div>
+              ))}
+            </dl>
           )}
         </li>
       ))}

@@ -9,6 +9,14 @@ import {
   esIdioma, pagina, type Idioma,
 } from "@/lib/contenido";
 import Navegacion from "./navegacion";
+import CambioFotos from "./cambio-fotos";
+import { CLAVE_FOTOS, EN_PRUEBAS } from "@/lib/pruebas";
+
+/* Se aplica antes de pintar para que la elección no parpadee al navegar. El
+   estado por defecto —sin atributo— son las fotos propias. */
+const RECORDAR_FOTOS = `try{if(localStorage.getItem(${JSON.stringify(
+  CLAVE_FOTOS,
+)})==="proveedor")document.documentElement.dataset.fotos="proveedor"}catch(e){}`;
 
 const lora = Lora({
   subsets: ["latin", "latin-ext"],
@@ -80,6 +88,13 @@ export default async function Layout({
           dispara un aviso de hidratación que no viene de este código. Se
           silencia solo en este nodo, no en el árbol. */}
       <body className="flex min-h-screen flex-col" suppressHydrationWarning>
+        {/* Primer hijo del body y no en el <head>: un layout raíz no debe
+            escribir su propio <head> —de eso se encarga la API de metadatos—,
+            y aquí el navegador lo ejecuta igualmente antes de parsear el resto
+            del documento, que es lo único que hace falta para que la rejilla
+            no se pinte con unas fotos y salte a las otras. */}
+        {EN_PRUEBAS && <script dangerouslySetInnerHTML={{ __html: RECORDAR_FOTOS }} />}
+
         {/* El orden del menú se declara aquí, entero y a la vista: primero lo
             que vende, luego dónde se le encuentra y qué se ha publicado sobre
             la casa, y al final quiénes son y cómo contactar.
@@ -106,6 +121,8 @@ export default async function Layout({
         />
 
         <main className="flex-1">{children}</main>
+
+        {EN_PRUEBAS && <CambioFotos etiqueta="Fotos de proveedor" />}
 
         {/* Sin margen superior. Lo llevaba, y sobraba dos veces: la última
             sección de cada página ya trae su propio `py`, así que en las

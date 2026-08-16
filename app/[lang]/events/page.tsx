@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
-  esIdioma, feriasPorFecha, rangoFechas, IDIOMAS,
+  esIdioma, feriasPorFecha, rangoFechas, IDIOMAS, CONTACTO,
   T, type Feria, type Idioma,
 } from "@/lib/contenido";
 
@@ -63,6 +63,16 @@ function Ficha({ f, lang, pasada }: { f: Feria; lang: Idioma; pasada: boolean })
     </>
   );
 
+  const t = T[lang];
+  /* Pedir cita durante la feria, que es lo que el cliente quería de esta
+     sección: va como asunto, no como stand, porque asiste de visitante.
+     Un `mailto:` con el asunto ya escrito y sin formulario: la web no tiene
+     backend y así funciona desde el primer día y sin nada que mantener.
+     Fuera del <a> que envuelve la tarjeta: un enlace dentro de otro no es
+     HTML válido. Y solo en las próximas: pedir cita para una feria que ya
+     pasó no lleva a ningún sitio. */
+  const cita = f.reunion && !pasada;
+
   return (
     <li className="border-t border-linea pt-6">
       {f.url ? (
@@ -76,6 +86,17 @@ function Ficha({ f, lang, pasada }: { f: Feria; lang: Idioma; pasada: boolean })
         </a>
       ) : (
         cuerpo
+      )}
+      {cita && (
+        <a
+          href={`mailto:${CONTACTO.email}?subject=${encodeURIComponent(
+            t.asuntoReunion.replace("{feria}", f.nombre),
+          )}`}
+          className="mt-4 inline-flex items-center gap-2 placa oro-lamina px-5 py-2.5 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-negro"
+        >
+          {t.pedirReunion}
+          <span aria-hidden>→</span>
+        </a>
       )}
     </li>
   );

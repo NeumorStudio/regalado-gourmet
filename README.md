@@ -53,9 +53,13 @@ catálogo detallado que se manda aparte.
 
 Cada producto apunta con `grupo` a la ficha en la que sale. Varias filas
 comparten ficha cuando son el mismo producto en otro envase: **las 92 filas del
-catálogo se publican en 63 fichas**. Una fila sin `grupo` sale con su nombre en
+catálogo se publican en 45 fichas**. Una fila sin `grupo` sale con su nombre en
 crudo antes que no salir; es el aviso de que a un producto nuevo le falta el
 nombre de escaparate.
+
+En el queso la ficha no es la curación, es **la forma**: una para la pieza
+entera y otra para la cuña, y las tres curaciones van dentro como un dato más.
+Se vendía el mismo queso en dos tamaños y salían tres fotos casi idénticas.
 
 **Ferias y publicaciones** no aparecen en el menú ni en el sitemap mientras su
 lista esté vacía: no se anuncia una sección sin contenido. En cuanto se añade

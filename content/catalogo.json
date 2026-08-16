@@ -106,15 +106,15 @@
   {
    "slug": "aceites-horeca",
    "nombre": {
-    "es": "Aceites de Oliva Virgen Extra HORECA",
-    "en": "HORECA extra virgin olive oils",
-    "nb": "HORECA ekstra virgin olivenolje",
-    "fr": "Huiles d’olive vierge extra HORECA",
-    "pt": "Azeites virgem extra HORECA",
-    "it": "Oli extravergine di oliva HORECA",
-    "de": "Native Olivenöle extra für HORECA"
+    "es": "HORECA · Hostelería y catering",
+    "en": "HORECA · Hospitality and catering",
+    "nb": "HORECA · Storkjøkken og catering",
+    "fr": "HORECA · Hôtellerie et restauration",
+    "pt": "HORECA · Hotelaria e catering",
+    "it": "HORECA · Ristorazione e catering",
+    "de": "HORECA · Gastronomie und Catering"
    },
-   "total": 2
+   "total": 17
   },
   {
    "slug": "otros-productos-salsas",
@@ -127,7 +127,7 @@
     "it": "Altri prodotti e salse",
     "de": "Weitere Produkte und Saucen"
    },
-   "total": 35
+   "total": 4
   },
   {
    "slug": "infusiones-tes",
@@ -218,7 +218,7 @@
    "presentacion": "CAJA DE 2 BOTELLAS",
    "unidad": "ESTUCHE",
    "foto": "/productos/p005.png",
-   "grupo": "aove-premium"
+   "grupo": "aove-seleccion-estuche"
   },
   {
    "id": "a006",
@@ -228,7 +228,7 @@
    "presentacion": "CAJA DE 12 BOTELLAS",
    "unidad": "BOTELLA",
    "foto": "/productos/p006.png",
-   "grupo": "aove-flavia"
+   "grupo": "aove-baena"
   },
   {
    "id": "a007",
@@ -238,7 +238,7 @@
    "presentacion": "CAJA DE 6 BOTELLAS",
    "unidad": "BOTELLA",
    "foto": "/productos/p007.png",
-   "grupo": "aove-flavia"
+   "grupo": "aove-baena"
   },
   {
    "id": "a008",
@@ -278,7 +278,7 @@
    "presentacion": "CAJA DE 6 BOTELLAS",
    "unidad": "BOTELLA",
    "foto": "/productos/p011.png",
-   "grupo": "aove-gourmet-eco"
+   "grupo": "aove-eco"
   },
   {
    "id": "a012",
@@ -288,7 +288,7 @@
    "presentacion": "CAJA DE 12 BOTELLAS",
    "unidad": "BOTELLA",
    "foto": "/productos/p012.png",
-   "grupo": "aove-gourmet-eco"
+   "grupo": "aove-eco"
   },
   {
    "id": "a013",
@@ -298,11 +298,11 @@
    "presentacion": "CAJA DE 6 BOTELLAS",
    "unidad": "BOTELLA",
    "foto": "/productos/p013.png",
-   "grupo": "aove-gourmet-eco"
+   "grupo": "aove-eco"
   },
   {
    "id": "a014",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "CAJA SAL Y PIMIENTA 1000 DUOS",
    "formato": "",
    "presentacion": "Caja de 1",
@@ -312,7 +312,7 @@
   },
   {
    "id": "a015",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "EXPOSITOR EDULCORANTE 250 sobres x 1gr",
    "formato": "",
    "presentacion": "Caja de 8",
@@ -322,7 +322,7 @@
   },
   {
    "id": "a016",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "EXPOSITOR SAL 300 sobres x 0.8 gr",
    "formato": "",
    "presentacion": "Caja de 8",
@@ -332,7 +332,7 @@
   },
   {
    "id": "a017",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "EXPOSITOR PIMIENTA 300 sobres x 0.2 gr",
    "formato": "",
    "presentacion": "Caja de 8",
@@ -342,7 +342,7 @@
   },
   {
    "id": "a018",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "CAJA SOBRES PIMIENTA 0.2 gr x 2000",
    "formato": "",
    "presentacion": "Caja de 1",
@@ -352,7 +352,7 @@
   },
   {
    "id": "a019",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "CAJAS SOBRE SAL FINA 0,8 GR x 2000",
    "formato": "",
    "presentacion": "Caja de 1",
@@ -392,7 +392,7 @@
   },
   {
    "id": "a023",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "CHUPADEDOS PART 3X2,5 KG LATA",
    "formato": "LATA",
    "presentacion": "Caja de 3",
@@ -402,7 +402,7 @@
   },
   {
    "id": "a024",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "COCKTAIL 3X2,5KG LATA",
    "formato": "LATA",
    "presentacion": "Caja de 3",
@@ -412,7 +412,7 @@
   },
   {
    "id": "a025",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "MANZANILLA R/ANCHOA 3X2,5KG LATA",
    "formato": "LATA",
    "presentacion": "Caja de 3",
@@ -422,7 +422,7 @@
   },
   {
    "id": "a026",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "GORDAL S/H ALIÑADA 3X2KG LATA",
    "formato": "LATA",
    "presentacion": "Caja de 3",
@@ -592,7 +592,7 @@
   },
   {
    "id": "a043",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "BOLSA ALIÑO MEDIT 10 ml x 10 ml + SAL (5 unid)",
    "formato": "TARRINAS",
    "presentacion": "Caja de 10",
@@ -602,7 +602,7 @@
   },
   {
    "id": "a044",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "CAJA SET TOMATE ALU 25 gr x 10 ml SAL 220 unid",
    "formato": "TARRINAS",
    "presentacion": "Caja de 1",
@@ -612,7 +612,7 @@
   },
   {
    "id": "a045",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "CUBO CUADRA.SET TOMA + SAL 25 gr x 10 ml (40 uni)",
    "formato": "TARRINAS",
    "presentacion": "Caja de 1",
@@ -622,7 +622,7 @@
   },
   {
    "id": "a046",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "BOLSA TARRINA CA PATE IBERICO 8x25 GR",
    "formato": "TARRINAS",
    "presentacion": "Caja de 10",
@@ -632,7 +632,7 @@
   },
   {
    "id": "a047",
-   "categoria": "otros-productos-salsas",
+   "categoria": "aceites-horeca",
    "nombre": "BOLSA TARRINA CA CREMA DE YORK 8x25 GR",
    "formato": "TARRINAS",
    "presentacion": "Caja de 10",
@@ -870,7 +870,7 @@
    "presentacion": "Caja de 6",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-semicurado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a069",
@@ -880,7 +880,7 @@
    "presentacion": "Caja de 2",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-semicurado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a070",
@@ -890,7 +890,7 @@
    "presentacion": "Caja de 2",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-semicurado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a071",
@@ -900,7 +900,7 @@
    "presentacion": "Caja de 4",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-semicurado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a072",
@@ -910,7 +910,7 @@
    "presentacion": "Caja de 4",
    "unidad": "€/kg",
    "foto": "/productos/p059.png",
-   "grupo": "manchego-semicurado"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a074",
@@ -920,7 +920,7 @@
    "presentacion": "Caja de 24",
    "unidad": "€/kg",
    "foto": "/productos/p059.png",
-   "grupo": "manchego-semicurado"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a076",
@@ -930,7 +930,7 @@
    "presentacion": "Caja de 6",
    "unidad": "€/Unit",
    "foto": "/productos/p059.png",
-   "grupo": "manchego-semicurado"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a077",
@@ -940,7 +940,7 @@
    "presentacion": "Caja de 6",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-curado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a078",
@@ -950,7 +950,7 @@
    "presentacion": "Caja de 2",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-curado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a079",
@@ -960,7 +960,7 @@
    "presentacion": "Caja de 2",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-curado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a080",
@@ -970,7 +970,7 @@
    "presentacion": "Caja de 4",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-curado"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a081",
@@ -980,7 +980,7 @@
    "presentacion": "Caja de 4",
    "unidad": "€/kg",
    "foto": "/productos/p060.png",
-   "grupo": "manchego-curado"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a083",
@@ -990,7 +990,7 @@
    "presentacion": "Caja de 24",
    "unidad": "€/kg",
    "foto": "/productos/p060.png",
-   "grupo": "manchego-curado"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a085",
@@ -1000,7 +1000,7 @@
    "presentacion": "Caja de 24",
    "unidad": "€/Unit",
    "foto": "/productos/p060.png",
-   "grupo": "manchego-curado"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a086",
@@ -1010,7 +1010,7 @@
    "presentacion": "Caja de 6",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a087",
@@ -1020,7 +1020,7 @@
    "presentacion": "Caja de 2",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a088",
@@ -1030,7 +1030,7 @@
    "presentacion": "Caja de 2",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a089",
@@ -1040,7 +1040,7 @@
    "presentacion": "Caja de 4",
    "unidad": "€/kg",
    "foto": "/productos/p058.webp",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-rueda"
   },
   {
    "id": "a090",
@@ -1050,7 +1050,7 @@
    "presentacion": "Caja de 4",
    "unidad": "€/kg",
    "foto": "/productos/p061.png",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a092",
@@ -1060,7 +1060,7 @@
    "presentacion": "Caja de 24",
    "unidad": "€/kg",
    "foto": "/productos/p061.png",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a094",
@@ -1070,7 +1070,7 @@
    "presentacion": "Caja de 24",
    "unidad": "€/Unit",
    "foto": "/productos/p061.png",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a095",
@@ -1080,7 +1080,7 @@
    "presentacion": "Caja de 24",
    "unidad": "€/Unit",
    "foto": "/productos/p061.png",
-   "grupo": "manchego-gran-reserva"
+   "grupo": "manchego-cuna"
   },
   {
    "id": "a096",
@@ -1115,17 +1115,17 @@
  ],
  "grupos": [
   {
-   "slug": "manchego-semicurado",
+   "slug": "manchego-rueda",
    "categoria": "quesos-manchegos-dop",
-   "foto": "/productos/p059.png",
+   "foto": "/productos/manchego-rueda.jpg",
    "antetitulo": {
-    "es": "Semicurado",
-    "en": "Semi-cured",
-    "nb": "Halvmodnet",
-    "fr": "Semi-affiné",
-    "pt": "Semicurado",
-    "it": "Semistagionato",
-    "de": "Halbgereift"
+    "es": "Pieza entera",
+    "en": "Whole wheel",
+    "nb": "Hel ost",
+    "fr": "Pièce entière",
+    "pt": "Peça inteira",
+    "it": "Forma intera",
+    "de": "Ganzer Laib"
    },
    "titulo": {
     "es": "Queso Manchego D.O.P.",
@@ -1144,20 +1144,71 @@
     "pt": "Leite de ovelha manchega",
     "it": "Latte di pecora manchega",
     "de": "Milch vom Manchega-Schaf"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "curacion",
+     "valores": [
+      {
+       "es": "Semicurado",
+       "en": "Semi-cured",
+       "nb": "Halvmodnet",
+       "fr": "Semi-affiné",
+       "pt": "Semicurado",
+       "it": "Semistagionato",
+       "de": "Halbgereift"
+      },
+      {
+       "es": "Curado",
+       "en": "Cured",
+       "nb": "Modnet",
+       "fr": "Affiné",
+       "pt": "Curado",
+       "it": "Stagionato",
+       "de": "Gereift"
+      },
+      {
+       "es": "Gran Reserva",
+       "en": "Gran Reserva",
+       "nb": "Gran Reserva",
+       "fr": "Gran Reserva",
+       "pt": "Gran Reserva",
+       "it": "Gran Reserva",
+       "de": "Gran Reserva"
+      }
+     ]
+    },
+    {
+     "forma": "formatos",
+     "valores": [
+      "1 kg",
+      "2 kg",
+      "3 kg",
+      {
+       "es": "½ pieza",
+       "en": "½ wheel",
+       "nb": "½ ost",
+       "fr": "½ pièce",
+       "pt": "½ peça",
+       "it": "½ forma",
+       "de": "½ Laib"
+      }
+     ]
+    }
+   ]
   },
   {
-   "slug": "manchego-curado",
+   "slug": "manchego-cuna",
    "categoria": "quesos-manchegos-dop",
-   "foto": "/productos/p060.png",
+   "foto": "/productos/manchego-cuna.jpg",
    "antetitulo": {
-    "es": "Curado",
-    "en": "Cured",
-    "nb": "Modnet",
-    "fr": "Affiné",
-    "pt": "Curado",
-    "it": "Stagionato",
-    "de": "Gereift"
+    "es": "Cuña",
+    "en": "Wedge",
+    "nb": "Kile",
+    "fr": "Portion",
+    "pt": "Cunha",
+    "it": "Spicchio",
+    "de": "Stück"
    },
    "titulo": {
     "es": "Queso Manchego D.O.P.",
@@ -1176,44 +1227,54 @@
     "pt": "Leite de ovelha manchega",
     "it": "Latte di pecora manchega",
     "de": "Milch vom Manchega-Schaf"
-   }
-  },
-  {
-   "slug": "manchego-gran-reserva",
-   "categoria": "quesos-manchegos-dop",
-   "foto": "/productos/p061.png",
-   "antetitulo": {
-    "es": "Gran Reserva",
-    "en": "Gran Reserva",
-    "nb": "Gran Reserva",
-    "fr": "Gran Reserva",
-    "pt": "Gran Reserva",
-    "it": "Gran Reserva",
-    "de": "Gran Reserva"
    },
-   "titulo": {
-    "es": "Queso Manchego D.O.P.",
-    "en": "Manchego Cheese D.O.P.",
-    "nb": "Manchego-ost D.O.P.",
-    "fr": "Fromage Manchego A.O.P.",
-    "pt": "Queijo Manchego D.O.P.",
-    "it": "Formaggio Manchego D.O.P.",
-    "de": "Manchego-Käse g.U."
-   },
-   "caracter": {
-    "es": "Leche de oveja manchega",
-    "en": "Manchega sheep's milk",
-    "nb": "Melk fra manchega-sau",
-    "fr": "Lait de brebis manchega",
-    "pt": "Leite de ovelha manchega",
-    "it": "Latte di pecora manchega",
-    "de": "Milch vom Manchega-Schaf"
-   }
+   "formatos": [
+    {
+     "forma": "curacion",
+     "valores": [
+      {
+       "es": "Semicurado",
+       "en": "Semi-cured",
+       "nb": "Halvmodnet",
+       "fr": "Semi-affiné",
+       "pt": "Semicurado",
+       "it": "Semistagionato",
+       "de": "Halbgereift"
+      },
+      {
+       "es": "Curado",
+       "en": "Cured",
+       "nb": "Modnet",
+       "fr": "Affiné",
+       "pt": "Curado",
+       "it": "Stagionato",
+       "de": "Gereift"
+      },
+      {
+       "es": "Gran Reserva",
+       "en": "Gran Reserva",
+       "nb": "Gran Reserva",
+       "fr": "Gran Reserva",
+       "pt": "Gran Reserva",
+       "it": "Gran Reserva",
+       "de": "Gran Reserva"
+      }
+     ]
+    },
+    {
+     "forma": "formatos",
+     "valores": [
+      "750 g",
+      "250 g",
+      "150 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "manchego-estuche",
    "categoria": "quesos-manchegos-dop",
-   "foto": "/productos/p062.webp",
+   "foto": "/productos/manchego-estuche.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Estuche de degustación",
@@ -1232,12 +1293,20 @@
     "pt": "As três curas",
     "it": "Le tre stagionature",
     "de": "Die drei Reifegrade"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "3 × 250 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "manchego-bandeja",
    "categoria": "quesos-manchegos-dop",
-   "foto": "/productos/p062.webp",
+   "foto": "/productos/manchego-bandeja.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Bandeja gourmet",
@@ -1256,12 +1325,20 @@
     "pt": "Cortado à mão",
     "it": "Tagliato a mano",
     "de": "Von Hand geschnitten"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "200 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "tapas-bellota",
    "categoria": "jamones-ibericos-serrano",
-   "foto": "/productos/p046.png",
+   "foto": "/productos/tapas-bellota.jpg",
    "antetitulo": {
     "es": "Plato de tapas",
     "en": "Tapas platter",
@@ -1288,12 +1365,20 @@
     "pt": "50 % raça ibérica",
     "it": "50% razza iberica",
     "de": "50 % iberische Rasse"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "80 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "tapas-cebo",
    "categoria": "jamones-ibericos-serrano",
-   "foto": "/productos/p047.png",
+   "foto": "/productos/tapas-cebo.jpg",
    "antetitulo": {
     "es": "Plato de tapas",
     "en": "Tapas platter",
@@ -1320,12 +1405,20 @@
     "pt": "50 % raça ibérica",
     "it": "50% razza iberica",
     "de": "50 % iberische Rasse"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "90 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-sost-jamon",
    "categoria": "jamones-ibericos-serrano",
-   "foto": "/productos/p048.png",
+   "foto": "/productos/lonch-sost-jamon.jpg",
    "antetitulo": {
     "es": "Loncheado sostenible",
     "en": "Sustainable sliced",
@@ -1352,12 +1445,20 @@
     "pt": "50 % raça ibérica",
     "it": "50% razza iberica",
     "de": "50 % iberische Rasse"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-sost-paleta",
    "categoria": "jamones-ibericos-serrano",
-   "foto": "/productos/p049.png",
+   "foto": "/productos/lonch-sost-paleta.jpg",
    "antetitulo": {
     "es": "Loncheado sostenible",
     "en": "Sustainable sliced",
@@ -1384,12 +1485,20 @@
     "pt": "50 % raça ibérica",
     "it": "50% razza iberica",
     "de": "50 % iberische Rasse"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-jamon-cebo",
    "categoria": "jamones-ibericos-serrano",
-   "foto": "/productos/p050.png",
+   "foto": "/productos/lonch-jamon-cebo.jpg",
    "antetitulo": {
     "es": "Loncheado",
     "en": "Sliced",
@@ -1416,12 +1525,21 @@
     "pt": "50 % raça ibérica",
     "it": "50% razza iberica",
     "de": "50 % iberische Rasse"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "150 g",
+      "200 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-paleta-cebo",
    "categoria": "jamones-ibericos-serrano",
-   "foto": "/productos/p052.png",
+   "foto": "/productos/lonch-paleta-cebo.jpg",
    "antetitulo": {
     "es": "Loncheado",
     "en": "Sliced",
@@ -1448,12 +1566,21 @@
     "pt": "50 % raça ibérica",
     "it": "50% razza iberica",
     "de": "50 % iberische Rasse"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "150 g",
+      "200 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lomo-duroc",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p038.png",
+   "foto": "/productos/lomo-duroc.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Lomo cruce Duroc",
@@ -1469,7 +1596,7 @@
   {
    "slug": "lomo-cebo",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p039.png",
+   "foto": "/productos/lomo-cebo.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Lomo de cebo ibérico",
@@ -1493,7 +1620,7 @@
   {
    "slug": "chorizo-cular",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p040.png",
+   "foto": "/productos/chorizo-cular.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Chorizo cular ibérico",
@@ -1512,12 +1639,37 @@
     "pt": "Qualidade extra",
     "it": "Qualità extra",
     "de": "Extra-Qualität"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      {
+       "es": "Pieza entera",
+       "en": "Whole piece",
+       "nb": "Hel",
+       "fr": "Pièce entière",
+       "pt": "Peça inteira",
+       "it": "Pezzo intero",
+       "de": "Ganzes Stück"
+      },
+      {
+       "es": "Media pieza",
+       "en": "Half piece",
+       "nb": "Halv",
+       "fr": "Demi-pièce",
+       "pt": "Meia peça",
+       "it": "Mezzo pezzo",
+       "de": "Halbes Stück"
+      }
+     ]
+    }
+   ]
   },
   {
    "slug": "salchichon-cular",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p041.png",
+   "foto": "/productos/salchichon-cular.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Salchichón cular ibérico",
@@ -1536,7 +1688,32 @@
     "pt": "Qualidade extra",
     "it": "Qualità extra",
     "de": "Extra-Qualität"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      {
+       "es": "Pieza entera",
+       "en": "Whole piece",
+       "nb": "Hel",
+       "fr": "Pièce entière",
+       "pt": "Peça inteira",
+       "it": "Pezzo intero",
+       "de": "Ganzes Stück"
+      },
+      {
+       "es": "Media pieza",
+       "en": "Half piece",
+       "nb": "Halv",
+       "fr": "Demi-pièce",
+       "pt": "Meia peça",
+       "it": "Mezzo pezzo",
+       "de": "Halbes Stück"
+      }
+     ]
+    }
+   ]
   },
   {
    "slug": "salchichon-velita",
@@ -1552,7 +1729,15 @@
     "it": "Salchichón velita iberico",
     "de": "Iberischer Velita-Salchichón"
    },
-   "caracter": ""
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "200 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "chorizo-velita",
@@ -1568,12 +1753,20 @@
     "it": "Chorizo velita iberico",
     "de": "Iberischer Velita-Chorizo"
    },
-   "caracter": ""
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "200 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "chorizo-bellota",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p044.png",
+   "foto": "/productos/chorizo-bellota.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Chorizo ibérico de bellota",
@@ -1592,12 +1785,37 @@
     "pt": "Elaboração de campanha",
     "it": "Lavorazione stagionale",
     "de": "Saisonale Herstellung"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      {
+       "es": "Pieza entera",
+       "en": "Whole piece",
+       "nb": "Hel",
+       "fr": "Pièce entière",
+       "pt": "Peça inteira",
+       "it": "Pezzo intero",
+       "de": "Ganzes Stück"
+      },
+      {
+       "es": "Media pieza",
+       "en": "Half piece",
+       "nb": "Halv",
+       "fr": "Demi-pièce",
+       "pt": "Meia peça",
+       "it": "Mezzo pezzo",
+       "de": "Halbes Stück"
+      }
+     ]
+    }
+   ]
   },
   {
    "slug": "salchichon-bellota",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p045.png",
+   "foto": "/productos/salchichon-bellota.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Salchichón ibérico de bellota",
@@ -1616,7 +1834,32 @@
     "pt": "Elaboração de campanha",
     "it": "Lavorazione stagionale",
     "de": "Saisonale Herstellung"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      {
+       "es": "Pieza entera",
+       "en": "Whole piece",
+       "nb": "Hel",
+       "fr": "Pièce entière",
+       "pt": "Peça inteira",
+       "it": "Pezzo intero",
+       "de": "Ganzes Stück"
+      },
+      {
+       "es": "Media pieza",
+       "en": "Half piece",
+       "nb": "Halv",
+       "fr": "Demi-pièce",
+       "pt": "Meia peça",
+       "it": "Mezzo pezzo",
+       "de": "Halbes Stück"
+      }
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-sost-lomo-duroc",
@@ -1640,12 +1883,20 @@
     "it": "Lonza incrocio Duroc",
     "de": "Duroc-Kreuzung Lende"
    },
-   "caracter": ""
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-sost-lomo-cebo",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p055.png",
+   "foto": "/productos/lonch-sost-lomo-cebo.jpg",
    "antetitulo": {
     "es": "Loncheado sostenible",
     "en": "Sustainable sliced",
@@ -1672,12 +1923,20 @@
     "pt": "50 % raça ibérica",
     "it": "50% razza iberica",
     "de": "50 % iberische Rasse"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-sost-chorizo",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p056.png",
+   "foto": "/productos/lonch-sost-chorizo.jpg",
    "antetitulo": {
     "es": "Loncheado sostenible",
     "en": "Sustainable sliced",
@@ -1704,12 +1963,20 @@
     "pt": "Qualidade extra",
     "it": "Qualità extra",
     "de": "Extra-Qualität"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "lonch-sost-salchichon",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p057.png",
+   "foto": "/productos/lonch-sost-salchichon.jpg",
    "antetitulo": {
     "es": "Loncheado sostenible",
     "en": "Sustainable sliced",
@@ -1736,12 +2003,20 @@
     "pt": "Qualidade extra",
     "it": "Qualità extra",
     "de": "Extra-Qualität"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
   },
   {
    "slug": "aove-seleccion",
    "categoria": "aceites-premium-do",
-   "foto": "/productos/p002.png",
+   "foto": "/productos/aove-seleccion.jpg",
    "antetitulo": {
     "es": "Selección",
     "en": "Selección",
@@ -1760,12 +2035,29 @@
     "it": "Olio extravergine di oliva",
     "de": "Natives Olivenöl Extra"
    },
-   "caracter": ""
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "500 ml",
+      {
+       "es": "500 ml + estuche",
+       "en": "500 ml + gift tube",
+       "nb": "500 ml + eske",
+       "fr": "500 ml + coffret",
+       "pt": "500 ml + estojo",
+       "it": "500 ml + astuccio",
+       "de": "500 ml + Geschenkhülse"
+      }
+     ]
+    }
+   ]
   },
   {
    "slug": "aove-singular",
    "categoria": "aceites-premium-do",
-   "foto": "/productos/p003.png",
+   "foto": "/productos/aove-singular.jpg",
    "antetitulo": {
     "es": "Singular",
     "en": "Singular",
@@ -1784,20 +2076,28 @@
     "it": "Olio extravergine di oliva",
     "de": "Natives Olivenöl Extra"
    },
-   "caracter": ""
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "500 ml"
+     ]
+    }
+   ]
   },
   {
    "slug": "aove-aniversario",
    "categoria": "aceites-premium-do",
-   "foto": "/productos/p004.png",
+   "foto": "/productos/aove-aniversario.jpg",
    "antetitulo": {
-    "es": "Aniversario",
-    "en": "Aniversario",
-    "nb": "Aniversario",
-    "fr": "Aniversario",
-    "pt": "Aniversario",
-    "it": "Aniversario",
-    "de": "Aniversario"
+    "es": "25 Aniversario",
+    "en": "25 Aniversario",
+    "nb": "25 Aniversario",
+    "fr": "25 Aniversario",
+    "pt": "25 Aniversario",
+    "it": "25 Aniversario",
+    "de": "25 Aniversario"
    },
    "titulo": {
     "es": "Aceite de Oliva Virgen Extra",
@@ -1808,68 +2108,52 @@
     "it": "Olio extravergine di oliva",
     "de": "Natives Olivenöl Extra"
    },
-   "caracter": ""
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "500 ml"
+     ]
+    }
+   ]
   },
   {
-   "slug": "aove-premium",
+   "slug": "aove-seleccion-estuche",
    "categoria": "aceites-premium-do",
-   "foto": "/productos/p005.png",
+   "foto": "/productos/aove-seleccion-estuche.jpg",
    "antetitulo": {
-    "es": "Premium",
-    "en": "Premium",
-    "nb": "Premium",
-    "fr": "Premium",
-    "pt": "Premium",
-    "it": "Premium",
-    "de": "Premium"
+    "es": "Selección",
+    "en": "Selección",
+    "nb": "Selección",
+    "fr": "Selección",
+    "pt": "Selección",
+    "it": "Selección",
+    "de": "Selección"
    },
    "titulo": {
-    "es": "Aceite de Oliva Virgen Extra",
-    "en": "Extra Virgin Olive Oil",
-    "nb": "Ekstra virgin olivenolje",
-    "fr": "Huile d'olive vierge extra",
-    "pt": "Azeite virgem extra",
-    "it": "Olio extravergine di oliva",
-    "de": "Natives Olivenöl Extra"
+    "es": "Estuche de 3 botellas",
+    "en": "Gift pack of 3 bottles",
+    "nb": "Gaveeske med 3 flasker",
+    "fr": "Coffret de 3 bouteilles",
+    "pt": "Estojo de 3 garrafas",
+    "it": "Cofanetto da 3 bottiglie",
+    "de": "Geschenkset mit 3 Flaschen"
    },
-   "caracter": ""
-  },
-  {
-   "slug": "aove-flavia",
-   "categoria": "aceites-premium-do",
-   "foto": "/productos/p007.png",
-   "antetitulo": {
-    "es": "Flavia",
-    "en": "Flavia",
-    "nb": "Flavia",
-    "fr": "Flavia",
-    "pt": "Flavia",
-    "it": "Flavia",
-    "de": "Flavia"
-   },
-   "titulo": {
-    "es": "Aceite de Oliva Virgen Extra",
-    "en": "Extra Virgin Olive Oil",
-    "nb": "Ekstra virgin olivenolje",
-    "fr": "Huile d'olive vierge extra",
-    "pt": "Azeite virgem extra",
-    "it": "Olio extravergine di oliva",
-    "de": "Natives Olivenöl Extra"
-   },
-   "caracter": {
-    "es": "D.O. Baena",
-    "en": "D.O. Baena",
-    "nb": "D.O. Baena",
-    "fr": "D.O. Baena",
-    "pt": "D.O. Baena",
-    "it": "D.O. Baena",
-    "de": "D.O. Baena"
-   }
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "3 × 500 ml"
+     ]
+    }
+   ]
   },
   {
    "slug": "aove-baena",
    "categoria": "aceites-premium-do",
-   "foto": "/productos/p008.png",
+   "foto": "/productos/aove-baena.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Aceite de Oliva Virgen Extra",
@@ -1888,20 +2172,30 @@
     "pt": "D.O. Baena",
     "it": "D.O. Baena",
     "de": "D.O. Baena"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "250 ml",
+      "500 ml",
+      "1 L"
+     ]
+    }
+   ]
   },
   {
-   "slug": "aove-gourmet-eco",
+   "slug": "aove-eco",
    "categoria": "aceites-premium-do",
-   "foto": "/productos/p013.png",
+   "foto": "/productos/aove-eco.jpg",
    "antetitulo": {
-    "es": "Gourmet",
-    "en": "Gourmet",
-    "nb": "Gourmet",
-    "fr": "Gourmet",
-    "pt": "Gourmet",
-    "it": "Gourmet",
-    "de": "Gourmet"
+    "es": "ECO Premium",
+    "en": "ECO Premium",
+    "nb": "ECO Premium",
+    "fr": "ECO Premium",
+    "pt": "ECO Premium",
+    "it": "ECO Premium",
+    "de": "ECO Premium"
    },
    "titulo": {
     "es": "Aceite de Oliva Virgen Extra",
@@ -1920,12 +2214,30 @@
     "pt": "Biológico",
     "it": "Biologico",
     "de": "Bio"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "250 ml",
+      "500 ml",
+      {
+       "es": "500 ml + estuche",
+       "en": "500 ml + gift tube",
+       "nb": "500 ml + eske",
+       "fr": "500 ml + coffret",
+       "pt": "500 ml + estojo",
+       "it": "500 ml + astuccio",
+       "de": "500 ml + Geschenkhülse"
+      }
+     ]
+    }
+   ]
   },
   {
    "slug": "aove-horeca-baena",
    "categoria": "aceites-horeca",
-   "foto": "/productos/p009.png",
+   "foto": "/productos/aove-horeca-baena.jpg",
    "antetitulo": {
     "es": "Hostelería",
     "en": "Foodservice",
@@ -1952,12 +2264,21 @@
     "pt": "D.O. Baena",
     "it": "D.O. Baena",
     "de": "D.O. Baena"
-   }
+   },
+   "formatos": [
+    {
+     "forma": "",
+     "valores": [
+      "1 L",
+      "2 L"
+     ]
+    }
+   ]
   },
   {
    "slug": "duos-sal-pimienta",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p014.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/duos-sal-pimienta.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Dúos de sal y pimienta",
@@ -1980,8 +2301,8 @@
   },
   {
    "slug": "sobre-edulcorante",
-   "categoria": "otros-productos-salsas",
-   "foto": "",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/sobre-edulcorante.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Edulcorante",
@@ -2004,8 +2325,8 @@
   },
   {
    "slug": "sobre-sal",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p014.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/sobre-sal.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Sal fina",
@@ -2028,8 +2349,8 @@
   },
   {
    "slug": "sobre-pimienta",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p014.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/sobre-pimienta.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Pimienta",
@@ -2053,7 +2374,7 @@
   {
    "slug": "molinillo-himalaya",
    "categoria": "otros-productos-salsas",
-   "foto": "/productos/p015.png",
+   "foto": "/productos/molinillo-himalaya.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Sal rosa del Himalaya",
@@ -2077,7 +2398,7 @@
   {
    "slug": "molinillo-fusion",
    "categoria": "otros-productos-salsas",
-   "foto": "/productos/p016.jpg",
+   "foto": "/productos/molinillo-fusion.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Fusión de pimientas",
@@ -2101,7 +2422,7 @@
   {
    "slug": "molinillo-marina",
    "categoria": "otros-productos-salsas",
-   "foto": "/productos/p017.png",
+   "foto": "/productos/molinillo-marina.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Sal marina",
@@ -2124,8 +2445,8 @@
   },
   {
    "slug": "aceituna-chupadedos",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p018.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/aceituna-chupadedos.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Aceituna chupadedos",
@@ -2148,8 +2469,8 @@
   },
   {
    "slug": "aceituna-coctel",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p018.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/aceituna-coctel.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Cóctel de aceitunas",
@@ -2172,8 +2493,8 @@
   },
   {
    "slug": "aceituna-manzanilla",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p018.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/aceituna-manzanilla.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Manzanilla rellena de anchoa",
@@ -2196,8 +2517,8 @@
   },
   {
    "slug": "aceituna-gordal",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p018.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/aceituna-gordal.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Gordal aliñada sin hueso",
@@ -2232,7 +2553,8 @@
     "it": "Cocco grattugiato",
     "de": "Kokosraspel"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "almendra-sal",
@@ -2248,7 +2570,8 @@
     "it": "Mandorle fritte salate",
     "de": "Gesalzene geröstete Mandeln"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "almendra-cruda",
@@ -2264,7 +2587,8 @@
     "it": "Mandorle pelate crude",
     "de": "Rohe, blanchierte Mandeln"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "anacardo-sal",
@@ -2280,7 +2604,8 @@
     "it": "Anacardi fritti salati",
     "de": "Gesalzene geröstete Cashewkerne"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "avellana-tostada",
@@ -2296,7 +2621,8 @@
     "it": "Nocciole tostate",
     "de": "Geröstete Haselnüsse"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "coctel-salado",
@@ -2312,7 +2638,8 @@
     "it": "Mix salato",
     "de": "Salzige Nussmischung"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "cacahuete-sal",
@@ -2328,7 +2655,8 @@
     "it": "Arachidi fritte salate",
     "de": "Gesalzene geröstete Erdnüsse"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "pistacho-sal",
@@ -2344,7 +2672,8 @@
     "it": "Pistacchi tostati salati",
     "de": "Gesalzene geröstete Pistazien"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "maiz-frito",
@@ -2360,7 +2689,8 @@
     "it": "Mais fritto",
     "de": "Gerösteter Mais"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "mix-barbacoa",
@@ -2376,7 +2706,8 @@
     "it": "Mix barbecue",
     "de": "Barbecue-Mix"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "nuez-grano",
@@ -2392,7 +2723,8 @@
     "it": "Gherigli di noce",
     "de": "Walnusskerne"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "pasas-sultanas",
@@ -2408,7 +2740,8 @@
     "it": "Uvetta sultanina",
     "de": "Sultaninen"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "pasas-sin-pepitas",
@@ -2424,7 +2757,8 @@
     "it": "Uvetta senza semi",
     "de": "Kernlose Rosinen"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "pistacho-grano",
@@ -2440,7 +2774,8 @@
     "it": "Granella di pistacchio cruda",
     "de": "Rohe Pistazienkerne"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "pistacho-granillo",
@@ -2456,7 +2791,8 @@
     "it": "Granella di pistacchio tostata",
     "de": "Geröstetes Pistaziengranulat"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "pistacho-harina",
@@ -2472,12 +2808,13 @@
     "it": "Farina di pistacchio tostato",
     "de": "Geröstetes Pistazienmehl"
    },
-   "caracter": ""
+   "caracter": "",
+   "oculto": true
   },
   {
    "slug": "alino-mediterraneo",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p034.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/alino-mediterraneo.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Aliño mediterráneo",
@@ -2500,8 +2837,8 @@
   },
   {
    "slug": "tomate-sal",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p035.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/tomate-sal.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Tomate y sal",
@@ -2524,8 +2861,8 @@
   },
   {
    "slug": "pate-iberico",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p036.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/pate-iberico.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Paté ibérico",
@@ -2548,8 +2885,8 @@
   },
   {
    "slug": "crema-york",
-   "categoria": "otros-productos-salsas",
-   "foto": "/productos/p037.jpg",
+   "categoria": "aceites-horeca",
+   "foto": "/productos/crema-york.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Crema de jamón de York",

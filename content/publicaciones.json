@@ -19,55 +19,21 @@
  },
  "publicaciones": [
   {
-   "id": "m1",
-   "medio": "Diario de Huelva",
-   "titulo": "«El producto español se vende solo cuando llega bien contado»",
-   "fecha": "2026-05-14",
-   "url": "https://ejemplo.test/entrevista",
-   "foto": "/marca/fundador.jpeg",
+   "id": "isn-magazine-2026",
+   "medio": "International Supermarket News",
+   "titulo": "González-Regalado Gourmet: bringing Andalusian excellence to the wider table",
+   "fecha": "2026-05-05",
+   "url": "https://internationalsupermarketnews.com/interview-gonzalez-regalado-gourmet-bringing-andalusian-excellence-to-the-wider-table/",
+   "foto": "/publicaciones/isn-magazine-2026.jpg",
    "resumen": {
-    "es": "Entrevista sobre la selección de producto y la exportación a los países nórdicos.",
-    "en": "",
-    "nb": "",
-    "fr": "",
-    "pt": "",
-    "it": "",
-    "de": ""
-   }
-  },
-  {
-   "id": "m2",
-   "medio": "Gourmets",
-   "titulo": "Una casa de selección para el Travel Retail",
-   "fecha": "2026-02-03",
-   "url": "https://ejemplo.test/gourmets",
-   "foto": "",
-   "resumen": {
-    "es": "Reportaje sobre el modelo de casa de selección frente al de fabricante.",
-    "en": "",
-    "nb": "",
-    "fr": "",
-    "pt": "",
-    "it": "",
-    "de": ""
-   }
-  },
-  {
-   "id": "m3",
-   "medio": "Norsk Mat",
-   "titulo": "Spansk kvalitet i norske hyller",
-   "fecha": "2025-11-20",
-   "foto": "/ambiente/quesos.jpg",
-   "resumen": {
-    "es": "Publicación noruega sobre la llegada del queso manchego D.O.P. al canal especializado.",
-    "en": "",
-    "nb": "",
-    "fr": "",
-    "pt": "",
-    "it": "",
-    "de": ""
+    "es": "Entrevista a Eduardo González-Regalado, fundador de la casa, sobre cómo se elige el producto y qué hace falta para llevar el aceite, el ibérico y la aceituna del sur de España a los mercados que piden autenticidad y trazabilidad.",
+    "en": "Interview with Eduardo González-Regalado, founder of the house, on how the products are chosen and what it takes to bring southern Spain's olive oil, Iberian charcuterie and olives to markets that demand authenticity and traceability.",
+    "nb": "Intervju med Eduardo González-Regalado, grunnleggeren, om hvordan produktene velges ut og hva som skal til for å bringe olivenolje, iberiske spekevarer og oliven fra Sør-Spania til markeder som krever autentisitet og sporbarhet.",
+    "fr": "Entretien avec Eduardo González-Regalado, fondateur de la maison, sur la sélection des produits et ce qu'il faut pour amener l'huile d'olive, la charcuterie ibérique et l'olive du sud de l'Espagne vers des marchés exigeant authenticité et traçabilité.",
+    "pt": "Entrevista a Eduardo González-Regalado, fundador da casa, sobre como se escolhem os produtos e o que é preciso para levar o azeite, os enchidos ibéricos e a azeitona do sul de Espanha a mercados que exigem autenticidade e rastreabilidade.",
+    "it": "Intervista a Eduardo González-Regalado, fondatore della casa, su come si scelgono i prodotti e su cosa serve per portare olio d'oliva, salumi iberici e olive del sud della Spagna verso mercati che chiedono autenticità e tracciabilità.",
+    "de": "Interview mit Eduardo González-Regalado, dem Gründer des Hauses, darüber, wie die Produkte ausgewählt werden und was nötig ist, um Olivenöl, iberische Wurstwaren und Oliven aus Südspanien in Märkte zu bringen, die Authentizität und Rückverfolgbarkeit verlangen."
    }
   }
- ],
- "_DEMO": "ATENCIÓN: las entradas de la lista son de MUESTRA, inventadas para enseñar el diseño al cliente. Vaciar la lista antes de publicar en el dominio real, o sustituirlas por datos verdaderos."
+ ]
 }

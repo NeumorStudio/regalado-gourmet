@@ -343,6 +343,7 @@ type Clave =
   | "ferias" | "feriasIntro" | "feriasProximas" | "feriasPasadas" | "feriasVacio"
   | "publicaciones" | "publicacionesIntro" | "publicacionesVacio" | "leer"
   | "pedirReunion" | "asuntoReunion"
+  | "colaboraciones" | "enColaboracionCon"
   | "respuesta" | "derechos" | "disenadoPor";
 
 export const T: Record<Idioma, Record<Clave, string>> = {
@@ -384,6 +385,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos reuniendo las entrevistas y publicaciones. Escríbanos si desea material sobre la casa.",
     leer: "Leer",
+    colaboraciones: "Colaboraciones",
+    enColaboracionCon: "En colaboración con",
     pedirReunion: "Solicitar una reunión",
     asuntoReunion: "Reunión en {feria}",
     respuesta:
@@ -429,6 +432,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "We are gathering the interviews and features. Write to us if you would like material about the house.",
     leer: "Read",
+    colaboraciones: "Collaborations",
+    enColaboracionCon: "In collaboration with",
     pedirReunion: "Request a meeting",
     asuntoReunion: "Meeting at {feria}",
     respuesta:
@@ -474,6 +479,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Vi samler intervjuene og omtalene. Ta kontakt hvis du ønsker materiale om huset.",
     leer: "Les",
+    colaboraciones: "Samarbeid",
+    enColaboracionCon: "I samarbeid med",
     pedirReunion: "Be om et møte",
     asuntoReunion: "Møte på {feria}",
     respuesta:
@@ -519,6 +526,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Nous réunissons les entretiens et les articles. Écrivez-nous si vous souhaitez de la documentation sur la maison.",
     leer: "Lire",
+    colaboraciones: "Collaborations",
+    enColaboracionCon: "En collaboration avec",
     pedirReunion: "Demander un rendez-vous",
     asuntoReunion: "Rendez-vous à {feria}",
     respuesta:
@@ -564,6 +573,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos a reunir as entrevistas e publicações. Escreva-nos se desejar material sobre a casa.",
     leer: "Ler",
+    colaboraciones: "Colaborações",
+    enColaboracionCon: "Em colaboração com",
     pedirReunion: "Solicitar uma reunião",
     asuntoReunion: "Reunião na {feria}",
     respuesta:
@@ -609,6 +620,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Stiamo raccogliendo le interviste e gli articoli. Ci scriva se desidera materiale sulla casa.",
     leer: "Leggi",
+    colaboraciones: "Collaborazioni",
+    enColaboracionCon: "In collaborazione con",
     pedirReunion: "Richiedere un incontro",
     asuntoReunion: "Incontro a {feria}",
     respuesta:
@@ -654,6 +667,8 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Wir stellen die Interviews und Berichte gerade zusammen. Schreiben Sie uns, wenn Sie Material über das Haus wünschen.",
     leer: "Lesen",
+    colaboraciones: "Kooperationen",
+    enColaboracionCon: "In Zusammenarbeit mit",
     pedirReunion: "Termin anfragen",
     asuntoReunion: "Termin auf der {feria}",
     respuesta:
@@ -662,6 +677,43 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     disenadoPor: "Gestaltet von",
   },
 };
+
+/**
+ * Con quién colabora la casa.
+ *
+ * Se enseña en dos sitios y en ninguno hace sección propia: pequeña en el pie,
+ * que la acompaña por toda la web sin pesar, y con su párrafo al final de
+ * "Quiénes somos", que es donde esto se cuenta.
+ *
+ * La marca va tal cual, en blanco y con sus filetes de color, sobre una placa
+ * negra: la web ya tiene bloques oscuros —el hero, el contacto, las cabeceras
+ * de categoría—, así que la placa es de la casa y el logotipo ajeno no hay que
+ * recolorearlo para que encaje.
+ *
+ * OJO: el texto dice solo lo que se lee en el cartel que mandó el cliente
+ * —nombre, academia de fútbol, Madrid y Guinea Ecuatorial— porque no hay nada
+ * más confirmado. En ese cartel González-Regalado NO figura todavía entre los
+ * patrocinadores ni entre los colaboradores. CONFIRMAR con el cliente en qué
+ * nivel entra y ampliar el párrafo con lo que él quiera contar.
+ */
+export const COLABORACION = {
+  nombre: "Benjamín Zarandona Football Academy",
+  lugar: "Madrid · Guinea Ecuatorial",
+  marca: "/marca/bz-academy.png",
+  /** La publicación en la que se anuncia. Al ser de Instagram no se puede
+   *  incrustar sin cargarles su script a todos los visitantes, así que la
+   *  placa es sencillamente un enlace que abre la publicación. */
+  url: "https://www.instagram.com/p/DakAz4rgn63/?img_index=1",
+  texto: {
+    es: "La casa colabora con la Benjamín Zarandona Football Academy, la academia de fútbol con sede en Madrid y Guinea Ecuatorial.",
+    en: "The house collaborates with the Benjamín Zarandona Football Academy, the football academy based in Madrid and Equatorial Guinea.",
+    nb: "Huset samarbeider med Benjamín Zarandona Football Academy, fotballakademiet med tilhold i Madrid og Ekvatorial-Guinea.",
+    fr: "La maison collabore avec la Benjamín Zarandona Football Academy, l’académie de football basée à Madrid et en Guinée équatoriale.",
+    pt: "A casa colabora com a Benjamín Zarandona Football Academy, a academia de futebol com sede em Madrid e na Guiné Equatorial.",
+    it: "La casa collabora con la Benjamín Zarandona Football Academy, l’accademia di calcio con sede a Madrid e in Guinea Equatoriale.",
+    de: "Das Haus arbeitet mit der Benjamín Zarandona Football Academy zusammen, der Fußballakademie mit Sitz in Madrid und Äquatorialguinea.",
+  } as Record<Idioma, string>,
+} as const;
 
 /** Quién firma la web. La anterior llevaba el crédito del desarrollador
  *  anterior; este ocupa su sitio. */

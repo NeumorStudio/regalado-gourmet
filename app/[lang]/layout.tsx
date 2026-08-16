@@ -10,6 +10,7 @@ import {
 } from "@/lib/contenido";
 import Navegacion from "./navegacion";
 import CambioFotos from "./cambio-fotos";
+import Colaboracion from "./colaboracion";
 import { CLAVE_FOTOS, EN_PRUEBAS } from "@/lib/pruebas";
 
 /* Se aplica antes de pintar para que la elección no parpadee al navegar. El
@@ -143,6 +144,10 @@ export default async function Layout({
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-tinta-2">
                 {pagina(lang, "index").bloques.find((b) => b.tipo === "p")?.texto}
               </p>
+              {/* Aquí y no en el menú: acompaña a la casa por toda la web sin
+                  pedir una sección para ella. El detalle se cuenta en
+                  "Quiénes somos". */}
+              <Colaboracion lang={lang as Idioma} compacto />
             </div>
 
             <div>

@@ -41,7 +41,9 @@ export default async function Catalogo({
       <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIAS.map((c) => {
-            const vacia = c.total === 0;
+            // Con galería hay algo que ver aunque no haya tarifa, así que la
+            // tarjeta ni se apaga ni deja de llevar a su página.
+            const vacia = c.total === 0 && !c.galeria?.length;
             const foto = AMBIENTE[c.slug];
             const Contenido = (
               <>

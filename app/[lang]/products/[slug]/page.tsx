@@ -171,7 +171,41 @@ export default async function Categoria({
         </div>
       </section>
 
-      {cat.total === 0 ? (
+      {/* Tres caminos: la rejilla de fichas cuando hay tarifa; una galería
+          cuando no la hay pero sí algo que enseñar —las infusiones no son un
+          catálogo de referencias, son una selección que cambia—; y el aviso de
+          "en preparación" cuando no hay ni una cosa ni la otra. */}
+      {cat.galeria?.length ? (
+        <section className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
+          {cat.intro?.[l] && (
+            <p className="max-w-2xl text-lg text-tinta-2 text-pretty">{cat.intro[l]}</p>
+          )}
+          {/* Cada foto lleva `grupo` y `group`: el primero abre el filete
+              dorado y el segundo escala la imagen. Es el mismo gesto que hacen
+              las tarjetas de categoría, y sin él esta sección era la única de
+              la web que no respondía al cursor. */}
+          <ul className="mt-10 grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-3">
+            {cat.galeria.map((foto, i) => (
+              <li
+                key={foto}
+                className="grupo group grabado relative aspect-[4/5] overflow-hidden rounded-sm bg-crema"
+              >
+                {/* `alt` vacío: son fotos de ambiente de la sección, no
+                    ilustran cada una un artículo que se pueda nombrar. Lo que
+                    hay que leer lo dice el párrafo de arriba. */}
+                <Image
+                  src={foto}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  loading={i < 3 ? undefined : "lazy"}
+                  className="object-cover transition-transform duration-500 ease-[var(--ease-salida)] group-hover:scale-105"
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : cat.total === 0 ? (
         <section className="mx-auto w-full max-w-3xl px-6 py-20 text-center sm:py-24">
           <p className="etiqueta">{t.enPreparacion}</p>
           <p className="mt-4 text-lg text-tinta-2 text-pretty">{t.enPreparacionNota}</p>

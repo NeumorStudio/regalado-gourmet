@@ -114,8 +114,8 @@
    {
     "fichero": "manchego-estuche.jpg",
     "uso": "Estuche de degustación",
-    "escena": "Estuche plano con tres ventanas y una cuña de cada curación dentro, sobre travertino",
-    "origen": "La forma sale del estuche real del proveedor (p062.webp): caja baja y alargada, tres ventanas troqueladas en la tapa, una curación en cada una. La caja va en negro liso y SIN una sola letra: el original lleva la marca impresa en oro, y reproducir su librea sería vender un envase que no es nuestro. La forma es el producto; el impreso, del fabricante. Antes aquí había tres cuñas sueltas sin caja, que no se leía como estuche."
+    "escena": "El estuche de tres ventanas del proveedor, apoyado en la mesa de travertino",
+    "origen": "NO está generada, a diferencia de la rueda y la cuña: es la foto real del estuche que mandó el cliente (`estuchesinmarca.png`, 1254x1254, ya sin el nombre del fabricante, sobre fondo blanco con reflejo). Se recortó con el separador de Higgsfield —el relleno por inundación no distinguía la caja de su propio reflejo— y se compuso sobre un fondo de travertino y pared generado aparte. La sombra va en tres capas y sale de la silueta de la propia caja: contacto (la franja de abajo, oscura y poco difusa), proyectada (la silueta aplastada e inclinada a la derecha, muy blanda) y oclusión (la base de la caja se oscurece). Sin la oclusión el objeto tiene sombra debajo y aun así parece que flota. El fondo es de cámara alta a propósito: la caja está fotografiada desde unos 30° por encima, y sobre un fondo visto a ras no hay sombra que la haga apoyarse. La rueda y la cuña sí van sobre el fondo de cámara baja, que es la altura desde la que están tomadas."
    },
    {
     "fichero": "manchego-bandeja.jpg",

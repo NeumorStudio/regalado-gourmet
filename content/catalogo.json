@@ -140,7 +140,24 @@
     "it": "Infusi e tè",
     "de": "Tees und Kräutertees"
    },
-   "total": 0
+   "total": 0,
+   "galeria": [
+    "/infusiones/estuche.jpg",
+    "/infusiones/infusion-frutos.jpg",
+    "/infusiones/prensa.jpg",
+    "/infusiones/latas.jpg",
+    "/infusiones/mesa.jpg",
+    "/infusiones/frio.jpg"
+   ],
+   "intro": {
+    "es": "Infusiones y tés mediterráneos: mezclas artesanas de hierba, flor y cítrico, en lata y en estuche de degustación.",
+    "en": "Mediterranean teas and herbal infusions: artisan blends of herb, flower and citrus, in tins and tasting gift boxes.",
+    "nb": "Middelhavste og urteinfusjoner: håndverksblandinger av urter, blomster og sitrus, i bokser og smakesett.",
+    "fr": "Infusions et thés méditerranéens : mélanges artisanaux d’herbes, de fleurs et d’agrumes, en boîtes et en coffrets de dégustation.",
+    "pt": "Infusões e chás mediterrânicos: misturas artesanais de erva, flor e citrino, em lata e em estojo de degustação.",
+    "it": "Infusi e tè mediterranei: miscele artigianali di erbe, fiori e agrumi, in latta e in cofanetto degustazione.",
+    "de": "Mediterrane Tees und Kräuteraufgüsse: handwerkliche Mischungen aus Kraut, Blüte und Zitrus, in Dosen und Verkostungsboxen."
+   }
   },
   {
    "slug": "vinos",

@@ -129,16 +129,26 @@ export type Categoria = {
   nombre: Record<Idioma, string>;
   total: number;
   subcategorias?: Subcategoria[];
+  /** Una categoría sin tarifa que aun así tiene algo que enseñar. En vez de la
+   *  rejilla de fichas pinta estas fotos y el texto de `intro`: es el caso de
+   *  las infusiones, donde no hay catálogo de referencias sino una selección
+   *  que cambia. Sin galería y sin tarifa, la categoría sale "en preparación"
+   *  como hasta ahora. */
+  galeria?: string[];
+  intro?: Record<Idioma, string>;
 };
 
 export const CATEGORIAS = catalogo.categorias as Categoria[];
 export const PRODUCTOS = catalogo.productos as Producto[];
 export const GRUPOS = catalogo.grupos as Grupo[];
 
-/** Las que ya tienen referencias. Las demás se publican igual, pero con un
- *  aviso en vez de una rejilla vacía: el cliente quiere que se vea el alcance
- *  de la oferta aunque aún no haya mandado las tarifas. */
-export const CATEGORIAS_CON_PRODUCTO = CATEGORIAS.filter((c) => c.total > 0);
+/** Las que tienen algo que enseñar: referencias o, sin ellas, una galería. Las
+ *  demás se publican igual, pero con un aviso en vez de una rejilla vacía: el
+ *  cliente quiere que se vea el alcance de la oferta aunque aún no haya
+ *  mandado las tarifas. */
+export const CATEGORIAS_CON_PRODUCTO = CATEGORIAS.filter(
+  (c) => c.total > 0 || c.galeria?.length,
+);
 
 export function categoria(slug: string): Categoria | undefined {
   return CATEGORIAS.find((c) => c.slug === slug);

@@ -476,7 +476,11 @@ body::after {
 /* Al pasar por encima el filete se abre hacia el canto, igual que en la placa
    de los botones: es el mismo gesto en toda la web. */
 .tarjeta:hover.grabado::after,
-.grupo:hover .grabado::after {
+.grupo:hover .grabado::after,
+/* Y cuando `grupo` y `grabado` caen en el mismo elemento, que es el caso de
+   las fotos de la galería: sin esta variante el selector de arriba pide que
+   `grabado` sea descendiente y no encaja con nada. */
+.grupo:hover.grabado::after {
   inset: 3px;
   opacity: 0.5;
 }

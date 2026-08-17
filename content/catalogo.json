@@ -712,7 +712,7 @@
    "formato": "",
    "presentacion": "",
    "unidad": "€/KG",
-   "foto": "/productos/salchichon-velita.jpg",
+   "foto": "/productos/p042.jpg",
    "subcategoria": "salchichon",
    "grupo": "salchichon-velita"
   },
@@ -1736,7 +1736,7 @@
   {
    "slug": "salchichon-velita",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/salchichon-velita.jpg",
+   "foto": "/productos/p042.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Salchichón velita ibérico",
@@ -1833,7 +1833,7 @@
   {
    "slug": "salchichon-bellota",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/salchichon-bellota.jpg",
+   "foto": "/productos/salchichon-velita.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Salchichón ibérico de bellota",

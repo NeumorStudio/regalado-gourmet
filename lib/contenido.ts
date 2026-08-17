@@ -196,11 +196,6 @@ export type Ficha = {
   titulo: string;
   caracter: string;
   foto: string;
-  /** La del catálogo del proveedor, cuando la ficha ha estrenado otra. Es la
-   *  misma que serviría de respaldo si la ficha no fijara foto, así que no
-   *  hace falta guardarla en ninguna parte: ya está en su fila de tarifa.
-   *  La usa el comparador de `CambioFotos`. "" si no hay otra que enseñar. */
-  fotoProveedor: string;
   formatos: { forma: Formato["forma"]; valores: string[] }[];
 };
 
@@ -222,7 +217,7 @@ export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
     if (!g) {
       fichas.push({
         clave: p.id, antetitulo: "", titulo: p.nombre,
-        caracter: p.formato, foto: p.foto, fotoProveedor: "", formatos: [],
+        caracter: p.formato, foto: p.foto, formatos: [],
       });
       continue;
     }
@@ -235,7 +230,6 @@ export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
       caracter: enIdioma(g.caracter, lang),
       // si la ficha no fija foto se queda con la de su primera fila
       foto: g.foto || p.foto,
-      fotoProveedor: g.foto && p.foto !== g.foto ? p.foto : "",
       formatos: (g.formatos ?? []).map((f) => ({
         forma: f.forma,
         valores: f.valores.map((v) => (typeof v === "string" ? v : enIdioma(v, lang))),

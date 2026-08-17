@@ -6,7 +6,6 @@ import {
   esIdioma, categoria, bloquesDe, gamasDe, fichasDe, cabecera, IDIOMAS, CATEGORIAS,
   SITIO, T, CONTACTO, ruta, type Idioma, type Producto,
 } from "@/lib/contenido";
-import { EN_PRUEBAS } from "@/lib/pruebas";
 
 export function generateStaticParams() {
   return IDIOMAS.flatMap((lang) => CATEGORIAS.map((c) => ({ lang, slug: c.slug })));
@@ -61,37 +60,16 @@ function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
     <ul className="mt-8 grid grid-cols-2 items-start gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
       {fichas.map((f) => (
         <li key={f.clave} className="group flex flex-col">
-          <div
-            className={`grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-white ${
-              EN_PRUEBAS && f.fotoProveedor ? "con-alternativa" : ""
-            }`}
-          >
+          <div className="grabado grabado-menudo relative aspect-square overflow-hidden rounded-sm border border-linea bg-white">
             {f.foto ? (
-              <>
-                <Image
-                  src={f.foto}
-                  alt={f.titulo}
-                  width={340}
-                  height={340}
-                  loading="lazy"
-                  className="foto-ia h-full w-full object-contain p-4 transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
-                />
-                {/* La del catálogo del proveedor, para poder comparar mientras
-                    se decide qué fotografía se queda. Solo va en el HTML si la
-                    web está en pruebas —abierta al público es una foto por
-                    ficha—, y el CSS enseña una u otra sin volver a pintar la
-                    página. Ver `cambio-fotos.tsx`. */}
-                {EN_PRUEBAS && f.fotoProveedor && (
-                  <Image
-                    src={f.fotoProveedor}
-                    alt={f.titulo}
-                    width={340}
-                    height={340}
-                    loading="lazy"
-                    className="foto-proveedor absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
-                  />
-                )}
-              </>
+              <Image
+                src={f.foto}
+                alt={f.titulo}
+                width={340}
+                height={340}
+                loading="lazy"
+                className="h-full w-full object-contain p-4 transition-transform duration-300 ease-[var(--ease-salida)] group-hover:scale-[1.04]"
+              />
             ) : (
               <div className="grid h-full w-full place-items-center bg-crema px-3 text-center font-sans text-[0.65rem] uppercase tracking-wider text-tinta-3">
                 {f.titulo}

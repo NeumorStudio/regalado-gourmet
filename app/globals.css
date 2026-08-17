@@ -615,31 +615,6 @@ body:has(main .colaboracion-pagina) .colaboracion-pie {
   color: var(--color-oro-tinta);
 }
 
-/* ------------------------------------------- comparador de fotografía
-   Solo existe mientras la web está en pruebas. Las dos fotos van en el HTML y
-   aquí se decide cuál se ve, así que cambiar de una a otra no vuelve a pedir
-   la página ni repinta la rejilla. Sin atributo manda la foto propia, que es
-   la que va a quedarse. */
-.foto-proveedor {
-  display: none;
-}
-/* Se esconde la propia SOLO donde hay otra que enseñar: cinco fichas no
-   tienen foto de proveedor distinta y, sin esta condición, al cambiar se
-   quedaban en un cuadrado en blanco. */
-[data-fotos="proveedor"] .con-alternativa .foto-ia {
-  display: none;
-}
-[data-fotos="proveedor"] .foto-proveedor {
-  display: block;
-}
-
-/* Queda por delante del grano, que es lo único con z-index más alto que la
-   cabecera: sin esto el botón se vería a través de la capa de ruido. */
-.comparador {
-  z-index: 61;
-  box-shadow: 0 8px 20px -10px rgb(var(--sombra-rgb) / 0.4);
-}
-
 /* ------------------------------------------------- pie de la tarjeta
    Donde hay cursor, la flecha sobra: al pasar por encima la tarjeta ya se
    levanta, la foto crece y el filete se abre, así que se entiende que se

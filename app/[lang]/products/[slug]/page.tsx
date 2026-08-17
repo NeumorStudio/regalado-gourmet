@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
-  esIdioma, categoria, bloquesDe, gamasDe, fichasDe, AMBIENTE, IDIOMAS, CATEGORIAS,
+  esIdioma, categoria, bloquesDe, gamasDe, fichasDe, cabecera, IDIOMAS, CATEGORIAS,
   SITIO, T, CONTACTO, ruta, type Idioma, type Producto,
 } from "@/lib/contenido";
 import { EN_PRUEBAS } from "@/lib/pruebas";
@@ -35,7 +35,7 @@ export async function generateMetadata({
       siteName: "González-Regalado Gourmet",
       locale: l,
       type: "website",
-      images: AMBIENTE[cat.slug] ? [`${SITIO}${AMBIENTE[cat.slug]}`] : undefined,
+      images: cabecera(cat.slug) ? [`${SITIO}${cabecera(cat.slug)}`] : undefined,
     },
   };
 }
@@ -165,13 +165,15 @@ export default async function Categoria({
   if (!esIdioma(lang) || !cat) notFound();
   const l = lang as Idioma;
   const t = T[l];
-  const foto = AMBIENTE[cat.slug];
+  const foto = cabecera(cat.slug);
   const grupos = bloquesDe(cat, l);
 
   return (
     <>
-      {/* Cabecera con la foto de la categoría de fondo: es la que el visitante
-          acaba de pulsar en el índice, así que la continuidad se agradece. */}
+      {/* Cabecera con la foto de la categoría de fondo. Por defecto es la
+          misma que el visitante acaba de pulsar en el índice, que da
+          continuidad; una categoría puede pedir otra distinta declarándola en
+          `AMBIENTE_CABECERA` cuando la de la tarjeta no sirve de ambiente. */}
       <section className="abre-oscuro relative overflow-hidden bg-negro text-white">
         {foto && (
           <Image src={foto} alt="" fill priority sizes="100vw" className="object-cover opacity-45" />

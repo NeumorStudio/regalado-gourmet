@@ -36,17 +36,25 @@ function Ficha({ f, lang, pasada }: { f: Feria; lang: Idioma; pasada: boolean })
   const nota = f.nota?.[lang];
   const cuerpo = (
     <>
-      {/* El hueco de la foto se reserva siempre, la haya o no: si solo lo
-          pintan las que tienen imagen, las demás suben su texto y las fechas
-          de la fila dejan de alinearse. Sin foto queda un plano en crema. */}
-      <div className="relative aspect-[3/2] overflow-hidden rounded-sm bg-crema sm:aspect-[4/3]">
-        {f.foto && (
+      {/* El hueco de la imagen se reserva siempre, la haya o no: si solo lo
+          pintan las que tienen algo, las demás suben su texto y las fechas de
+          la fila dejan de alinearse. Sin imagen queda un plano en crema.
+          Dos formas de llenarlo: una fotografía apaisada, o el cartel de la
+          feria, que al ser 4:5 pide una tarjeta 4:5 y así se ve entero, sin
+          recortarle el contacto ni las fechas. El `alt` va vacío en los dos
+          casos: el nombre de la feria está justo debajo, en el h3. */}
+      <div
+        className={`grabado relative overflow-hidden rounded-sm bg-crema ${
+          f.cartel ? "aspect-[4/5]" : "aspect-[3/2] sm:aspect-[4/3]"
+        }`}
+      >
+        {(f.cartel || f.foto) && (
           <Image
-            src={f.foto}
+            src={f.cartel || f.foto!}
             alt=""
             fill
             sizes="(max-width: 640px) 100vw, 33vw"
-            className={`object-cover ${pasada ? "opacity-80" : ""}`}
+            className={`object-cover ${pasada ? "opacity-70" : ""}`}
           />
         )}
       </div>
@@ -80,7 +88,7 @@ function Ficha({ f, lang, pasada }: { f: Feria; lang: Idioma; pasada: boolean })
           href={f.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block underline-offset-4 hover:[&_h3]:text-oro-tinta hover:[&_h3]:underline"
+          className="grupo group block underline-offset-4 hover:[&_h3]:text-oro-tinta hover:[&_h3]:underline"
         >
           {cuerpo}
         </a>

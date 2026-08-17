@@ -1,5 +1,5 @@
 {
- "_comentario": "Ferias y eventos. Añadir entradas a la lista `ferias`. El campo `ejemplo` no se pinta: está aquí como plantilla de la forma exacta que debe tener cada entrada. Las fechas van en AAAA-MM-DD; la web reparte sola entre próximas y pasadas según el día, y se refresca cada 24 h sin necesidad de volver a publicar. `fin`, `stand`, `url`, `foto` y `nota` son opcionales.",
+ "_comentario": "Ferias y eventos. Añadir entradas a la lista `ferias`. El campo `ejemplo` no se pinta: está aquí como plantilla de la forma exacta que debe tener cada entrada. Las fechas van en AAAA-MM-DD; la web reparte sola entre próximas y pasadas según el día, y se refresca cada 24 h sin necesidad de volver a publicar. `fin`, `stand`, `url`, `nota` y la imagen son opcionales. La imagen puede ser `foto` —una fotografía apaisada, que llena la tarjeta— o `cartel`, el cartel de la feria a 4:5, que se enseña entero y sin recortar. Si no hay ninguna queda el plano en crema.",
  "ejemplo": {
   "id": "alimentaria-2027",
   "nombre": "Alimentaria",
@@ -45,7 +45,6 @@
    "inicio": "2026-10-17",
    "fin": "2026-10-21",
    "url": "https://www.sialparis.com",
-   "foto": "/ferias/sial-paris-2026.jpg",
    "reunion": true,
    "nota": {
     "es": "Asistimos como visitantes, con acceso a la zona de reuniones. Escríbanos y concertamos una cita durante la feria.",
@@ -55,7 +54,8 @@
     "pt": "Estaremos como visitantes, com acesso à zona de reuniões. Escreva-nos e marcamos um encontro durante a feira.",
     "it": "Partecipiamo come visitatori, con accesso all'area riunioni. Scriveteci e fissiamo un incontro durante la fiera.",
     "de": "Wir sind als Besucher vor Ort, mit Zugang zum Meetingbereich. Schreiben Sie uns und wir vereinbaren einen Termin während der Messe."
-   }
+   },
+   "cartel": "/ferias/sial-paris-2026-cartel.jpg"
   }
  ]
 }

@@ -58,7 +58,7 @@ export default function Colaboracion({
 
   if (compacto) {
     return (
-      <div className="mt-6">
+      <div className="colaboracion-pie mt-6">
         <p className="etiqueta text-[0.68rem]">{t.enColaboracionCon}</p>
         <div className="mt-2.5">{placa}</div>
       </div>
@@ -66,7 +66,7 @@ export default function Colaboracion({
   }
 
   return (
-    <section className="border-t border-linea bg-crema">
+    <section className="colaboracion-pagina border-t border-linea bg-crema">
       <div className="mx-auto w-full max-w-3xl px-6 py-14 sm:py-16">
         <p className="etiqueta">{t.colaboraciones}</p>
         <div className="filete mt-4" />

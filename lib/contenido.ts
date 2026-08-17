@@ -256,7 +256,12 @@ export type Feria = {
   fin?: string;
   stand?: string;
   url?: string;
+  /** Una fotografía de la feria, que llena la tarjeta a sangre. */
   foto?: string;
+  /** O el cartel de la feria, a 4:5, que se enseña entero y sin recortar.
+   *  Es el mismo fichero que se publica en redes, así que la tarjeta y la
+   *  publicación cuentan lo mismo. Manda sobre `foto` si están los dos. */
+  cartel?: string;
   nota?: Partial<Record<Idioma, string>>;
   /** Se puede pedir cita durante la feria. Sin formulario ni backend: un
    *  `mailto:` con el asunto y el cuerpo ya escritos, que es lo que la web
@@ -305,6 +310,21 @@ export function rangoFechas(f: Feria, lang: Idioma): string {
 
 // ------------------------------------------------------------- publicaciones
 
+/**
+ * Una declaración del entrevistado.
+ *
+ * `texto` es siempre el literal, en el idioma en que se publicó. `traduccion`
+ * lleva la versión en los demás: en su propio idioma se enseña el literal, y
+ * en los otros la traducción, avisando de que lo es. Traducir una cita sin
+ * decirlo es ponerle al entrevistado palabras que no dijo; no traducirla es
+ * dejar a seis de los siete idiomas mirando un muro en inglés.
+ */
+export type Cita = {
+  texto: string;
+  tema?: Partial<Record<Idioma, string>>;
+  traduccion?: Partial<Record<Idioma, string>>;
+};
+
 export type Publicacion = {
   id: string;
   medio: string;
@@ -312,13 +332,45 @@ export type Publicacion = {
   fecha: string;
   url?: string;
   foto?: string;
+  autor?: string;
+  /** En qué idioma se publicó. Manda para decidir si una cita se enseña
+   *  literal o traducida. Si falta se da por hecho que está en el idioma que
+   *  se está leyendo, y entonces no hay nada que traducir. */
+  idioma?: Idioma;
   resumen?: Partial<Record<Idioma, string>>;
+  /** Lo que da pie a la ficha propia. Sin citas, "Leer" seguiría llevando
+   *  directamente al medio: una página nuestra que solo repitiera el titular
+   *  no le añade nada a nadie. */
+  citas?: Cita[];
 };
 
 /** De la más reciente a la más antigua: en prensa lo último es lo que importa. */
 export const PUBLICACIONES = (publicaciones.publicaciones as Publicacion[])
   .slice()
   .sort((a, b) => b.fecha.localeCompare(a.fecha));
+
+/**
+ * Una cita lista para pintar: el literal si se está leyendo en su idioma, y si
+ * no la traducción. `traducida` avisa a la página de que tiene que decirlo.
+ */
+export function citaEn(c: Cita, lang: Idioma, idiomaOriginal?: Idioma) {
+  const traducida = Boolean(idiomaOriginal && idiomaOriginal !== lang && c.traduccion?.[lang]);
+  return {
+    texto: traducida ? c.traduccion![lang]! : c.texto,
+    // el idioma REAL del texto que se acaba de elegir, para el atributo `lang`
+    idioma: traducida ? lang : (idiomaOriginal ?? lang),
+    traducida,
+    tema: c.tema?.[lang] ?? "",
+  };
+}
+
+/** La ficha propia solo existe si hay algo que enseñar en ella. */
+export function publicacion(id: string): Publicacion | undefined {
+  return PUBLICACIONES.find((p) => p.id === id && p.citas?.length);
+}
+
+/** Las que tienen ficha propia, para el sitemap y para `generateStaticParams`. */
+export const PUBLICACIONES_CON_FICHA = PUBLICACIONES.filter((p) => p.citas?.length);
 
 /** "14 de mayo de 2026" en el idioma que toque. */
 export function fechaLarga(iso: string, lang: Idioma): string {
@@ -342,6 +394,7 @@ type Clave =
   | "gamaPremium" | "gamaSeleccion" | "pieza" | "cuna" | "curacion" | "formatos"
   | "ferias" | "feriasIntro" | "feriasProximas" | "feriasPasadas" | "feriasVacio"
   | "publicaciones" | "publicacionesIntro" | "publicacionesVacio" | "leer"
+  | "leerOriginal" | "volverPublicaciones" | "enPalabrasDe" | "traducidoDe"
   | "pedirReunion" | "asuntoReunion"
   | "colaboraciones" | "enColaboracionCon"
   | "respuesta" | "derechos" | "disenadoPor";
@@ -385,6 +438,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos reuniendo las entrevistas y publicaciones. Escríbanos si desea material sobre la casa.",
     leer: "Leer",
+    leerOriginal: "Leer el original en {medio}",
+    volverPublicaciones: "Volver a publicaciones",
+    enPalabrasDe: "En palabras de",
+    traducidoDe: "Declaraciones traducidas de la entrevista original, en inglés.",
     colaboraciones: "Colaboraciones",
     enColaboracionCon: "En colaboración con",
     pedirReunion: "Solicitar una reunión",
@@ -432,6 +489,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "We are gathering the interviews and features. Write to us if you would like material about the house.",
     leer: "Read",
+    leerOriginal: "Read the original at {medio}",
+    volverPublicaciones: "Back to press",
+    enPalabrasDe: "In the words of",
+    traducidoDe: "Statements as published in the original interview.",
     colaboraciones: "Collaborations",
     enColaboracionCon: "In collaboration with",
     pedirReunion: "Request a meeting",
@@ -479,6 +540,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Vi samler intervjuene og omtalene. Ta kontakt hvis du ønsker materiale om huset.",
     leer: "Les",
+    leerOriginal: "Les originalen i {medio}",
+    volverPublicaciones: "Tilbake til presse",
+    enPalabrasDe: "Med ordene til",
+    traducidoDe: "Uttalelser oversatt fra det opprinnelige intervjuet, på engelsk.",
     colaboraciones: "Samarbeid",
     enColaboracionCon: "I samarbeid med",
     pedirReunion: "Be om et møte",
@@ -526,6 +591,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Nous réunissons les entretiens et les articles. Écrivez-nous si vous souhaitez de la documentation sur la maison.",
     leer: "Lire",
+    leerOriginal: "Lire l’original dans {medio}",
+    volverPublicaciones: "Retour à la presse",
+    enPalabrasDe: "Dans les mots de",
+    traducidoDe: "Propos traduits de l’entretien original, en anglais.",
     colaboraciones: "Collaborations",
     enColaboracionCon: "En collaboration avec",
     pedirReunion: "Demander un rendez-vous",
@@ -573,6 +642,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Estamos a reunir as entrevistas e publicações. Escreva-nos se desejar material sobre a casa.",
     leer: "Ler",
+    leerOriginal: "Ler o original em {medio}",
+    volverPublicaciones: "Voltar às publicações",
+    enPalabrasDe: "Nas palavras de",
+    traducidoDe: "Declarações traduzidas da entrevista original, em inglês.",
     colaboraciones: "Colaborações",
     enColaboracionCon: "Em colaboração com",
     pedirReunion: "Solicitar uma reunião",
@@ -620,6 +693,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Stiamo raccogliendo le interviste e gli articoli. Ci scriva se desidera materiale sulla casa.",
     leer: "Leggi",
+    leerOriginal: "Leggi l’originale su {medio}",
+    volverPublicaciones: "Torna alla rassegna stampa",
+    enPalabrasDe: "Nelle parole di",
+    traducidoDe: "Dichiarazioni tradotte dall’intervista originale, in inglese.",
     colaboraciones: "Collaborazioni",
     enColaboracionCon: "In collaborazione con",
     pedirReunion: "Richiedere un incontro",
@@ -667,6 +744,10 @@ export const T: Record<Idioma, Record<Clave, string>> = {
     publicacionesVacio:
       "Wir stellen die Interviews und Berichte gerade zusammen. Schreiben Sie uns, wenn Sie Material über das Haus wünschen.",
     leer: "Lesen",
+    leerOriginal: "Das Original bei {medio} lesen",
+    volverPublicaciones: "Zurück zur Presse",
+    enPalabrasDe: "In den Worten von",
+    traducidoDe: "Aussagen aus dem englischsprachigen Originalinterview übersetzt.",
     colaboraciones: "Kooperationen",
     enColaboracionCon: "In Zusammenarbeit mit",
     pedirReunion: "Termin anfragen",
@@ -756,9 +837,32 @@ export const AMBIENTE: Record<string, string> = {
   "sal-y-especias": "/ambiente/sal-y-especias.jpg",
   monodosis: "/ambiente/monodosis.jpg",
 };
-// Renombrada al recortarle la pared clara del borde izquierdo: con el nombre
-// anterior los navegadores seguían sirviendo la versión cacheada.
-export const AMBIENTE_PORTADA = "/ambiente/hero-aceite.jpg";
+/**
+ * Cuando la cabecera de una categoría no quiere la misma foto que su tarjeta.
+ *
+ * Por defecto comparten fichero a propósito: la cabecera continúa la imagen
+ * que el visitante acaba de pulsar en el catálogo. Pero en quesos las dos
+ * fotos hacen oficios distintos —la tarjeta enseña el producto, la cabecera
+ * pone ambiente—, así que la cabecera va por libre. Solo se anota aquí la
+ * categoría que se sale de la regla; el resto siguen con una sola foto.
+ */
+export const AMBIENTE_CABECERA: Record<string, string> = {
+  "quesos-manchegos-dop": "/ambiente/quesos-tabla.jpg",
+};
+
+/** La foto de la cabecera de una categoría: la suya si la tiene, y si no la
+ *  misma de su tarjeta en el catálogo. */
+export function cabecera(slug: string): string | undefined {
+  return AMBIENTE_CABECERA[slug] ?? AMBIENTE[slug];
+}
+
+/**
+ * La foto que abre la portada. Es la misma que encabeza la sección de quesos,
+ * y no pasa nada: en el hero se ve un momento y cruzándose con otras dos, y
+ * quien llega a la ficha de quesos ya viene de haberla visto. Antes abría el
+ * bodegón de aceite, que sigue en el fundido en segundo lugar.
+ */
+export const AMBIENTE_PORTADA = "/ambiente/quesos-tabla.jpg";
 
 /** Las páginas de contenido, para el sitemap. El orden del menú NO sale de
  *  aquí: se declara en app/[lang]/layout.tsx, donde se ve entero. */

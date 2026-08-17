@@ -1,5 +1,5 @@
 {
- "_comentario": "Entrevistas y publicaciones sobre la casa. Añadir entradas a la lista `publicaciones`. El campo `ejemplo` no se pinta: está aquí como plantilla. `fecha` va en AAAA-MM-DD y ordena la lista, de la más reciente a la más antigua. `url`, `foto` y `resumen` son opcionales; el titular se guarda tal y como se publicó, sin traducir, y lo que se traduce es el resumen.",
+ "_comentario": "Entrevistas y publicaciones sobre la casa. Añadir entradas a la lista `publicaciones`. El campo `ejemplo` no se pinta: está aquí como plantilla. `fecha` va en AAAA-MM-DD y ordena la lista, de la más reciente a la más antigua. `url`, `foto` y `resumen` son opcionales; el titular se guarda tal y como se publicó, sin traducir, y lo que se traduce es el resumen. `citas` son declaraciones del entrevistado. `texto` es SIEMPRE el literal, en el idioma en que se publicó, que declara `idioma`; `traduccion` lleva la versión en los demás. En su propio idioma se enseña el literal; en los otros, la traducción con un aviso de que lo es, y el literal queda a un clic en el enlace al medio. La ficha propia no reproduce el artículo, solo lo que dijo él y un enlace al original.",
  "ejemplo": {
   "id": "diario-huelva-2026",
   "medio": "Diario de Huelva",
@@ -33,7 +33,71 @@
     "pt": "Entrevista a Eduardo González-Regalado, fundador da casa, sobre como se escolhem os produtos e o que é preciso para levar o azeite, os enchidos ibéricos e a azeitona do sul de Espanha a mercados que exigem autenticidade e rastreabilidade.",
     "it": "Intervista a Eduardo González-Regalado, fondatore della casa, su come si scelgono i prodotti e su cosa serve per portare olio d'oliva, salumi iberici e olive del sud della Spagna verso mercati che chiedono autenticità e tracciabilità.",
     "de": "Interview mit Eduardo González-Regalado, dem Gründer des Hauses, darüber, wie die Produkte ausgewählt werden und was nötig ist, um Olivenöl, iberische Wurstwaren und Oliven aus Südspanien in Märkte zu bringen, die Authentizität und Rückverfolgbarkeit verlangen."
-   }
+   },
+   "autor": "Eduardo González-Regalado Batllés",
+   "citas": [
+    {
+     "tema": {
+      "es": "Filosofía",
+      "en": "Philosophy",
+      "nb": "Filosofi",
+      "fr": "Philosophie",
+      "pt": "Filosofia",
+      "it": "Filosofia",
+      "de": "Philosophie"
+     },
+     "texto": "Our philosophy is simple: we don’t sell volume—we sell quality. Every product we work with must reflect the tradition and integrity of its region of origin, especially from southern Spain.",
+     "traduccion": {
+      "es": "Nuestra filosofía es sencilla: no vendemos volumen, vendemos calidad. Cada producto con el que trabajamos tiene que reflejar la tradición y la integridad de su región de origen, sobre todo del sur de España.",
+      "nb": "Filosofien vår er enkel: vi selger ikke volum – vi selger kvalitet. Hvert produkt vi arbeider med må gjenspeile tradisjonen og integriteten i opprinnelsesregionen sin, særlig fra Sør-Spania.",
+      "fr": "Notre philosophie est simple : nous ne vendons pas du volume, nous vendons de la qualité. Chaque produit avec lequel nous travaillons doit refléter la tradition et l’intégrité de sa région d’origine, en particulier du sud de l’Espagne.",
+      "pt": "A nossa filosofia é simples: não vendemos volume, vendemos qualidade. Cada produto com que trabalhamos tem de refletir a tradição e a integridade da sua região de origem, sobretudo do sul de Espanha.",
+      "it": "La nostra filosofia è semplice: non vendiamo volume, vendiamo qualità. Ogni prodotto con cui lavoriamo deve riflettere la tradizione e l’integrità della sua regione d’origine, in particolare del sud della Spagna.",
+      "de": "Unsere Philosophie ist einfach: Wir verkaufen kein Volumen, wir verkaufen Qualität. Jedes Produkt, mit dem wir arbeiten, muss die Tradition und Integrität seiner Herkunftsregion widerspiegeln, vor allem aus dem Süden Spaniens."
+     }
+    },
+    {
+     "tema": {
+      "es": "Crecimiento",
+      "en": "Growth",
+      "nb": "Vekst",
+      "fr": "Croissance",
+      "pt": "Crescimento",
+      "it": "Crescita",
+      "de": "Wachstum"
+     },
+     "texto": "We never force production beyond natural capacity, because that risks compromising quality. Growth has to be controlled and sustainable.",
+     "traduccion": {
+      "es": "Nunca forzamos la producción más allá de la capacidad natural, porque eso arriesga la calidad. El crecimiento tiene que ser controlado y sostenible.",
+      "nb": "Vi presser aldri produksjonen ut over naturlig kapasitet, for det setter kvaliteten på spill. Vekst må være kontrollert og bærekraftig.",
+      "fr": "Nous ne forçons jamais la production au-delà de la capacité naturelle, car cela risque de compromettre la qualité. La croissance doit être maîtrisée et durable.",
+      "pt": "Nunca forçamos a produção para além da capacidade natural, porque isso arrisca comprometer a qualidade. O crescimento tem de ser controlado e sustentável.",
+      "it": "Non forziamo mai la produzione oltre la capacità naturale, perché così si rischia di compromettere la qualità. La crescita dev’essere controllata e sostenibile.",
+      "de": "Wir treiben die Produktion nie über die natürliche Kapazität hinaus, denn das gefährdet die Qualität. Wachstum muss kontrolliert und nachhaltig sein."
+     }
+    },
+    {
+     "tema": {
+      "es": "Autenticidad",
+      "en": "Authenticity",
+      "nb": "Autentisitet",
+      "fr": "Authenticité",
+      "pt": "Autenticidade",
+      "it": "Autenticità",
+      "de": "Authentizität"
+     },
+     "texto": "There is a growing appreciation for authenticity. Consumers are more informed—they want to know where food comes from, how it is produced, and who is behind it.",
+     "traduccion": {
+      "es": "Hay un aprecio creciente por la autenticidad. El consumidor está más informado: quiere saber de dónde viene el alimento, cómo se produce y quién está detrás.",
+      "nb": "Det er en økende verdsettelse av autentisitet. Forbrukerne er bedre informert – de vil vite hvor maten kommer fra, hvordan den produseres og hvem som står bak.",
+      "fr": "L’authenticité est de plus en plus appréciée. Les consommateurs sont mieux informés : ils veulent savoir d’où vient l’aliment, comment il est produit et qui se trouve derrière.",
+      "pt": "Há uma valorização crescente da autenticidade. Os consumidores estão mais informados: querem saber de onde vem o alimento, como é produzido e quem está por trás.",
+      "it": "C’è un apprezzamento crescente per l’autenticità. I consumatori sono più informati: vogliono sapere da dove viene il cibo, come è prodotto e chi c’è dietro.",
+      "de": "Die Wertschätzung für Authentizität wächst. Die Verbraucher sind besser informiert: Sie wollen wissen, woher das Lebensmittel kommt, wie es hergestellt wird und wer dahintersteht."
+     }
+    }
+   ],
+   "idioma": "en"
   }
  ]
 }

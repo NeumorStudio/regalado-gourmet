@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import {
-  CATEGORIAS, FERIAS, IDIOMAS, PAGINAS, PUBLICACIONES, SITIO, ruta,
+  CATEGORIAS, FERIAS, IDIOMAS, PAGINAS, PUBLICACIONES, PUBLICACIONES_CON_FICHA,
+  SITIO, ruta,
 } from "@/lib/contenido";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -49,5 +50,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
     : [];
 
-  return [...paginas, ...categorias, ...eventos, ...prensa];
+  // Las publicaciones que tienen ficha propia son páginas de la web como
+  // cualquier otra; las que solo enlazan al medio no existen aquí.
+  const fichas = IDIOMAS.flatMap((lang) =>
+    PUBLICACIONES_CON_FICHA.map((p) => ({
+      url: `${SITIO}/${lang}/press/${p.id}/`,
+      alternates: {
+        languages: Object.fromEntries(
+          IDIOMAS.map((l) => [l, `${SITIO}/${l}/press/${p.id}/`]),
+        ),
+      },
+      priority: 0.5,
+    })),
+  );
+
+  return [...paginas, ...categorias, ...eventos, ...prensa, ...fichas];
 }

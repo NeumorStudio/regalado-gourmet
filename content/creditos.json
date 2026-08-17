@@ -12,7 +12,7 @@
  "fotos": [
   {
    "fichero": "hero-aceite.jpg",
-   "uso": "portada",
+   "uso": "portada, segunda del fundido",
    "escena": "Aceitera de vidrio sin etiqueta, aceitunas verdes y rama de olivo sobre roble oscuro"
   },
   {
@@ -27,9 +27,15 @@
   },
   {
    "fichero": "quesos.jpg",
-   "uso": "Quesos Manchegos D.O.P.",
+   "uso": "tarjeta de Quesos Manchegos D.O.P. en el catálogo",
    "escena": "Ruedas de manchego artesano en la quesería: la pleita en zigzag del canto y la flor de cuatro pétalos de la cara. Sin marca a la vista.",
    "origen": "Fotografía de Dehesa de los Llanos. El cliente la envió reducida (1200x1189) en su correo; aquí va el original a 2000x1982 de su propio CDN. Se usa por ser la única del juego sin logotipo: no hay nada que borrar. CONFIRMAR con Dehesa que se puede publicar."
+  },
+  {
+   "fichero": "quesos-tabla.jpg",
+   "uso": "portada (abre el fundido) y cabecera de Quesos Manchegos D.O.P.",
+   "escena": "Rueda de manchego con una cuña cortada sobre tabla de madera, con lavanda y nueces",
+   "origen": "Del cliente: `GR-Reducida-scaled-1-1200x800.jpg`. Por el nombre —prefijo GR, medidas de WordPress— parece de su web anterior, aunque no aparece en la copia que tenemos de ella; CONFIRMAR con él que la foto es suya. Va aparte de `quesos.jpg` a propósito: la tarjeta del catálogo enseña el producto y la cabecera pone ambiente, y con una sola foto la cabecera repetía lo que ya se había visto. El original venía a 1200x800, corto para una foto a sangre, así que va escalada a 4K (bytedance, vía Higgsfield) e instalada a 2400 px. Si el cliente conserva el original sin reducir, mejor ese."
   },
   {
    "fichero": "jamones.jpg",
@@ -119,6 +125,6 @@
  },
  "otras_secciones": {
   "/publicaciones/isn-magazine-2026.jpg": "Retrato del fundador, el mismo que ilustra la entrevista en International Supermarket News. Original del cliente.",
-  "/ferias/sial-paris-2026.jpg": "Tarjeta oficial de visitante de SIAL París 2026 con su foto. La entrega SIAL a los asistentes. El billete con el código de barras NO se publica."
+  "/ferias/sial-paris-2026-cartel.jpg": "Cartel de la feria, 1080x1350 (formato de publicación), que sirve a la vez de imagen de la tarjeta en la web. Sustituye a la tarjeta de visitante amarilla que entrega SIAL, que el cliente dijo que no le gustaba. COMPUESTO, no generado: lleva un email y dos teléfonos y eso tiene que salir exacto, así que se maquetó en HTML con las fuentes y los dorados de la propia web y se renderizó con Chromium a 1080x1350. Piezas: el logotipo de la casa (public/marca), el de SIAL recortado de la tarjeta de visitante del cliente, y una escena generada con nano_banana_pro el 16/08/2026 —aceitera, cuña de manchego, loncheado ibérico y rama de olivo sobre tabla, con olivar andaluz al fondo; sin marca ni etiqueta a la vista—. Inspirado en el banner que el cliente tiene en la web de la entrevista, pero sin el retrato, como pidió. No dice ni 'stand' ni nada que sugiera que expone: asiste de visitante con acceso a la zona de reuniones."
  }
 }

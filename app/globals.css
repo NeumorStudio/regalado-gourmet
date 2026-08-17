@@ -555,6 +555,18 @@ body::after {
    foto, para que el canto entre las dos no dibujara una costura. Ahora la
    foto es el fondo de toda la sección y no hay canto que fundir. */
 
+/* ----------------------------------------------- colaboración, sin repetirse
+   En "Quiénes somos" la colaboración ya sale contada, con su placa y su
+   párrafo, así que el pie se calla en esa página. Va en CSS y no en el
+   componente porque el pie vive en el layout y un layout no sabe qué página
+   está pintando; aquí lo decide el propio documento.
+   Se apaña solo: cualquier página que incluya el bloque apaga el del pie sin
+   tener que acordarse de nada. Y si algún navegador no soportara `:has()`, lo
+   que pasa es que se repite —que es lo que había—, no que se rompa nada. */
+body:has(main .colaboracion-pagina) .colaboracion-pie {
+  display: none;
+}
+
 /* ------------------------------------------ formatos y curación de la ficha
    Los pesos van en placas con el filete impreso por dentro: el mismo gesto que
    los botones y el borde de las tarjetas, así que se leen como impresas sobre

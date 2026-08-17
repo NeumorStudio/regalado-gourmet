@@ -32,7 +32,11 @@ export default async function Inicio({ params }: { params: Promise<{ lang: strin
               veía. Quien sostiene ahora el contraste del texto es `velo-hero`,
               que oscurece el centro y suelta los flancos. */}
           <div className="fundido absolute inset-0 opacity-55">
-            {[AMBIENTE_PORTADA, "/ambiente/quesos.jpg", "/ambiente/chacinas.jpg"].map(
+            {/* Tres fotos distintas: la de quesos abre —ahora es la portada— y
+                el bodegón de aceite baja al segundo puesto, que es el sitio
+                que ocupaba la de quesos. Si se repitiera una, el fundido
+                parecería que se ha quedado enganchado. */}
+            {[AMBIENTE_PORTADA, "/ambiente/hero-aceite.jpg", "/ambiente/chacinas.jpg"].map(
               (src, i) => (
                 <Image
                   key={src}

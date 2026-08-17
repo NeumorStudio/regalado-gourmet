@@ -50,7 +50,19 @@ function Ficha({ p, lang, t }: { p: Publicacion; lang: Idioma; t: Record<string,
           {p.titulo}
         </h2>
         {resumen && <p className="mt-3 max-w-2xl text-tinta-2 text-pretty">{resumen}</p>}
-        {p.url && (
+        {/* Con ficha propia "Leer" se queda en casa, que es lo que se quería:
+            la publicación se lee aquí, con nuestro estilo, y allí dentro está
+            el enlace al medio. Sin ficha sigue llevando al original, que es
+            mejor que no llevar a ninguna parte. */}
+        {p.citas?.length ? (
+          <Link
+            href={`/${lang}/press/${p.id}/`}
+            className="mt-3 inline-flex min-h-11 items-center gap-2 font-sans text-sm text-oro-tinta underline-offset-4 hover:underline"
+          >
+            {t.leer}
+            <span aria-hidden>→</span>
+          </Link>
+        ) : p.url ? (
           <a
             href={p.url}
             target="_blank"
@@ -60,7 +72,7 @@ function Ficha({ p, lang, t }: { p: Publicacion; lang: Idioma; t: Record<string,
             {t.leer}
             <span aria-hidden>→</span>
           </a>
-        )}
+        ) : null}
       </div>
     </li>
   );

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
-  esIdioma, metadatos, titular, CATEGORIAS, AMBIENTE,
+  esIdioma, metadatos, titular, CATEGORIAS, AMBIENTE, tieneContenido,
   T, CONTACTO, type Idioma,
 } from "@/lib/contenido";
 
@@ -41,9 +41,9 @@ export default async function Catalogo({
       <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIAS.map((c) => {
-            // Con galería hay algo que ver aunque no haya tarifa, así que la
-            // tarjeta ni se apaga ni deja de llevar a su página.
-            const vacia = c.total === 0 && !c.galeria?.length;
+            // Se apaga y deja de enlazar solo si no hay NADA que enseñar:
+            // ni tarifa, ni fichas declaradas, ni galería. Ver `tieneContenido`.
+            const vacia = !tieneContenido(c);
             const foto = AMBIENTE[c.slug];
             const Contenido = (
               <>

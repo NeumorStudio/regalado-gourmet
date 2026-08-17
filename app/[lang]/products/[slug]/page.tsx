@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
-  esIdioma, categoria, bloquesDe, gamasDe, fichasDe, cabecera, IDIOMAS, CATEGORIAS,
-  SITIO, T, CONTACTO, ruta, type Idioma, type Producto,
+  esIdioma, categoria, bloquesDe, gamasDe, fichasDe, cabecera,
+  IDIOMAS, CATEGORIAS, SITIO, T, CONTACTO, ruta, type Idioma, type Ficha,
 } from "@/lib/contenido";
 
 export function generateStaticParams() {
@@ -48,9 +48,8 @@ export async function generateMetadata({
  * la misma foto doce veces, y los aceites como una fila por formato de
  * botella; las 92 filas del catálogo se publican en 45 fichas. Ver `fichasDe`.
  */
-function Rejilla({ productos, lang }: { productos: Producto[]; lang: Idioma }) {
+function Rejilla({ fichas, lang }: { fichas: Ficha[]; lang: Idioma }) {
   const t = T[lang];
-  const fichas = fichasDe(productos, lang);
   // Si alguna ficha de esta rejilla lleva antetítulo, todas le guardan el
   // sitio: sin eso el nombre de las que no lo tienen sube una línea y la fila
   // queda descuadrada. Cuando no lo lleva ninguna (los frutos secos, por
@@ -205,7 +204,7 @@ export default async function Categoria({
             ))}
           </ul>
         </section>
-      ) : cat.total === 0 ? (
+      ) : !grupos.length ? (
         <section className="mx-auto w-full max-w-3xl px-6 py-20 text-center sm:py-24">
           <p className="etiqueta">{t.enPreparacion}</p>
           <p className="mt-4 text-lg text-tinta-2 text-pretty">{t.enPreparacionNota}</p>
@@ -222,7 +221,7 @@ export default async function Categoria({
           {grupos.map((grupo) => {
             const gamas = gamasDe(grupo.productos);
             return (
-              <div key={grupo.titulo} className="mb-14 last:mb-0">
+              <div key={grupo.titulo || "sueltas"} className="mb-14 last:mb-0">
                 {grupo.titulo && (
                   <h2
                     className="border-b-2 border-negro pb-4 text-balance"
@@ -231,24 +230,31 @@ export default async function Categoria({
                     {grupo.titulo}
                   </h2>
                 )}
+                {/* Las fichas sin fila de tarifa abren su bloque. En embutidos
+                    son las de la D.O.P. Los Pedroches: van dentro de Chorizo y
+                    de Salchichón como una más, y lo que las distingue es el
+                    sello en su propio nombre. */}
+                {grupo.sueltas.length > 0 && (
+                  <Rejilla fichas={grupo.sueltas} lang={l} />
+                )}
                 {/* Las dos gamas solo se separan cuando ambas están marcadas.
                     Con una sola (o ninguna) sería un titular sin contraste. */}
-                {gamas.length > 1 ? (
+                {grupo.productos.length === 0 ? null : gamas.length > 1 ? (
                   gamas.map((g) => (
                     <div key={g} className="mt-8">
                       <p className="etiqueta">
                         {g === "premium" ? t.gamaPremium : t.gamaSeleccion}
                       </p>
-                      <Rejilla productos={grupo.productos.filter((p) => p.gama === g)} lang={l} />
+                      <Rejilla fichas={fichasDe(grupo.productos.filter((p) => p.gama === g), l)} lang={l} />
                     </div>
                   ))
                 ) : (
-                  <Rejilla productos={grupo.productos} lang={l} />
+                  <Rejilla fichas={fichasDe(grupo.productos, l)} lang={l} />
                 )}
                 {/* Los que aún no tienen gama asignada no se pierden. */}
                 {gamas.length > 1 && grupo.productos.some((p) => !p.gama) && (
                   <div className="mt-8">
-                    <Rejilla productos={grupo.productos.filter((p) => !p.gama)} lang={l} />
+                    <Rejilla fichas={fichasDe(grupo.productos.filter((p) => !p.gama), l)} lang={l} />
                   </div>
                 )}
               </div>

@@ -712,7 +712,7 @@
    "formato": "",
    "presentacion": "",
    "unidad": "€/KG",
-   "foto": "/productos/p042.png",
+   "foto": "/productos/salchichon-velita.jpg",
    "subcategoria": "salchichon",
    "grupo": "salchichon-velita"
   },
@@ -723,7 +723,7 @@
    "formato": "",
    "presentacion": "",
    "unidad": "€/KG",
-   "foto": "/productos/p043.png",
+   "foto": "/productos/p043.jpg",
    "subcategoria": "chorizo",
    "grupo": "chorizo-velita"
   },
@@ -838,7 +838,7 @@
    "formato": "100 gr",
    "presentacion": "",
    "unidad": "€/UD",
-   "foto": "/productos/p054.png",
+   "foto": "/productos/p054.jpg",
    "subcategoria": "lomo",
    "gama": "seleccion",
    "grupo": "lonch-sost-lomo-duroc"
@@ -1736,7 +1736,7 @@
   {
    "slug": "salchichon-velita",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p042.png",
+   "foto": "/productos/salchichon-velita.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Salchichón velita ibérico",
@@ -1760,7 +1760,7 @@
   {
    "slug": "chorizo-velita",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p043.png",
+   "foto": "/productos/p043.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Chorizo velita ibérico",
@@ -1882,7 +1882,7 @@
   {
    "slug": "lonch-sost-lomo-duroc",
    "categoria": "embutidos-ibericos",
-   "foto": "/productos/p054.png",
+   "foto": "/productos/p054.jpg",
    "antetitulo": {
     "es": "Loncheado sostenible",
     "en": "Sustainable sliced",
@@ -2928,7 +2928,7 @@
   {
    "slug": "miel-lavanda",
    "categoria": "otros-productos-salsas",
-   "foto": "",
+   "foto": "/productos/miel-lavanda.jpg",
    "antetitulo": "",
    "titulo": {
     "es": "Miel artesana de lavanda",
@@ -2948,6 +2948,241 @@
     "it": "Vasetto di vetro",
     "de": "Glas"
    }
+  },
+  {
+   "slug": "dop-jamon-pieza",
+   "categoria": "jamones-ibericos-dop",
+   "foto": "/productos/dop-jamon-pieza.jpg",
+   "antetitulo": {
+    "es": "Pieza entera",
+    "en": "Whole leg",
+    "nb": "Hel skinke",
+    "fr": "Pièce entière",
+    "pt": "Peça inteira",
+    "it": "Pezzo intero",
+    "de": "Ganzer Schinken"
+   },
+   "titulo": {
+    "es": "Jamón ibérico D.O.P.",
+    "en": "Iberian ham D.O.P.",
+    "nb": "Iberisk skinke D.O.P.",
+    "fr": "Jambon ibérique A.O.P.",
+    "pt": "Presunto ibérico D.O.P.",
+    "it": "Prosciutto iberico D.O.P.",
+    "de": "Iberischer Schinken g.U."
+   },
+   "caracter": {
+    "es": "Los Pedroches",
+    "en": "Los Pedroches",
+    "nb": "Los Pedroches",
+    "fr": "Los Pedroches",
+    "pt": "Los Pedroches",
+    "it": "Los Pedroches",
+    "de": "Los Pedroches"
+   }
+  },
+  {
+   "slug": "dop-jamon-cuchillo",
+   "categoria": "jamones-ibericos-dop",
+   "foto": "/productos/dop-jamon-cuchillo.jpg",
+   "antetitulo": {
+    "es": "Cortado a cuchillo",
+    "en": "Knife-cut",
+    "nb": "Skåret med kniv",
+    "fr": "Coupé au couteau",
+    "pt": "Cortado à faca",
+    "it": "Tagliato a coltello",
+    "de": "Mit dem Messer geschnitten"
+   },
+   "titulo": {
+    "es": "Jamón ibérico D.O.P.",
+    "en": "Iberian ham D.O.P.",
+    "nb": "Iberisk skinke D.O.P.",
+    "fr": "Jambon ibérique A.O.P.",
+    "pt": "Presunto ibérico D.O.P.",
+    "it": "Prosciutto iberico D.O.P.",
+    "de": "Iberischer Schinken g.U."
+   },
+   "caracter": {
+    "es": "Los Pedroches",
+    "en": "Los Pedroches",
+    "nb": "Los Pedroches",
+    "fr": "Los Pedroches",
+    "pt": "Los Pedroches",
+    "it": "Los Pedroches",
+    "de": "Los Pedroches"
+   },
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dop-cana-lomo",
+   "categoria": "embutidos-ibericos",
+   "subcategoria": "lomo",
+   "foto": "/productos/dop-cana-lomo.jpg",
+   "antetitulo": {
+    "es": "Cortado a cuchillo",
+    "en": "Knife-cut",
+    "nb": "Skåret med kniv",
+    "fr": "Coupé au couteau",
+    "pt": "Cortado à faca",
+    "it": "Tagliato a coltello",
+    "de": "Mit dem Messer geschnitten"
+   },
+   "titulo": {
+    "es": "Caña de lomo ibérica D.O.P.",
+    "en": "Iberian loin D.O.P.",
+    "nb": "Iberisk filet D.O.P.",
+    "fr": "Longe ibérique A.O.P.",
+    "pt": "Lombo ibérico D.O.P.",
+    "it": "Lonza iberica D.O.P.",
+    "de": "Iberische Lende g.U."
+   },
+   "caracter": {
+    "es": "Los Pedroches",
+    "en": "Los Pedroches",
+    "nb": "Los Pedroches",
+    "fr": "Los Pedroches",
+    "pt": "Los Pedroches",
+    "it": "Los Pedroches",
+    "de": "Los Pedroches"
+   },
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dop-chorizo",
+   "categoria": "embutidos-ibericos",
+   "foto": "/productos/dop-chorizo.jpg",
+   "antetitulo": {
+    "es": "Loncheado",
+    "en": "Sliced",
+    "nb": "Skiveskåret",
+    "fr": "Tranché",
+    "pt": "Fatiado",
+    "it": "Affettato",
+    "de": "Aufgeschnitten"
+   },
+   "titulo": {
+    "es": "Chorizo ibérico D.O.P.",
+    "en": "Iberian chorizo D.O.P.",
+    "nb": "Iberisk chorizo D.O.P.",
+    "fr": "Chorizo ibérique A.O.P.",
+    "pt": "Chouriço ibérico D.O.P.",
+    "it": "Chorizo iberico D.O.P.",
+    "de": "Iberischer Chorizo g.U."
+   },
+   "caracter": {
+    "es": "Los Pedroches",
+    "en": "Los Pedroches",
+    "nb": "Los Pedroches",
+    "fr": "Los Pedroches",
+    "pt": "Los Pedroches",
+    "it": "Los Pedroches",
+    "de": "Los Pedroches"
+   },
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ],
+   "subcategoria": "chorizo"
+  },
+  {
+   "slug": "dop-jamon-cebo",
+   "categoria": "jamones-ibericos-dop",
+   "foto": "/productos/dop-jamon-cebo.jpg",
+   "antetitulo": {
+    "es": "Cebo de campo",
+    "en": "Cebo de campo",
+    "nb": "Cebo de campo",
+    "fr": "Cebo de campo",
+    "pt": "Cebo de campo",
+    "it": "Cebo de campo",
+    "de": "Cebo de campo"
+   },
+   "titulo": {
+    "es": "Jamón ibérico D.O.P.",
+    "en": "Iberian ham D.O.P.",
+    "nb": "Iberisk skinke D.O.P.",
+    "fr": "Jambon ibérique A.O.P.",
+    "pt": "Presunto ibérico D.O.P.",
+    "it": "Prosciutto iberico D.O.P.",
+    "de": "Iberischer Schinken g.U."
+   },
+   "caracter": {
+    "es": "Los Pedroches",
+    "en": "Los Pedroches",
+    "nb": "Los Pedroches",
+    "fr": "Los Pedroches",
+    "pt": "Los Pedroches",
+    "it": "Los Pedroches",
+    "de": "Los Pedroches"
+   },
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dop-salchichon",
+   "categoria": "embutidos-ibericos",
+   "foto": "/productos/dop-salchichon.jpg",
+   "antetitulo": {
+    "es": "Loncheado",
+    "en": "Sliced",
+    "nb": "Skiveskåret",
+    "fr": "Tranché",
+    "pt": "Fatiado",
+    "it": "Affettato",
+    "de": "Aufgeschnitten"
+   },
+   "titulo": {
+    "es": "Salchichón ibérico D.O.P.",
+    "en": "Iberian salchichón D.O.P.",
+    "nb": "Iberisk salchichón D.O.P.",
+    "fr": "Salchichón ibérique A.O.P.",
+    "pt": "Salpicão ibérico D.O.P.",
+    "it": "Salchichón iberico D.O.P.",
+    "de": "Iberischer Salchichón g.U."
+   },
+   "caracter": {
+    "es": "Los Pedroches",
+    "en": "Los Pedroches",
+    "nb": "Los Pedroches",
+    "fr": "Los Pedroches",
+    "pt": "Los Pedroches",
+    "it": "Los Pedroches",
+    "de": "Los Pedroches"
+   },
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "100 g"
+     ]
+    }
+   ],
+   "subcategoria": "salchichon"
   }
  ]
 }

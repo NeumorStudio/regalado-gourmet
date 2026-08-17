@@ -114,6 +114,10 @@ export type Grupo = {
    *  Un valor es texto tal cual cuando es una cifra ("150 g", igual en los
    *  siete idiomas) o va traducido cuando es una palabra ("Pieza entera"). */
   formatos?: Formato[];
+  /** En qué bloque de la categoría cae, cuando la categoría tiene bloques.
+   *  Solo hace falta en las fichas sin fila de tarifa detrás: las que la
+   *  tienen heredan la subcategoría de su fila. */
+  subcategoria?: string;
 };
 export type Formato = {
   /** El término que encabeza la fila, o "" para una fila sin término visible.
@@ -142,13 +146,27 @@ export const CATEGORIAS = catalogo.categorias as Categoria[];
 export const PRODUCTOS = catalogo.productos as Producto[];
 export const GRUPOS = catalogo.grupos as Grupo[];
 
-/** Las que tienen algo que enseñar: referencias o, sin ellas, una galería. Las
- *  demás se publican igual, pero con un aviso en vez de una rejilla vacía: el
- *  cliente quiere que se vea el alcance de la oferta aunque aún no haya
- *  mandado las tarifas. */
-export const CATEGORIAS_CON_PRODUCTO = CATEGORIAS.filter(
-  (c) => c.total > 0 || c.galeria?.length,
-);
+/**
+ * ¿Tiene esta categoría algo que enseñar? Tres formas de tenerlo: filas de
+ * tarifa, fichas declaradas sin tarifa detrás, o una galería de fotos. Las que
+ * no tienen ninguna se publican igual, pero con un aviso en vez de una rejilla
+ * vacía: el cliente quiere que se vea el alcance de la oferta aunque aún no
+ * haya mandado las tarifas.
+ *
+ * Lo miran la parrilla de la portada, la tarjeta del índice —para saber si se
+ * apaga y deja de enlazar— y la propia página de la categoría. Va en un solo
+ * sitio porque las tres tienen que coincidir: una tarjeta apagada que enlaza a
+ * una página con producto es peor que cualquiera de las dos cosas por separado.
+ */
+export function tieneContenido(c: Categoria): boolean {
+  return Boolean(
+    c.total > 0 ||
+      c.galeria?.length ||
+      GRUPOS.some((g) => g.categoria === c.slug && !g.oculto),
+  );
+}
+
+export const CATEGORIAS_CON_PRODUCTO = CATEGORIAS.filter(tieneContenido);
 
 export function categoria(slug: string): Categoria | undefined {
   return CATEGORIAS.find((c) => c.slug === slug);
@@ -182,14 +200,32 @@ export function productosDe(slug: string): Producto[] {
  */
 export function bloquesDe(cat: Categoria, lang: Idioma) {
   const productos = productosDe(cat.slug);
-  const grupos = cat.subcategorias?.length
-    ? cat.subcategorias.map((s) => ({
-        titulo: s.nombre[lang],
-        productos: productos.filter((p) => p.subcategoria === s.slug),
-      }))
-    : [{ titulo: "", productos }];
-  return grupos.filter((g) => g.productos.length);
+  const sueltos = gruposSueltosDe(cat.slug);
+  const arma = (titulo: string, ps: Producto[], gs: Grupo[]) => ({
+    titulo,
+    productos: ps,
+    sueltas: gs.map((g) => aFicha(g, "", lang)),
+  });
+
+  if (!cat.subcategorias?.length) return [arma("", productos, sueltos)].filter(lleno);
+
+  const bloques = cat.subcategorias.map((s) =>
+    arma(
+      s.nombre[lang],
+      productos.filter((p) => p.subcategoria === s.slug),
+      sueltos.filter((g) => g.subcategoria === s.slug),
+    ),
+  );
+  // Una ficha suelta sin subcategoría en una categoría que las tiene no se
+  // pierde: abre la página en un bloque sin título.
+  const huerfanas = sueltos.filter(
+    (g) => !cat.subcategorias!.some((s) => s.slug === g.subcategoria),
+  );
+  return [arma("", [], huerfanas), ...bloques].filter(lleno);
 }
+
+const lleno = (b: { productos: Producto[]; sueltas: Ficha[] }) =>
+  b.productos.length > 0 || b.sueltas.length > 0;
 
 /** Las gamas presentes en un grupo, en orden. Vacío si no hay ninguna marcada
  *  (los dos "velita" están sin clasificar a la espera del cliente). */
@@ -219,6 +255,21 @@ export type Ficha = {
  * y verlo feo en la web avisa; verlo desaparecer, no. Una ficha marcada como
  * `oculto` sí desaparece, que para eso está.
  */
+function aFicha(g: Grupo, fotoRespaldo: string, lang: Idioma): Ficha {
+  return {
+    clave: g.slug,
+    antetitulo: enIdioma(g.antetitulo, lang),
+    titulo: enIdioma(g.titulo, lang),
+    caracter: enIdioma(g.caracter, lang),
+    // si la ficha no fija foto se queda con la de su primera fila
+    foto: g.foto || fotoRespaldo,
+    formatos: (g.formatos ?? []).map((f) => ({
+      forma: f.forma,
+      valores: f.valores.map((v) => (typeof v === "string" ? v : enIdioma(v, lang))),
+    })),
+  };
+}
+
 export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
   const fichas: Ficha[] = [];
   const hechos = new Set<string>();
@@ -233,20 +284,30 @@ export function fichasDe(productos: Producto[], lang: Idioma): Ficha[] {
     }
     if (g.oculto || hechos.has(g.slug)) continue;
     hechos.add(g.slug);
-    fichas.push({
-      clave: g.slug,
-      antetitulo: enIdioma(g.antetitulo, lang),
-      titulo: enIdioma(g.titulo, lang),
-      caracter: enIdioma(g.caracter, lang),
-      // si la ficha no fija foto se queda con la de su primera fila
-      foto: g.foto || p.foto,
-      formatos: (g.formatos ?? []).map((f) => ({
-        forma: f.forma,
-        valores: f.valores.map((v) => (typeof v === "string" ? v : enIdioma(v, lang))),
-      })),
-    });
+    fichas.push(aFicha(g, p.foto, lang));
   }
   return fichas;
+}
+
+/**
+ * Las fichas de una categoría que NO tienen una fila de tarifa detrás.
+ *
+ * Los ibéricos de Los Pedroches son eso: el cliente sabe qué vende y en qué
+ * formatos —lo escribió en su correo— pero todavía no ha mandado la lista de
+ * precios. Sus fichas se declaran directamente en `grupos` y se publican
+ * igual. El día que llegue la tarifa, sus filas apuntan a estas mismas fichas
+ * con `grupo` y desaparecen de aquí solas.
+ *
+ * Se mira ficha a ficha y no categoría a categoría: embutidos tiene tarifa
+ * para lo de Sánchez Alcaraz y NO la tiene para el chorizo y el salchichón
+ * D.O.P. que se mudaron ahí, así que las dos cosas conviven en la misma
+ * página.
+ */
+export function gruposSueltosDe(slug: string): Grupo[] {
+  const conFila = new Set(PRODUCTOS.map((p) => p.grupo).filter(Boolean));
+  return GRUPOS.filter(
+    (g) => g.categoria === slug && !g.oculto && !conFila.has(g.slug),
+  );
 }
 
 // ------------------------------------------------------------ ferias y eventos

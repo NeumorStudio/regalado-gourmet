@@ -3027,22 +3027,22 @@
    "subcategoria": "lomo",
    "foto": "/productos/dop-cana-lomo.jpg",
    "antetitulo": {
-    "es": "Cortado a cuchillo",
-    "en": "Knife-cut",
-    "nb": "Skåret med kniv",
-    "fr": "Coupé au couteau",
-    "pt": "Cortado à faca",
-    "it": "Tagliato a coltello",
-    "de": "Mit dem Messer geschnitten"
+    "es": "Cortado a cuchillo y loncheado",
+    "en": "Knife-cut and sliced",
+    "nb": "Skåret med kniv og skiveskåret",
+    "fr": "Coupé au couteau et tranché",
+    "pt": "Cortado à faca e fatiado",
+    "it": "Tagliato a coltello e affettato",
+    "de": "Mit dem Messer geschnitten und aufgeschnitten"
    },
    "titulo": {
-    "es": "Caña de lomo ibérica D.O.P.",
-    "en": "Iberian loin D.O.P.",
-    "nb": "Iberisk filet D.O.P.",
-    "fr": "Longe ibérique A.O.P.",
-    "pt": "Lombo ibérico D.O.P.",
-    "it": "Lonza iberica D.O.P.",
-    "de": "Iberische Lende g.U."
+    "es": "Caña de lomo ibérica",
+    "en": "Iberian loin",
+    "nb": "Iberisk filet",
+    "fr": "Longe ibérique",
+    "pt": "Lombo ibérico",
+    "it": "Lonza iberica",
+    "de": "Iberische Lende"
    },
    "caracter": {
     "es": "Los Pedroches",

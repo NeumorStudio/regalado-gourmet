@@ -3027,13 +3027,13 @@
    "subcategoria": "lomo",
    "foto": "/productos/dop-cana-lomo.jpg",
    "antetitulo": {
-    "es": "Cortado a cuchillo y loncheado",
-    "en": "Knife-cut and sliced",
-    "nb": "Skåret med kniv og skiveskåret",
-    "fr": "Coupé au couteau et tranché",
-    "pt": "Cortado à faca e fatiado",
-    "it": "Tagliato a coltello e affettato",
-    "de": "Mit dem Messer geschnitten und aufgeschnitten"
+    "es": "Loncheado",
+    "en": "Sliced",
+    "nb": "Skiveskåret",
+    "fr": "Tranché",
+    "pt": "Fatiado",
+    "it": "Affettato",
+    "de": "Aufgeschnitten"
    },
    "titulo": {
     "es": "Caña de lomo ibérica",

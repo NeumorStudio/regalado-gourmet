@@ -10,6 +10,7 @@ import {
 } from "@/lib/contenido";
 import Navegacion from "./navegacion";
 import Colaboracion from "./colaboracion";
+import { Analytics } from "@vercel/analytics/next";
 
 const lora = Lora({
   subsets: ["latin", "latin-ext"],
@@ -189,6 +190,10 @@ export default async function Layout({
             </p>
           </div>
         </footer>
+
+        {/* Panel en el dashboard de Vercel: páginas, país, referrer, dispositivo.
+            Agregado y sin cookies, así que no pide banner de consentimiento. */}
+        <Analytics />
       </body>
     </html>
   );

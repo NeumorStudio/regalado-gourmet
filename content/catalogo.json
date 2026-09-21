@@ -130,6 +130,19 @@
    "total": 4
   },
   {
+   "slug": "conservas-del-mar",
+   "nombre": {
+    "es": "Conservas y especialidades del Mar",
+    "en": "Seafood preserves and specialities",
+    "nb": "Sjømatkonserver og spesialiteter",
+    "fr": "Conserves et spécialités de la mer",
+    "pt": "Conservas e especialidades do mar",
+    "it": "Conserve e specialità di mare",
+    "de": "Meereskonserven und Spezialitäten"
+   },
+   "total": 0
+  },
+  {
    "slug": "infusiones-tes",
    "nombre": {
     "es": "Infusiones y tés",
@@ -711,7 +724,7 @@
    "nombre": "SALCHICHON VELITA IBERICO 200 gr",
    "formato": "",
    "presentacion": "",
-   "unidad": "€/KG",
+   "unidad": "€/UD",
    "foto": "/productos/salchichon-velita.jpg",
    "subcategoria": "salchichon",
    "grupo": "salchichon-velita"
@@ -722,7 +735,7 @@
    "nombre": "CHORIZO VELITA IBERICO 200 gr",
    "formato": "",
    "presentacion": "",
-   "unidad": "€/KG",
+   "unidad": "€/UD",
    "foto": "/productos/chorizo-velita.jpg",
    "subcategoria": "chorizo",
    "grupo": "chorizo-velita"
@@ -3183,6 +3196,255 @@
     }
    ],
    "subcategoria": "salchichon"
+  },
+  {
+   "slug": "anchoa-serie-oro",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/anchoa-serie-oro.jpg",
+   "antetitulo": {
+    "es": "Tarrina serie oro",
+    "en": "Serie oro tub",
+    "nb": "Serie oro-beger",
+    "fr": "Barquette serie oro",
+    "pt": "Cuvete serie oro",
+    "it": "Vaschetta serie oro",
+    "de": "Serie oro Schale"
+   },
+   "titulo": {
+    "es": "Anchoa",
+    "en": "Anchovy",
+    "nb": "Ansjos",
+    "fr": "Anchois",
+    "pt": "Anchova",
+    "it": "Acciuga",
+    "de": "Sardelle"
+   },
+   "caracter": {
+    "es": "50 tiras",
+    "en": "50 fillets",
+    "nb": "50 fileter",
+    "fr": "50 filets",
+    "pt": "50 filetes",
+    "it": "50 filetti",
+    "de": "50 Filets"
+   },
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "400 g"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "boqueron-tarrina",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/boqueron-tarrina.jpg",
+   "antetitulo": {
+    "es": "Tarrina",
+    "en": "Tub",
+    "nb": "Beger",
+    "fr": "Barquette",
+    "pt": "Cuvete",
+    "it": "Vaschetta",
+    "de": "Schale"
+   },
+   "titulo": {
+    "es": "Boquerón",
+    "en": "White anchovy",
+    "nb": "Hvit ansjos",
+    "fr": "Anchois blanc",
+    "pt": "Biqueirão",
+    "it": "Alici marinate",
+    "de": "Weiße Sardellen"
+   },
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      {
+       "es": "50 unidades",
+       "en": "50 units",
+       "nb": "50 stk.",
+       "fr": "50 unités",
+       "pt": "50 unidades",
+       "it": "50 unità",
+       "de": "50 Stück"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "gilda-anchoa",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/gilda-anchoa.jpg",
+   "antetitulo": {
+    "es": "Anchoa",
+    "en": "Anchovy",
+    "nb": "Ansjos",
+    "fr": "Anchois",
+    "pt": "Anchova",
+    "it": "Acciuga",
+    "de": "Sardelle"
+   },
+   "titulo": {
+    "es": "Gilda",
+    "en": "Gilda",
+    "nb": "Gilda",
+    "fr": "Gilda",
+    "pt": "Gilda",
+    "it": "Gilda",
+    "de": "Gilda"
+   },
+   "caracter": {
+    "es": "Aceituna y guindilla",
+    "en": "Olive and guindilla pepper",
+    "nb": "Oliven og guindilla-chili",
+    "fr": "Olive et piment guindilla",
+    "pt": "Azeitona e guindilla",
+    "it": "Oliva e peperoncino guindilla",
+    "de": "Olive und Guindilla-Pfefferoni"
+   }
+  },
+  {
+   "slug": "gilda-boqueron",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/gilda-boqueron.jpg",
+   "antetitulo": {
+    "es": "Boquerón",
+    "en": "White anchovy",
+    "nb": "Hvit ansjos",
+    "fr": "Anchois blanc",
+    "pt": "Biqueirão",
+    "it": "Alici marinate",
+    "de": "Weiße Sardellen"
+   },
+   "titulo": {
+    "es": "Gilda",
+    "en": "Gilda",
+    "nb": "Gilda",
+    "fr": "Gilda",
+    "pt": "Gilda",
+    "it": "Gilda",
+    "de": "Gilda"
+   },
+   "caracter": {
+    "es": "Aceituna, guindilla y pimiento",
+    "en": "Olive, guindilla pepper and red pepper",
+    "nb": "Oliven, guindilla-chili og paprika",
+    "fr": "Olive, piment guindilla et poivron",
+    "pt": "Azeitona, guindilla e pimento",
+    "it": "Oliva, peperoncino guindilla e peperone",
+    "de": "Olive, Guindilla-Pfefferoni und Paprika"
+   }
+  },
+  {
+   "slug": "bonito-tronco",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/bonito-tronco.jpg",
+   "antetitulo": {
+    "es": "Tronco",
+    "en": "Loin",
+    "nb": "Rygg",
+    "fr": "Longe",
+    "pt": "Lombo",
+    "it": "Filetto",
+    "de": "Rückenstück"
+   },
+   "titulo": {
+    "es": "Bonito del Norte",
+    "en": "Bonito del Norte",
+    "nb": "Bonito del Norte",
+    "fr": "Bonito del Norte",
+    "pt": "Bonito del Norte",
+    "it": "Bonito del Norte",
+    "de": "Bonito del Norte"
+   },
+   "caracter": {
+    "es": "En aceite de oliva",
+    "en": "In olive oil",
+    "nb": "I olivenolje",
+    "fr": "À l’huile d’olive",
+    "pt": "Em azeite",
+    "it": "In olio d’oliva",
+    "de": "In Olivenöl"
+   },
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "250 g",
+      "450 g"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "bonito-ventresca",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/bonito-ventresca.jpg",
+   "antetitulo": {
+    "es": "Ventresca",
+    "en": "Ventresca",
+    "nb": "Ventresca",
+    "fr": "Ventresca",
+    "pt": "Ventresca",
+    "it": "Ventresca",
+    "de": "Ventresca"
+   },
+   "titulo": {
+    "es": "Bonito",
+    "en": "Bonito",
+    "nb": "Bonito",
+    "fr": "Bonito",
+    "pt": "Bonito",
+    "it": "Bonito",
+    "de": "Bonito"
+   },
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "120 g"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "pudin-cabracho",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/pudin-cabracho.jpg",
+   "antetitulo": {
+    "es": "Pudin",
+    "en": "Terrine",
+    "nb": "Terrin",
+    "fr": "Terrine",
+    "pt": "Pudim",
+    "it": "Terrina",
+    "de": "Terrine"
+   },
+   "titulo": {
+    "es": "Cabracho",
+    "en": "Scorpionfish",
+    "nb": "Skorpionfisk",
+    "fr": "Rascasse",
+    "pt": "Rascasso",
+    "it": "Scorfano",
+    "de": "Drachenkopf"
+   },
+   "caracter": "",
+   "formatos": [
+    {
+     "forma": "formatos",
+     "valores": [
+      "110 g"
+     ]
+    }
+   ]
   }
  ]
 }

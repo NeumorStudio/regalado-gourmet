@@ -890,6 +890,7 @@ export const AMBIENTE: Record<string, string> = {
   "aceites-premium-do": "/ambiente/aceites.jpg",
   "aceites-horeca": "/ambiente/aceites-horeca.jpg",
   "otros-productos-salsas": "/ambiente/sal-y-especias.jpg",
+  "conservas-del-mar": "/ambiente/conservas-del-mar.jpg",
   "infusiones-tes": "/ambiente/infusiones.jpg",
   vinos: "/ambiente/vinos.jpg",
   tomates: "/ambiente/tomates.jpg",
@@ -913,6 +914,10 @@ export const AMBIENTE: Record<string, string> = {
  */
 export const AMBIENTE_CABECERA: Record<string, string> = {
   "quesos-manchegos-dop": "/ambiente/quesos-tabla.jpg",
+  // La del mar es vertical: encaja clavada en la tarjeta, que es 4:5, pero
+  // recortada a lo ancho para la cabecera dejaría solo la madera vacía de
+  // abajo. La cabecera se lleva la banda de arriba, que es donde está todo.
+  "conservas-del-mar": "/ambiente/conservas-del-mar-cabecera.jpg",
 };
 
 /** La foto de la cabecera de una categoría: la suya si la tiene, y si no la

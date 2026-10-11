@@ -45,7 +45,7 @@ export const PERIODOS = [7, 30] as const;
 /** Compara la clave de la URL sin dar pistas por el tiempo de respuesta. */
 export function claveValida(dada: string): boolean {
   const buena = process.env.INFORME_CLAVE;
-  if (!buena || buena.length < 16) return false;
+  if (!buena || buena.length < 8) return false;
   const a = Buffer.from(dada);
   const b = Buffer.from(buena);
   return a.length === b.length && timingSafeEqual(a, b);

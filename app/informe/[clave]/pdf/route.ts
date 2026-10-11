@@ -78,7 +78,16 @@ export async function GET(
   ) => {
     const s = seguro(t, f);
     const w = f.widthOfTextAtSize(s, tam) + esp * s.length;
-    pag.drawText(s, { x: derecha ? x - w : x, y: yy, size: tam, font: f, color, characterSpacing: esp });
+    let cx = derecha ? x - w : x;
+    if (!esp) {
+      pag.drawText(s, { x: cx, y: yy, size: tam, font: f, color });
+      return;
+    }
+    // pdf-lib no tiene espaciado entre letras: se dibuja letra a letra
+    for (const c of s) {
+      pag.drawText(c, { x: cx, y: yy, size: tam, font: f, color });
+      cx += f.widthOfTextAtSize(c, tam) + esp;
+    }
   };
   const recortar = (t: string, f: PDFFont, tam: number, max: number) => {
     if (ancho(t, f, tam) <= max) return t;

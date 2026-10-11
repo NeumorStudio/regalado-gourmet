@@ -100,13 +100,15 @@ function filas(crudo: Crudo[], clave: string): Fila[] {
 
 export async function obtenerInforme(dias: number): Promise<Informe> {
   const ahora = new Date();
+  // Igual que "Last 7 Days" del panel de Vercel: desde hace N días hasta hoy,
+  // ambos días incluidos, para que las cifras coincidan con las del panel.
   const hasta = fechaISO(ahora);
-  const desde = fechaISO(new Date(ahora.getTime() - (dias - 1) * 86_400_000));
+  const desde = fechaISO(new Date(ahora.getTime() - dias * 86_400_000));
 
   // 100 es el máximo que admite la API por consulta
   const [total, diario, rutas, origenes, paises] = await Promise.all([
     consultar(desde, hasta),
-    consultar(desde, hasta, "day", dias),
+    consultar(desde, hasta, "day", dias + 1),
     consultar(desde, hasta, "requestPath", 100),
     consultar(desde, hasta, "referrerHostname", 100),
     consultar(desde, hasta, "country", 100),

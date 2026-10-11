@@ -78,5 +78,5 @@ export function proxy(peticion: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|productos|marcas|favicon|robots.txt|sitemap.xml|.*\\.).*)"],
+  matcher: ["/((?!_next|informe|productos|marcas|favicon|robots.txt|sitemap.xml|.*\\.).*)"],
 };

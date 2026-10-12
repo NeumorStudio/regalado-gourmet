@@ -42,7 +42,8 @@ export async function GET(
     i = await obtenerInforme(dias);
   } catch (e) {
     console.error("informe:", e);
-    return new Response("No se han podido leer las estadísticas ahora mismo. Inténtalo en unos minutos.", {
+    const msg = e instanceof Error ? e.message : String(e);
+    return new Response(`No se han podido leer las estadísticas ahora mismo. Inténtalo en unos minutos.\n\n[${msg}]`, {
       status: 502,
       headers: CABECERAS,
     });

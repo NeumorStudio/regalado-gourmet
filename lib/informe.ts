@@ -81,7 +81,10 @@ async function consultar(
     next: { revalidate: 3600 },
   });
   if (!r.ok) {
-    throw new Error(`Vercel respondió ${r.status} al pedir ${por ?? "totales"}`);
+    // el cuerpo de error de la API no lleva secretos y es lo que permite saber
+    // si falta una variable, el token está mal o es un límite de la API
+    const detalle = await r.text().catch(() => "");
+    throw new Error(`Vercel respondió ${r.status} al pedir ${por ?? "totales"}: ${detalle.slice(0, 300)}`);
   }
   const json = (await r.json()) as { data: Crudo[] | Crudo };
   return Array.isArray(json.data) ? json.data : [json.data];

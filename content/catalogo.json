@@ -3624,6 +3624,38 @@
     "de": "100 % Rufete"
    },
    "subcategoria": "sierra-de-salamanca"
+  },
+  {
+   "slug": "salmon-noruego",
+   "categoria": "conservas-del-mar",
+   "foto": "/productos/salmon-noruego.jpg",
+   "antetitulo": {
+    "es": "Origen Noruega",
+    "en": "Origin Norway",
+    "nb": "Opprinnelse Norge",
+    "fr": "Origine Norvège",
+    "pt": "Origem Noruega",
+    "it": "Origine Norvegia",
+    "de": "Herkunft Norwegen"
+   },
+   "titulo": {
+    "es": "Salmón del Atlántico",
+    "en": "Atlantic salmon",
+    "nb": "Atlantisk laks",
+    "fr": "Saumon de l’Atlantique",
+    "pt": "Salmão do Atlântico",
+    "it": "Salmone atlantico",
+    "de": "Atlantischer Lachs"
+   },
+   "caracter": {
+    "es": "",
+    "en": "",
+    "nb": "",
+    "fr": "",
+    "pt": "",
+    "it": "",
+    "de": ""
+   }
   }
  ]
 }

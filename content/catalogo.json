@@ -183,7 +183,21 @@
     "it": "Vini",
     "de": "Weine"
    },
-   "total": 0
+   "total": 0,
+   "subcategorias": [
+    {
+     "slug": "sierra-de-salamanca",
+     "nombre": {
+      "es": "D.O.P. Sierra de Salamanca",
+      "en": "D.O.P. Sierra de Salamanca",
+      "nb": "D.O.P. Sierra de Salamanca",
+      "fr": "A.O.P. Sierra de Salamanca",
+      "pt": "D.O.P. Sierra de Salamanca",
+      "it": "D.O.P. Sierra de Salamanca",
+      "de": "g.U. Sierra de Salamanca"
+     }
+    }
+   ]
   },
   {
    "slug": "tomates",
@@ -3445,6 +3459,171 @@
      ]
     }
    ]
+  },
+  {
+   "slug": "dominium-2020",
+   "categoria": "vinos",
+   "foto": "/vinos/dominium-2020.jpg",
+   "antetitulo": {
+    "es": "Tinto",
+    "en": "Red",
+    "nb": "Rødvin",
+    "fr": "Rouge",
+    "pt": "Tinto",
+    "it": "Rosso",
+    "de": "Rotwein"
+   },
+   "titulo": {
+    "es": "Dominium 2020",
+    "en": "Dominium 2020",
+    "nb": "Dominium 2020",
+    "fr": "Dominium 2020",
+    "pt": "Dominium 2020",
+    "it": "Dominium 2020",
+    "de": "Dominium 2020"
+   },
+   "caracter": {
+    "es": "100 % Rufete",
+    "en": "100 % Rufete",
+    "nb": "100 % Rufete",
+    "fr": "100 % Rufete",
+    "pt": "100 % Rufete",
+    "it": "100 % Rufete",
+    "de": "100 % Rufete"
+   },
+   "subcategoria": "sierra-de-salamanca"
+  },
+  {
+   "slug": "momentum-2023",
+   "categoria": "vinos",
+   "foto": "/vinos/momentum-2023.jpg",
+   "antetitulo": {
+    "es": "Tinto",
+    "en": "Red",
+    "nb": "Rødvin",
+    "fr": "Rouge",
+    "pt": "Tinto",
+    "it": "Rosso",
+    "de": "Rotwein"
+   },
+   "titulo": {
+    "es": "Momentum 2023",
+    "en": "Momentum 2023",
+    "nb": "Momentum 2023",
+    "fr": "Momentum 2023",
+    "pt": "Momentum 2023",
+    "it": "Momentum 2023",
+    "de": "Momentum 2023"
+   },
+   "caracter": {
+    "es": "70 % Rufete · 30 % Tempranillo",
+    "en": "70 % Rufete · 30 % Tempranillo",
+    "nb": "70 % Rufete · 30 % Tempranillo",
+    "fr": "70 % Rufete · 30 % Tempranillo",
+    "pt": "70 % Rufete · 30 % Tempranillo",
+    "it": "70 % Rufete · 30 % Tempranillo",
+    "de": "70 % Rufete · 30 % Tempranillo"
+   },
+   "subcategoria": "sierra-de-salamanca"
+  },
+  {
+   "slug": "santo-rostro-2024",
+   "categoria": "vinos",
+   "foto": "/vinos/santo-rostro-2024.jpg",
+   "antetitulo": {
+    "es": "Tinto",
+    "en": "Red",
+    "nb": "Rødvin",
+    "fr": "Rouge",
+    "pt": "Tinto",
+    "it": "Rosso",
+    "de": "Rotwein"
+   },
+   "titulo": {
+    "es": "Santo Rostro 2024",
+    "en": "Santo Rostro 2024",
+    "nb": "Santo Rostro 2024",
+    "fr": "Santo Rostro 2024",
+    "pt": "Santo Rostro 2024",
+    "it": "Santo Rostro 2024",
+    "de": "Santo Rostro 2024"
+   },
+   "caracter": {
+    "es": "70 % Tempranillo · 30 % Rufete",
+    "en": "70 % Tempranillo · 30 % Rufete",
+    "nb": "70 % Tempranillo · 30 % Rufete",
+    "fr": "70 % Tempranillo · 30 % Rufete",
+    "pt": "70 % Tempranillo · 30 % Rufete",
+    "it": "70 % Tempranillo · 30 % Rufete",
+    "de": "70 % Tempranillo · 30 % Rufete"
+   },
+   "subcategoria": "sierra-de-salamanca"
+  },
+  {
+   "slug": "dominio-de-la-sierra-blanco-2025",
+   "categoria": "vinos",
+   "foto": "/vinos/dominio-de-la-sierra-blanco-2025.jpg",
+   "antetitulo": {
+    "es": "Blanco",
+    "en": "White",
+    "nb": "Hvitvin",
+    "fr": "Blanc",
+    "pt": "Branco",
+    "it": "Bianco",
+    "de": "Weißwein"
+   },
+   "titulo": {
+    "es": "Dominio de la Sierra Blanco 2025",
+    "en": "Dominio de la Sierra Blanco 2025",
+    "nb": "Dominio de la Sierra Blanco 2025",
+    "fr": "Dominio de la Sierra Blanco 2025",
+    "pt": "Dominio de la Sierra Blanco 2025",
+    "it": "Dominio de la Sierra Blanco 2025",
+    "de": "Dominio de la Sierra Blanco 2025"
+   },
+   "caracter": {
+    "es": "100 % Rufete Serrano Blanco",
+    "en": "100 % Rufete Serrano Blanco",
+    "nb": "100 % Rufete Serrano Blanco",
+    "fr": "100 % Rufete Serrano Blanco",
+    "pt": "100 % Rufete Serrano Blanco",
+    "it": "100 % Rufete Serrano Blanco",
+    "de": "100 % Rufete Serrano Blanco"
+   },
+   "subcategoria": "sierra-de-salamanca"
+  },
+  {
+   "slug": "valmedroso-2024",
+   "categoria": "vinos",
+   "foto": "/vinos/valmedroso-2024.jpg",
+   "antetitulo": {
+    "es": "Tinto · Vino de paraje · Edición limitada",
+    "en": "Red · Single-vineyard wine · Limited edition",
+    "nb": "Rødvin · Enkeltmarkvin · Begrenset opplag",
+    "fr": "Rouge · Vin de parcelle · Édition limitée",
+    "pt": "Tinto · Vinho de parcela · Edição limitada",
+    "it": "Rosso · Vino di singola vigna · Edizione limitata",
+    "de": "Rotwein · Einzellagenwein · Limitierte Auflage"
+   },
+   "titulo": {
+    "es": "Valmedroso 2024",
+    "en": "Valmedroso 2024",
+    "nb": "Valmedroso 2024",
+    "fr": "Valmedroso 2024",
+    "pt": "Valmedroso 2024",
+    "it": "Valmedroso 2024",
+    "de": "Valmedroso 2024"
+   },
+   "caracter": {
+    "es": "100 % Rufete",
+    "en": "100 % Rufete",
+    "nb": "100 % Rufete",
+    "fr": "100 % Rufete",
+    "pt": "100 % Rufete",
+    "it": "100 % Rufete",
+    "de": "100 % Rufete"
+   },
+   "subcategoria": "sierra-de-salamanca"
   }
  ]
 }

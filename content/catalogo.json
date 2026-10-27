@@ -2283,15 +2283,7 @@
    "slug": "aove-horeca-baena",
    "categoria": "aceites-horeca",
    "foto": "/productos/aove-horeca-baena.jpg",
-   "antetitulo": {
-    "es": "Hostelería",
-    "en": "Foodservice",
-    "nb": "Storkjøkken",
-    "fr": "Restauration",
-    "pt": "Restauração",
-    "it": "Ristorazione",
-    "de": "Gastronomie"
-   },
+   "antetitulo": "",
    "titulo": {
     "es": "Aceite de Oliva Virgen Extra",
     "en": "Extra Virgin Olive Oil",
